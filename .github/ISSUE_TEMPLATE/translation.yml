@@ -1,0 +1,48 @@
+name: 漏译或错译
+description: 报告界面、标签或作品标题的简体中文问题
+title: "[翻译] "
+labels: [translation]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 类型
+      options:
+        - 界面文案
+        - 标签译名
+        - 作品标题
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: AniList 页面链接
+      placeholder: https://anilist.co/...
+    validations:
+      required: true
+  - type: input
+    id: original
+    attributes:
+      label: 英文或当前文本
+      description: 请保留原始大小写、空格和标点。
+    validations:
+      required: true
+  - type: input
+    id: suggestion
+    attributes:
+      label: 建议的大陆简体中文译名
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: 页面位置和译名依据
+      description: 说明控件、筛选项、标签或标题出现的位置；争议译名可附资料来源。
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 截图
+      description: 可直接拖入图片。

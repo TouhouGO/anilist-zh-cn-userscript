@@ -1,0 +1,16 @@
+{
+  "name": "anilist-zh-cn-userscript",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "check:dictionary": "tsx scripts/check-dictionaries.ts",
+    "check": "npm test && npm run typecheck && npm run check:dictionary && npm run build && npm run coverage",
+    "build": "vite build && tsx scripts/add-metadata.ts",
+    "coverage": "tsx scripts/check-coverage.ts",
+    "merge-titles": "node scripts/merge-title-sources.mjs"
+  },
+  "dependencies": { "opencc-js": "^1.4.1" },
+  "devDependencies": { "@types/node": "^22.0.0", "tsx": "^4.19.0", "typescript": "^5.6.0", "vite": "^6.0.0", "vitest": "^2.1.0" }
+}
