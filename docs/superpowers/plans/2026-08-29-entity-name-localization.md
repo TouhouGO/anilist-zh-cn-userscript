@@ -312,8 +312,8 @@ git commit -m "feat: 添加 Bangumi 人物名称精确补全"
 - Create: `src/entity-name-service.test.ts`
 
 **Interfaces:**
-- Produces: `EntityNameSource = 'override' | 'wikidata' | 'bangumi'`
-- Produces: `ResolvedEntityName = { kind: EntityKind; id: number; name: string; source: EntityNameSource }`
+- Produces: `EntityNameOrigin = 'override' | 'wikidata' | 'bangumi'`
+- Produces: `ResolvedEntityName = { kind: EntityKind; id: number; name: string; source: EntityNameOrigin }`
 - Produces: `createEntityNameService(options?).resolve(refs, context?): Promise<Map<string, ResolvedEntityName>>`
 - Produces: `entityKey(ref): '${kind}:${id}'`
 - Consumes: Wikidata source from Task 2 and Bangumi source/context from Task 3
