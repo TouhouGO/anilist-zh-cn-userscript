@@ -21,7 +21,7 @@
 | 动画与漫画中文标题 | 已覆盖列表、详情、悬浮层和动态等常见位置 |
 | 中文标题搜索 | 支持搜索页和右上角全站搜索，结果显示中文标题与封面 |
 | 个人资料、列表和统计 | 主要界面已覆盖 |
-| 角色、声优与制作人员姓名 | 尚在研究可靠的跨站 ID 映射 |
+| 角色、声优与制作人员姓名 | 首版已接入：Wikidata 直接 ID 为主，Bangumi 同作品精确匹配补全 |
 | 简介、评论、动态和论坛正文 | 保持原文 |
 
 当前已为 AniList 的 428 个标签建立基础简体中文词典，并使用大陆动漫社区语境修正部分译名。页面结构更新后出现的漏译或兼容问题会持续跟进。
@@ -36,6 +36,8 @@ src/data/
 │   └── community.ts    # 大陆社区语境优先修正
 ├── titles/
 │   └── overrides.ts    # 少量作品标题人工修正
+├── entities/
+│   └── overrides.ts    # 少量人物/角色名称纠错
 ├── ui-zh-CN.ts         # 稳定聚合入口
 ├── tag-zh-CN.ts        # 稳定聚合入口
 └── title-overrides.ts  # 稳定聚合入口
@@ -68,17 +70,19 @@ npm run merge-titles        # 重新合并上游标题数据
 
 脚本只在 AniList 页面运行。它会读取页面中的作品 ID，并按需请求：
 
-- AniList GraphQL API：补充中文搜索结果封面；
-- Bangumi API：补充已可靠映射作品的标签语境；
+- AniList GraphQL API：补充中文搜索结果封面，并读取待匹配人物的公开日文原名；
+- Wikidata Query Service：按 AniList 人物/角色 ID 批量查询中文名称；
+- Bangumi API：补充已可靠映射作品的标签语境，以及 Wikidata 缺失的人物名称；
 - AniList Chinese：每日缓存的中文标题更新。
 
-标题缓存保存在浏览器本地存储中，默认有效期为 24 小时。脚本不会把用户的 AniList 列表、动态正文或账户资料发送到项目维护者的服务器。
+标题和人物名称缓存保存在浏览器本地存储中。人物名称命中缓存 30 天，未命中缓存 7 天。项目没有遥测或后端服务，也不上传 AniList 账号、列表、搜索记录、浏览历史及本地缓存。
 
 ## 数据来源与致谢
 
 - [soruly/anilist-chinese](https://github.com/soruly/anilist-chinese)：AniList 作品中文标题，MIT。
 - [bangumi-data/bangumi-data](https://github.com/bangumi-data/bangumi-data)：作品标题、外部站点 ID 和标题映射，数据采用 CC BY 4.0。
 - [nk2028/opencc-js](https://github.com/nk2028/opencc-js)：繁体中文转大陆简体中文，MIT。
+- [Wikidata](https://www.wikidata.org/)：通过 AniList Character ID 与 Staff ID 获取公开中文名称，CC0。
 - [nz3u/bangumi-data](https://github.com/nz3u/bangumi-data)：人物、角色和标签数据研究参考，GPL-3.0；当前发布脚本未直接打包其数据。
 
 详细用途、优先级和许可说明见 [数据来源](docs/data-sources.md)。感谢这些项目及其贡献者维护开放数据。

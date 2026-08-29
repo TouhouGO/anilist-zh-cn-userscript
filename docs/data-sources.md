@@ -10,7 +10,8 @@
 | [bangumi-data/bangumi-data](https://github.com/bangumi-data/bangumi-data) | 通过 AniList/MAL 外部 ID 合并中文标题和 Bangumi 条目 ID | [CC BY 4.0](https://github.com/bangumi-data/bangumi-data#license) |
 | [nk2028/opencc-js](https://github.com/nk2028/opencc-js) | 将标题统一转换为大陆简体中文 | [MIT](https://github.com/nk2028/opencc-js/blob/main/LICENSE) |
 | [AniList GraphQL API](https://docs.anilist.co/) | 中文搜索结果的作品封面 | AniList API 条款 |
-| [Bangumi API](https://bangumi.github.io/api/) | 已映射作品的中文标签语境补充 | Bangumi API 条款 |
+| [Wikidata Query Service](https://query.wikidata.org/) | 通过 AniList Character ID（P11736）和 Staff ID（P11227）查询中文名称 | [CC0](https://www.wikidata.org/wiki/Wikidata:Copyright) |
+| [Bangumi API](https://bangumi.github.io/api/) | 已映射作品的中文标签语境与人物名称补充 | Bangumi API 条款 |
 
 `bangumi-data` 要求保留来源署名，本项目在 README 和本页持续标注其用途。上游数据的版权及许可继续归各自项目和权利人所有。
 
@@ -28,3 +29,14 @@
 4. 结果按 AniList ID 升序输出，并通过自动测试检查唯一性。
 
 大型生成文件适合整体更新；单条纠错放入 `src/data/titles/overrides.ts`。
+
+## 人物与角色名称
+
+人物名称按以下顺序解析：
+
+1. `src/data/entities/overrides.ts` 中少量可核验的人工纠错。
+2. Wikidata 的 AniList Character ID（P11736）或 AniList Staff ID（P11227）直接映射。
+3. Wikidata 缺失时，在已映射的同一 Bangumi 作品内用日文原名做唯一完全匹配。
+4. 匹配缺失或有歧义时保留 AniList 原名。
+
+有效名称在浏览器本地缓存 30 天，未命中缓存 7 天。脚本不打包完整人物数据库，也不上传用户信息或缓存。
