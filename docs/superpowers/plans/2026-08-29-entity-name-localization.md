@@ -383,7 +383,7 @@ type CacheEntry = {
 
 - [ ] **Step 5: 完成缓存期限和异常降级测试**
 
-增加测试：损坏 JSON 缓存被忽略；Wikidata reject 后仍调用 Bangumi；两个来源均 reject 时返回空 Map 且写入负缓存。
+增加测试：损坏 JSON 缓存被忽略；Wikidata reject 后仍调用 Bangumi；外部来源异常时返回空 Map 且不写负缓存，使下一次访问可以重试。
 
 - [ ] **Step 6: 运行服务测试和类型检查**
 
