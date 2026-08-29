@@ -3,7 +3,7 @@ import { entityKey, type EntityNameService } from './entity-name-service';
 import type { EntityRef } from './entity-name-types';
 
 type Scheduler = (callback: () => void) => void;
-type Candidate = { target: HTMLElement; ref: EntityRef; link?: HTMLAnchorElement };
+type Candidate = { target: HTMLElement; ref: EntityRef; link?: HTMLAnchorElement; pendingToken: string };
 
 const entityLinkSelector = 'a[href*="/character/"], a[href*="/staff/"]';
 const nameSelector = '.name, .title, [class*="name"]';
@@ -30,6 +30,7 @@ function prepareTarget(target: HTMLElement, ref: EntityRef): boolean {
     delete target.dataset.anilistZhCnEntityKey;
     delete target.dataset.anilistZhCnEntityOriginal;
     delete target.dataset.anilistZhCnEntityTranslated;
+    delete target.dataset.anilistZhCnEntityPending;
   }
   const original = target.textContent?.trim();
   if (!original) return false;
@@ -79,11 +80,16 @@ export function createEntityNameTranslator(
   let currentContext: EntityMediaContext | undefined;
   const pending = new Map<string, Candidate[]>();
 
-  const queueCandidate = (candidate: Candidate) => {
+  const queueCandidate = (candidate: Omit<Candidate, 'pendingToken'>) => {
     if (!prepareTarget(candidate.target, candidate.ref)) return;
     const key = entityKey(candidate.ref);
+    const pendingToken = `${generation}:${key}`;
+    if (candidate.target.dataset.anilistZhCnEntityPending === pendingToken) return;
     const candidates = pending.get(key) || [];
-    if (!candidates.some(item => item.target === candidate.target)) candidates.push(candidate);
+    if (!candidates.some(item => item.target === candidate.target)) {
+      candidate.target.dataset.anilistZhCnEntityPending = pendingToken;
+      candidates.push({ ...candidate, pendingToken });
+    }
     pending.set(key, candidates);
     if (!scheduled) {
       scheduled = true;
@@ -111,7 +117,15 @@ export function createEntityNameTranslator(
     const refs = [...batch.values()].map(candidates => candidates[0].ref);
     let names: Awaited<ReturnType<EntityNameService['resolve']>>;
     try { names = await service.resolve(refs, currentContext); }
-    catch { return 0; }
+    catch {
+      for (const candidates of batch.values()) for (const candidate of candidates) {
+        if (candidate.target.dataset.anilistZhCnEntityPending === candidate.pendingToken) delete candidate.target.dataset.anilistZhCnEntityPending;
+      }
+      return 0;
+    }
+    for (const candidates of batch.values()) for (const candidate of candidates) {
+      if (candidate.target.dataset.anilistZhCnEntityPending === candidate.pendingToken) delete candidate.target.dataset.anilistZhCnEntityPending;
+    }
     if (requestGeneration !== generation) return 0;
 
     let count = 0;

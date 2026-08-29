@@ -91,4 +91,22 @@ describe('Entity name translator', () => {
     expect(await flushing).toBe(0);
     expect(name.textContent).toBe('Spike Spiegel');
   });
+
+  it('does not start a duplicate lookup while the same target is in flight', async () => {
+    let finish!: (value: Map<string, { kind: 'character'; id: number; name: string; source: 'wikidata' }>) => void;
+    const response = new Promise<Map<string, { kind: 'character'; id: number; name: string; source: 'wikidata' }>>(resolve => { finish = resolve; });
+    let calls = 0;
+    const name = target('Spike Spiegel');
+    const page = rootWith([link('/character/1/Spike-Spiegel', name)]);
+    const translator = createEntityNameTranslator({ resolve: async () => { calls++; return response; } }, () => {});
+
+    translator.translate(page);
+    const first = translator.flush();
+    translator.translate(page);
+    const second = translator.flush();
+
+    expect(calls).toBe(1);
+    finish(new Map([['character:1', { kind: 'character', id: 1, name: '史派克·斯皮格尔', source: 'wikidata' }]]));
+    await Promise.all([first, second]);
+  });
 });

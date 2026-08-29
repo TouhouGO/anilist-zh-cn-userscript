@@ -2157,6 +2157,7 @@
       delete target.dataset.anilistZhCnEntityKey;
       delete target.dataset.anilistZhCnEntityOriginal;
       delete target.dataset.anilistZhCnEntityTranslated;
+      delete target.dataset.anilistZhCnEntityPending;
     }
     const original = (_b = target.textContent) == null ? void 0 : _b.trim();
     if (!original) return false;
@@ -2202,8 +2203,13 @@
     const queueCandidate = (candidate) => {
       if (!prepareTarget(candidate.target, candidate.ref)) return;
       const key = entityKey(candidate.ref);
+      const pendingToken = `${generation}:${key}`;
+      if (candidate.target.dataset.anilistZhCnEntityPending === pendingToken) return;
       const candidates = pending.get(key) || [];
-      if (!candidates.some((item) => item.target === candidate.target)) candidates.push(candidate);
+      if (!candidates.some((item) => item.target === candidate.target)) {
+        candidate.target.dataset.anilistZhCnEntityPending = pendingToken;
+        candidates.push({ ...candidate, pendingToken });
+      }
       pending.set(key, candidates);
       if (!scheduled) {
         scheduled = true;
@@ -2233,7 +2239,13 @@
       try {
         names = await service.resolve(refs, currentContext);
       } catch {
+        for (const candidates of batch.values()) for (const candidate of candidates) {
+          if (candidate.target.dataset.anilistZhCnEntityPending === candidate.pendingToken) delete candidate.target.dataset.anilistZhCnEntityPending;
+        }
         return 0;
+      }
+      for (const candidates of batch.values()) for (const candidate of candidates) {
+        if (candidate.target.dataset.anilistZhCnEntityPending === candidate.pendingToken) delete candidate.target.dataset.anilistZhCnEntityPending;
       }
       if (requestGeneration !== generation) return 0;
       let count = 0;
