@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+
+# Build & compilation
+dist/*.map
+outputs/
+*.tsbuildinfo
+.cache/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Test coverage
+coverage/
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# AI & Agent local caches / artifacts
+.gemini/
+.cursor/
+.claude/
+.codex/
+.antigravity/
+.brain/
+scratch/
+temp/
+tmp/
+
+# OS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# Local development worktrees & backups
+.worktrees/
+.release-backups/
