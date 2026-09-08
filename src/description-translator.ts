@@ -33,21 +33,30 @@ export function extractSidebarReleaseYear(root: Element): number | undefined {
 }
 
 export function renderDescriptionHtml(summaryHtml: string, originalHtml: string): string {
-  const divider = '<hr class="anilist-zh-cn-summary-divider" style="margin: 14px 0; border: none; border-top: 1px solid rgba(120, 140, 160, 0.25);">';
-  const headingStyle = 'margin-bottom: 8px; font-weight: 700; color: rgb(var(--color-text, 146, 166, 187));';
+  const divider = '<span class="anilist-zh-cn-summary-divider" style="display: block; margin: 14px 0; border-top: 1px solid rgba(120, 140, 160, 0.25);"></span>';
+  const headingStyle = 'display: block; margin-bottom: 8px; font-weight: 700; color: rgb(var(--color-text, 146, 166, 187));';
+
+  const formattedSummary = summaryHtml
+    .replace(/<p>/gi, '<span style="display: block; margin-bottom: 8px;">')
+    .replace(/<\/p>/gi, '</span>');
 
   if (!originalHtml.trim()) {
-    return `<div class="anilist-zh-cn-description-content"><p class="anilist-zh-cn-summary-heading" style="${headingStyle}"><strong>【剧情简介】</strong></p>${summaryHtml}</div>`;
+    return [
+      '<span class="anilist-zh-cn-description-content" style="display: block;">',
+      `<span class="anilist-zh-cn-summary-heading" style="${headingStyle}">【剧情简介】</span>`,
+      formattedSummary,
+      '</span>',
+    ].join('');
   }
 
   return [
-    '<div class="anilist-zh-cn-description-content">',
-    `<p class="anilist-zh-cn-summary-heading" style="${headingStyle}"><strong>【剧情简介】</strong></p>`,
-    summaryHtml,
+    '<span class="anilist-zh-cn-description-content" style="display: block;">',
+    `<span class="anilist-zh-cn-summary-heading" style="${headingStyle}">【剧情简介】</span>`,
+    formattedSummary,
     divider,
-    `<p class="anilist-zh-cn-summary-heading" style="${headingStyle}"><strong>【原简介】</strong></p>`,
-    `<div class="anilist-zh-cn-original-content">${originalHtml}</div>`,
-    '</div>',
+    `<span class="anilist-zh-cn-summary-heading" style="${headingStyle}">【原简介】</span>`,
+    `<span class="anilist-zh-cn-original-content" style="display: block;">${originalHtml}</span>`,
+    '</span>',
   ].join('');
 }
 
@@ -57,21 +66,31 @@ export async function translateDescription(
   descriptionService: BangumiDescriptionService
 ): Promise<boolean> {
   if (route.section !== 'media' || !route.id || !route.type) return false;
-  if (isMediaTab(route.path) || !isMediaOverview(route.path)) return false;
 
-  const descElement = (root.matches('.description') ? root : root.querySelector<HTMLElement>('.description')) as HTMLElement | null;
+  const descElement = (
+    root.matches('.description')
+      ? root
+      : root.querySelector<HTMLElement>('.description')
+  ) || (typeof document !== 'undefined' ? document.querySelector<HTMLElement>('.description') : null) as HTMLElement | null;
+
   if (!descElement) return false;
 
-  const currentDescId = descElement.getAttribute(MARKER_DESC_ID);
-  if (currentDescId === String(route.id)) return false;
+  // If already rendered with our translated content, do not re-render
+  if (descElement.querySelector('.anilist-zh-cn-description-content')) {
+    return false;
+  }
+
+  const rawText = descElement.textContent?.trim();
+  if (!rawText) return false;
 
   const originalHtml = descElement.getAttribute(MARKER_DESC_ORIGINAL) || descElement.innerHTML;
   if (!descElement.hasAttribute(MARKER_DESC_ORIGINAL)) {
     descElement.setAttribute(MARKER_DESC_ORIGINAL, originalHtml);
   }
 
-  const nativeTitle = extractSidebarNativeTitle(root);
-  const releaseYear = extractSidebarReleaseYear(root);
+  const queryRoot = typeof document !== 'undefined' ? (document.body || root) : root;
+  const nativeTitle = extractSidebarNativeTitle(queryRoot);
+  const releaseYear = extractSidebarReleaseYear(queryRoot);
 
   const info = await descriptionService.getDescription(route.id, {
     isAnime: route.type === 'anime',
@@ -81,6 +100,13 @@ export async function translateDescription(
 
   if (!info.summary) {
     descElement.setAttribute(MARKER_DESC_ID, String(route.id));
+    return false;
+  }
+
+  // Check if route changed during async network fetch
+  const currentPath = typeof location !== 'undefined' ? location.pathname : route.path;
+  const currentMediaId = currentPath.match(/^\/(?:anime|manga)\/(\d+)/)?.[1];
+  if (currentMediaId && currentMediaId !== String(route.id)) {
     return false;
   }
 

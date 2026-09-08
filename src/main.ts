@@ -38,7 +38,10 @@ function boot() {
 
   const syncPage = (route = parseRoute(location.href)) => {
     translateDocumentTitle(route, service);
-    if (document.body) translateElement(document.body, route);
+    if (document.body) {
+      translateElement(document.body, route);
+      void translateDescription(document.body, route, descriptionService);
+    }
     chineseSearch.refresh();
   };
 
@@ -53,6 +56,7 @@ function boot() {
   startDomObserver(nodes => {
     const route = parseRoute(location.href);
     for (const node of nodes) translateElement(node, route);
+    if (document.body) void translateDescription(document.body, route, descriptionService);
     translateDocumentTitle(route, service);
   });
 
