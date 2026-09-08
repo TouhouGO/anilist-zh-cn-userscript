@@ -23,6 +23,7 @@ function parseEntryValue(value: string): { title: string; bangumiId?: number } {
 
 export function createTitleService(storage: StorageLike = getSafeStorage(), fetcher: FetchLike = fetch): TitleService {
   const entries = new Map<number, string>();
+  const bangumiIds = new Map<number, number>();
   const nativeFallback = new Map<string, string>();
   const nativeByTitle = new Map<string, string>();
   const searchable = new Map<number, TitleMatch>();
@@ -33,6 +34,7 @@ export function createTitleService(storage: StorageLike = getSafeStorage(), fetc
     const chinese = toMainlandChinese(parsed.title);
     if (Number.isInteger(id)) {
       entries.set(id, chinese);
+      if (parsed.bangumiId) bangumiIds.set(id, parsed.bangumiId);
       searchable.set(id, {
         id,
         title: titleOverrides[id] || chinese,
@@ -77,6 +79,9 @@ export function createTitleService(storage: StorageLike = getSafeStorage(), fetc
     getTitle(id, fallback) {
       return titleOverrides[id] || entries.get(id) || nativeFallback.get(fallback) || fallback;
     },
+    getBangumiId(id) {
+      return bangumiIds.get(id);
+    },
     searchTitles(query, limit = 12) {
       const normalized = normalizeSearch(query);
       if (normalized.length < 2 || !/[\p{Script=Han}]/u.test(normalized)) return [];
@@ -112,9 +117,10 @@ export function createTitleService(storage: StorageLike = getSafeStorage(), fetc
           const id = Number(k);
           if (Number.isInteger(id)) {
             if (!entries.has(id)) {
-              const { title } = parseEntryValue(v);
+              const { title, bangumiId } = parseEntryValue(v);
               const chinese = toMainlandChinese(title);
               entries.set(id, chinese);
+              if (bangumiId) bangumiIds.set(id, bangumiId);
               searchable.set(id, { id, title: titleOverrides[id] || chinese });
               delta[id] = chinese;
             }
@@ -133,6 +139,7 @@ export function createTitleService(storage: StorageLike = getSafeStorage(), fetc
 
 export type TitleService = {
   getTitle(id: number, fallback: string): string;
+  getBangumiId(id: number): number | undefined;
   searchTitles(query: string, limit?: number): TitleMatch[];
   refresh(): Promise<void>;
 };

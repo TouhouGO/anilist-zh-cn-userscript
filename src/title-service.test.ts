@@ -11,6 +11,7 @@ describe('title service', () => {
     const service = createTitleService(memory(), async () => new Response(JSON.stringify([{ id: 999998, title: '測試標題' }])));
     await service.refresh();
     expect(service.getTitle(1, 'Original')).toBe('星际牛仔');
+    expect(service.getBangumiId(1)).toBe(253);
     expect(service.getTitle(999998, 'Original')).toBe('测试标题');
     expect(service.getTitle(999999, 'Original')).toBe('Original');
   });
@@ -18,6 +19,7 @@ describe('title service', () => {
     const service = createTitleService(memory(), async () => new Response(JSON.stringify({ '999997': '测试词典|12345', 'テストタイトル': '测试日文直译' })));
     await service.refresh();
     expect(service.getTitle(999997, 'Original')).toBe('测试词典');
+    expect(service.getBangumiId(999997)).toBe(12345);
     expect(service.getTitle(999996, 'テストタイトル')).toBe('测试日文直译');
   });
   it('finds AniList entries by normalized Chinese title with exact matches first', () => {

@@ -4,6 +4,7 @@ import type { TitleService } from './title-service';
 
 const service = {
   getTitle: (_id: number, fallback: string) => fallback,
+  getBangumiId: () => undefined,
   refresh: async () => {},
   searchTitles: () => [
     { id: 154587, title: '葬送的芙莉莲', native: '葬送のフリーレン' },

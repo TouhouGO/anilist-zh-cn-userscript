@@ -12,7 +12,7 @@
 | [nk2028/opencc-js](https://github.com/nk2028/opencc-js) | 将标题统一转换为大陆简体中文 | [MIT](https://github.com/nk2028/opencc-js/blob/main/LICENSE) |
 | [AniList GraphQL API](https://docs.anilist.co/) | 中文搜索结果的作品封面 | AniList API 条款 |
 | [Wikidata Query Service](https://query.wikidata.org/) | 通过 AniList Character ID（P11736）和 Staff ID（P11227）查询中文名称 | [CC0](https://www.wikidata.org/wiki/Wikidata:Copyright) |
-| [Bangumi API](https://bangumi.github.io/api/) | 已映射作品的中文标签语境与人物名称补充 | Bangumi API 条款 |
+| [Bangumi API](https://bangumi.github.io/api/) | 已映射作品的中文剧情简介、中文标签语境与人物名称补充 | Bangumi API 条款 |
 
 `bangumi-data` 要求保留来源署名，本项目在 README 和本页持续标注其用途。上游数据的版权及许可继续归各自项目和权利人所有。
 
