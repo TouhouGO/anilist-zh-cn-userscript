@@ -10,6 +10,8 @@ import { startChineseTitleSearch } from './chinese-search';
 import { createEntityNameService } from './entity-name-service';
 import { createEntityNameTranslator } from './entity-name-translator';
 import { translateDocumentTitle } from './document-title-translator';
+import { createBangumiDescriptionService } from './bangumi-description-service';
+import { translateDescription } from './description-translator';
 import type { EntityMediaContext } from './bangumi-entity-source';
 import type { Route } from './types';
 
@@ -21,6 +23,7 @@ function entityContext(route: Route): EntityMediaContext | undefined {
 function boot() {
   const service = createTitleService();
   const tagService = createBangumiTagService();
+  const descriptionService = createBangumiDescriptionService(service);
   const diagnostics = createDiagnostics(false);
   const entityTranslator = createEntityNameTranslator(createEntityNameService());
   const chineseSearch = startChineseTitleSearch(service);
@@ -29,6 +32,7 @@ function boot() {
     translateRoot(root, route);
     translateTitles(root, service);
     void translateBangumiTags(root, tagService);
+    void translateDescription(root, route, descriptionService);
     entityTranslator.translate(root, entityContext(route), route.path);
   };
 

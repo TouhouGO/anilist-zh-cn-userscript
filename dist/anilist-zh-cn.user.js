@@ -25287,6 +25287,7 @@
   }
   function createTitleService(storage = getSafeStorage(), fetcher = fetch) {
     const entries = /* @__PURE__ */ new Map();
+    const bangumiIds = /* @__PURE__ */ new Map();
     const nativeFallback = /* @__PURE__ */ new Map();
     const nativeByTitle = /* @__PURE__ */ new Map();
     const searchable = /* @__PURE__ */ new Map();
@@ -25296,6 +25297,7 @@
       const chinese = toMainlandChinese(parsed.title);
       if (Number.isInteger(id)) {
         entries.set(id, chinese);
+        if (parsed.bangumiId) bangumiIds.set(id, parsed.bangumiId);
         searchable.set(id, {
           id,
           title: titleOverrides[id] || chinese
@@ -25336,6 +25338,9 @@
       getTitle(id, fallback) {
         return titleOverrides[id] || entries.get(id) || nativeFallback.get(fallback) || fallback;
       },
+      getBangumiId(id) {
+        return bangumiIds.get(id);
+      },
       searchTitles(query, limit = 12) {
         const normalized = normalizeSearch(query);
         if (normalized.length < 2 || !/[\p{Script=Han}]/u.test(normalized)) return [];
@@ -25362,9 +25367,10 @@
             const id = Number(k2);
             if (Number.isInteger(id)) {
               if (!entries.has(id)) {
-                const { title } = parseEntryValue(v2);
+                const { title, bangumiId } = parseEntryValue(v2);
                 const chinese = toMainlandChinese(title);
                 entries.set(id, chinese);
+                if (bangumiId) bangumiIds.set(id, bangumiId);
                 searchable.set(id, { id, title: titleOverrides[id] || chinese });
                 delta[id] = chinese;
               }
@@ -25389,16 +25395,20 @@
     const parts = path.split("/").filter(Boolean);
     return parts.length >= 3 && detailTabs.has(parts[2].toLowerCase());
   }
+  function isMediaOverview(path) {
+    const parts = path.split("/").filter(Boolean);
+    return Boolean(extractMediaId(path) && (parts.length === 2 || parts.length === 3 && !detailTabs.has(parts[2].toLowerCase())));
+  }
   function isTitleLink(link, path) {
-    var _a;
+    var _a, _b;
     if (isMediaTab(path)) return false;
     if (detailTabLabels.has(((_a = link.textContent) == null ? void 0 : _a.trim()) || "")) return false;
     if (link.closest(".nav, .tabs, .media-tabs, .footer, .breadcrumb")) return false;
-    return Boolean(link.matches('.title, .title-link, [class*="title"], .media-card a, .media-preview-card a, .recommendation-card a, .list-row a, .status a, h1 a') || link.closest(".entry-card, .media-card, .media-preview-card, .recommendation-card, .list-row, .status"));
-  }
-  function isMediaOverview(path) {
-    const parts = path.split("/").filter(Boolean);
-    return Boolean(extractMediaId(path) && parts.length === 3 && !detailTabs.has(parts[2].toLowerCase()));
+    if (link.closest(".cover, .image")) return false;
+    if (link.querySelector("img") && !((_b = link.textContent) == null ? void 0 : _b.trim())) return false;
+    return Boolean(
+      link.matches('.title, .title-link, [class*="title"], .media-card a, .media-preview-card a, .recommendation-card a, .list-row a, .status a, h1 a, .entry a, .medialist a') || link.closest(".entry-card, .media-card, .media-preview-card, .recommendation-card, .list-row, .status, .medialist, .entry, .title, .lists, .list-entries")
+    );
   }
   function syncHoverTitleTarget(target, hoveredPath, service) {
     var _a;
@@ -25413,25 +25423,32 @@
   }
   function translateFavouriteTooltips(root, hoveredPath, service) {
     let count = 0;
-    const targets = [root.matches(".tooltip.visible .title") ? root : null, ...Array.from(root.querySelectorAll(".tooltip.visible .title"))].filter(Boolean);
+    const targets = [
+      root.matches(".tooltip.visible .title") ? root : null,
+      ...Array.from(root.querySelectorAll(".tooltip.visible .title"))
+    ].filter(Boolean);
     for (const target of targets) if (syncHoverTitleTarget(target, hoveredPath, service)) count++;
     return count;
   }
   function translateTitles(root, service) {
     var _a;
     let count = 0;
-    for (const link of [root.matches("a[href]") ? root : null, ...Array.from(root.querySelectorAll("a[href]"))].filter(Boolean)) {
-      const path = new URL(link.href, location.origin).pathname;
+    for (const link of [
+      root.matches("a[href]") ? root : null,
+      ...Array.from(root.querySelectorAll("a[href]"))
+    ].filter(Boolean)) {
+      const origin2 = typeof location !== "undefined" ? location.origin : "https://anilist.co";
+      const path = new URL(link.href, origin2).pathname;
       const media = extractMediaId(path);
       if (!media) continue;
-      const titleTarget = link.querySelector('.title, .title-link, [class*="title"]');
+      const titleTarget = link.querySelector('.title, .title-link, [class*="title"]') || (link.children.length === 1 && !link.querySelector("img") ? link.firstElementChild : void 0);
       const text = [...link.childNodes].find((node) => {
         var _a2;
-        return node.nodeType === Node.TEXT_NODE && ((_a2 = node.textContent) == null ? void 0 : _a2.trim());
+        return node.nodeType === 3 && ((_a2 = node.textContent) == null ? void 0 : _a2.trim());
       });
       if (!isTitleLink(link, path)) {
         if (link.dataset.anilistZhCnTitle && link.dataset.anilistZhCnOriginal) {
-          const restoreTarget = titleTarget || link;
+          const restoreTarget = titleTarget || text || link;
           restoreTarget.textContent = link.dataset.anilistZhCnOriginal;
           delete link.dataset.anilistZhCnTitle;
           delete link.dataset.anilistZhCnOriginal;
@@ -25439,34 +25456,36 @@
         continue;
       }
       if (link.dataset.anilistZhCnTitle) continue;
-      const original = ((titleTarget == null ? void 0 : titleTarget.textContent) || (text == null ? void 0 : text.textContent) || "").trim();
+      const original = ((titleTarget == null ? void 0 : titleTarget.textContent) || (text == null ? void 0 : text.textContent) || link.textContent || "").trim();
       if (!original) continue;
       const title = service.getTitle(media.id, original);
       if (title !== original) {
-        const target = titleTarget || text;
-        if (!target) continue;
+        const target = titleTarget || text || link;
         link.dataset.anilistZhCnTitle = "1";
         link.dataset.anilistZhCnOriginal = original;
-        if (target.nodeType === Node.TEXT_NODE) target.textContent = target.textContent.replace(original, title);
+        if (target.nodeType === 3) target.textContent = target.textContent.replace(original, title);
         else target.textContent = title;
         count++;
       }
     }
-    const currentPath = location.pathname;
+    const origin = typeof location !== "undefined" ? location.origin : "https://anilist.co";
+    const currentPath = typeof location !== "undefined" ? location.pathname : "/";
     const currentMedia = isMediaOverview(currentPath) ? extractMediaId(currentPath) : void 0;
-    if (currentMedia) for (const heading of Array.from(root.querySelectorAll("h1"))) {
-      if (heading.dataset.anilistZhCnTitle) continue;
-      const original = (_a = heading.textContent) == null ? void 0 : _a.trim();
-      if (!original) continue;
-      const title = service.getTitle(currentMedia.id, original);
-      if (title === original) continue;
-      heading.dataset.anilistZhCnTitle = "1";
-      heading.dataset.anilistZhCnOriginal = original;
-      heading.textContent = title;
-      count++;
+    if (currentMedia) {
+      for (const heading of Array.from(root.querySelectorAll("h1"))) {
+        if (heading.dataset.anilistZhCnTitle) continue;
+        const original = (_a = heading.textContent) == null ? void 0 : _a.trim();
+        if (!original) continue;
+        const title = service.getTitle(currentMedia.id, original);
+        if (title === original) continue;
+        heading.dataset.anilistZhCnTitle = "1";
+        heading.dataset.anilistZhCnOriginal = original;
+        heading.textContent = title;
+        count++;
+      }
     }
-    const hovered = document.querySelector('a.favourite.media:hover[href^="/anime/"], a.favourite.media:hover[href^="/manga/"]');
-    const hoveredPath = hovered ? new URL(hovered.href, location.origin).pathname : void 0;
+    const hovered = typeof document !== "undefined" ? document.querySelector('a.favourite.media:hover[href^="/anime/"], a.favourite.media:hover[href^="/manga/"]') : null;
+    const hoveredPath = hovered ? new URL(hovered.href, origin).pathname : void 0;
     count += translateFavouriteTooltips(root, hoveredPath, service);
     return count;
   }
@@ -26240,6 +26259,209 @@
     }
     return false;
   }
+  const STORAGE_PREFIX = "anilist-zh-cn-bgm-desc-";
+  const CACHE_TTL_FOUND = 30 * 24 * 60 * 60 * 1e3;
+  const CACHE_TTL_EMPTY = 7 * 24 * 60 * 60 * 1e3;
+  function normalizeSearchTitle(title) {
+    return title.toLowerCase().replace(/[\s\p{P}\p{S}〜～・·:：!！?？\-]+/gu, "").trim();
+  }
+  function escapeHtml(text) {
+    return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+  function formatBangumiSummary(raw) {
+    return toMainlandChinese(raw).replace(/\r\n/g, "\n").split("\n").map((line) => line.trim()).filter(Boolean).map((line) => `<p>${escapeHtml(line)}</p>`).join("");
+  }
+  async function searchBangumiSubjectStrict(keyword, isAnime, releaseYear, requester) {
+    const normQuery = normalizeSearchTitle(keyword);
+    if (!normQuery) return void 0;
+    const targetType = isAnime ? 2 : 1;
+    const url = `https://api.bgm.tv/search/subject/${encodeURIComponent(keyword.trim())}?type=${targetType}`;
+    try {
+      const payload = await requester(url, {
+        headers: {
+          "User-Agent": "TouhouGO/anilist-zh-cn-userscript (https://github.com/TouhouGO)",
+          Accept: "application/json"
+        }
+      });
+      const list = Array.isArray(payload == null ? void 0 : payload.list) ? payload.list : [];
+      const matches = [];
+      for (const item of list) {
+        const candType = Number(item.type);
+        if (candType !== targetType) continue;
+        const name = item.name || "";
+        const nameCn = item.name_cn || "";
+        const normName = normalizeSearchTitle(name);
+        const normNameCn = normalizeSearchTitle(nameCn);
+        const nameMatches = normName && normName === normQuery || normNameCn && normNameCn === normQuery;
+        if (!nameMatches) continue;
+        if (releaseYear && item.air_date) {
+          const candYear = parseInt(item.air_date.slice(0, 4), 10);
+          if (Number.isInteger(candYear) && candYear !== releaseYear) continue;
+        }
+        if (Number.isInteger(item.id)) matches.push(item.id);
+      }
+      return matches.length === 1 ? matches[0] : void 0;
+    } catch {
+      return void 0;
+    }
+  }
+  function createBangumiDescriptionService(titleService, requester = requestJson, storage = getSafeStorage()) {
+    const memoryCache = /* @__PURE__ */ new Map();
+    function loadCached(mediaId) {
+      const inMem = memoryCache.get(mediaId);
+      if (inMem) return inMem;
+      try {
+        const raw = storage.getItem(STORAGE_PREFIX + mediaId);
+        if (!raw) return void 0;
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === "object" && typeof parsed.time === "number") {
+          const ttl = parsed.summary ? CACHE_TTL_FOUND : CACHE_TTL_EMPTY;
+          if (Date.now() - parsed.time < ttl) {
+            const info = {
+              summary: parsed.summary || void 0,
+              nameCn: parsed.nameCn || void 0,
+              bangumiId: parsed.bangumiId || void 0
+            };
+            memoryCache.set(mediaId, info);
+            return info;
+          }
+        }
+      } catch {
+      }
+      return void 0;
+    }
+    function saveCache(mediaId, info) {
+      memoryCache.set(mediaId, info);
+      try {
+        storage.setItem(
+          STORAGE_PREFIX + mediaId,
+          JSON.stringify({
+            time: Date.now(),
+            summary: info.summary,
+            nameCn: info.nameCn,
+            bangumiId: info.bangumiId
+          })
+        );
+      } catch {
+      }
+    }
+    return {
+      async getDescription(mediaId, options = {}) {
+        var _a, _b;
+        if (!Number.isInteger(mediaId) || mediaId <= 0) return {};
+        const cached = loadCached(mediaId);
+        if (cached) return cached;
+        let targetBgmId = titleService.getBangumiId(mediaId);
+        if (!targetBgmId && options.nativeTitle) {
+          targetBgmId = await searchBangumiSubjectStrict(
+            options.nativeTitle,
+            options.isAnime ?? true,
+            options.releaseYear,
+            requester
+          );
+        }
+        if (!targetBgmId) {
+          const emptyResult = {};
+          saveCache(mediaId, emptyResult);
+          return emptyResult;
+        }
+        try {
+          const url = `https://api.bgm.tv/v0/subjects/${targetBgmId}`;
+          const payload = await requester(url, {
+            headers: {
+              "User-Agent": "TouhouGO/anilist-zh-cn-userscript (https://github.com/TouhouGO)",
+              Accept: "application/json"
+            }
+          });
+          const rawSummary = (_a = payload == null ? void 0 : payload.summary) == null ? void 0 : _a.trim();
+          const rawNameCn = (_b = payload == null ? void 0 : payload.name_cn) == null ? void 0 : _b.trim();
+          const formattedSummary = rawSummary ? formatBangumiSummary(rawSummary) : void 0;
+          const nameCn = rawNameCn ? toMainlandChinese(rawNameCn) : void 0;
+          const result = {
+            summary: formattedSummary,
+            nameCn,
+            bangumiId: targetBgmId
+          };
+          saveCache(mediaId, result);
+          return result;
+        } catch {
+          const errorResult = { bangumiId: targetBgmId };
+          return errorResult;
+        }
+      }
+    };
+  }
+  const MARKER_DESC_ID = "data-anilist-zh-cn-desc-id";
+  const MARKER_DESC_ORIGINAL = "data-anilist-zh-cn-desc-original";
+  function extractSidebarNativeTitle(root) {
+    var _a, _b, _c, _d;
+    const sets = Array.from(root.querySelectorAll(".data-set, .data-item"));
+    for (const set of sets) {
+      const type = (_b = (_a = set.querySelector(".type")) == null ? void 0 : _a.textContent) == null ? void 0 : _b.trim().toLowerCase();
+      if (type === "native" || type === "romaji") {
+        const val = (_d = (_c = set.querySelector(".value")) == null ? void 0 : _c.textContent) == null ? void 0 : _d.trim();
+        if (val) return val;
+      }
+    }
+    return void 0;
+  }
+  function extractSidebarReleaseYear(root) {
+    var _a, _b, _c, _d;
+    const sets = Array.from(root.querySelectorAll(".data-set, .data-item"));
+    for (const set of sets) {
+      const type = (_b = (_a = set.querySelector(".type")) == null ? void 0 : _a.textContent) == null ? void 0 : _b.trim().toLowerCase();
+      if (type === "start date" || type === "release date" || type === "season") {
+        const val = (_d = (_c = set.querySelector(".value")) == null ? void 0 : _c.textContent) == null ? void 0 : _d.trim();
+        if (val) {
+          const match = val.match(/\b(19\d{2}|20\d{2})\b/);
+          if (match) return parseInt(match[1], 10);
+        }
+      }
+    }
+    return void 0;
+  }
+  function renderDescriptionHtml(summaryHtml, originalHtml) {
+    const divider = '<hr class="anilist-zh-cn-summary-divider" style="margin: 14px 0; border: none; border-top: 1px solid rgba(120, 140, 160, 0.25);">';
+    const headingStyle = "margin-bottom: 8px; font-weight: 700; color: rgb(var(--color-text, 146, 166, 187));";
+    if (!originalHtml.trim()) {
+      return `<div class="anilist-zh-cn-description-content"><p class="anilist-zh-cn-summary-heading" style="${headingStyle}"><strong>【剧情简介】</strong></p>${summaryHtml}</div>`;
+    }
+    return [
+      '<div class="anilist-zh-cn-description-content">',
+      `<p class="anilist-zh-cn-summary-heading" style="${headingStyle}"><strong>【剧情简介】</strong></p>`,
+      summaryHtml,
+      divider,
+      `<p class="anilist-zh-cn-summary-heading" style="${headingStyle}"><strong>【原简介】</strong></p>`,
+      `<div class="anilist-zh-cn-original-content">${originalHtml}</div>`,
+      "</div>"
+    ].join("");
+  }
+  async function translateDescription(root, route, descriptionService) {
+    if (route.section !== "media" || !route.id || !route.type) return false;
+    if (isMediaTab(route.path) || !isMediaOverview(route.path)) return false;
+    const descElement = root.matches(".description") ? root : root.querySelector(".description");
+    if (!descElement) return false;
+    const currentDescId = descElement.getAttribute(MARKER_DESC_ID);
+    if (currentDescId === String(route.id)) return false;
+    const originalHtml = descElement.getAttribute(MARKER_DESC_ORIGINAL) || descElement.innerHTML;
+    if (!descElement.hasAttribute(MARKER_DESC_ORIGINAL)) {
+      descElement.setAttribute(MARKER_DESC_ORIGINAL, originalHtml);
+    }
+    const nativeTitle = extractSidebarNativeTitle(root);
+    const releaseYear = extractSidebarReleaseYear(root);
+    const info = await descriptionService.getDescription(route.id, {
+      isAnime: route.type === "anime",
+      nativeTitle,
+      releaseYear
+    });
+    if (!info.summary) {
+      descElement.setAttribute(MARKER_DESC_ID, String(route.id));
+      return false;
+    }
+    descElement.innerHTML = renderDescriptionHtml(info.summary, originalHtml);
+    descElement.setAttribute(MARKER_DESC_ID, String(route.id));
+    return true;
+  }
   function entityContext(route) {
     if (route.section !== "media" || !route.id || !route.type) return void 0;
     return { mediaId: route.id, mediaType: route.type === "anime" ? "ANIME" : "MANGA" };
@@ -26247,6 +26469,7 @@
   function boot() {
     const service = createTitleService();
     const tagService = createBangumiTagService();
+    const descriptionService = createBangumiDescriptionService(service);
     const diagnostics = createDiagnostics(false);
     const entityTranslator = createEntityNameTranslator(createEntityNameService());
     const chineseSearch = startChineseTitleSearch(service);
@@ -26254,6 +26477,7 @@
       translateRoot(root, route);
       translateTitles(root, service);
       void translateBangumiTags(root, tagService);
+      void translateDescription(root, route, descriptionService);
       entityTranslator.translate(root, entityContext(route), route.path);
     };
     const syncPage = (route = parseRoute(location.href)) => {
