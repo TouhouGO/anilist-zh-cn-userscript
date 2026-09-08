@@ -1,0 +1,58 @@
+name: Sync Titles Pipeline
+
+on:
+  schedule:
+    # Every Monday at 04:00 UTC (12:00 CST)
+    - cron: '0 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-titles:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch and merge title sources (Bangumi, soruly, Wikidata Manga)
+        run: node scripts/merge-title-sources.mjs
+
+      - name: Run verification checks & build
+        run: npm run check
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git status --porcelain
+          if [ -n "$(git status --porcelain data/ dist/)" ]; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push updated titles
+        if: steps.git-check.outputs.has_changes == 'true'
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ dist/
+          git commit -m "chore(data): auto-sync titles and rebuild userscripts [skip ci]"
+          git push
+
+      - name: Upload title dictionary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: titles_zh_cn
+          path: data/titles_zh_cn.json
+          if-no-files-found: error

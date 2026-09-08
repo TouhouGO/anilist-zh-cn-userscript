@@ -1,0 +1,47 @@
+name: 兼容或功能问题
+description: 报告脚本运行、页面更新或样式兼容问题
+title: "[问题] "
+labels: [bug]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: AniList 页面链接
+      placeholder: https://anilist.co/...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 脚本版本
+      placeholder: 例如 0.1.12
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 浏览器和用户脚本管理器
+      placeholder: 例如 Chrome 140 + ScriptCat
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开……
+        2. 点击……
+        3. 看到……
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果与实际结果
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 截图或控制台信息
+      description: 请先移除账户、令牌等私密信息。

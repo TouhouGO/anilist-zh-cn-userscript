@@ -1,0 +1,858 @@
+AniList 标签,分类,成人标签,AniList 定义,优化前译名,建议译名,采用译名,变更类型,状态,问题说明,参考语境,来源
+4-koma,Technical,否,"A manga in the 'yonkoma' format, which consists of four equal-sized panels arranged in a vertical strip.",四格漫画,四格漫画,四格漫画,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Achromatic,Technical,否,Contains animation that is primarily done in black and white.,无彩色,无彩色,无彩色,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Achronological Order,Setting-Time,否,Chapters or episodes do not occur in chronological order.,非线性叙事,非线性叙事,非线性叙事,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Acrobatics,Theme-Game-Sport,否,"The art of jumping, tumbling, and balancing. Often paired with trapeze, trampolining, tightropes, or general gymnastics.",杂技,杂技,杂技,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Acting,Theme-Arts,否,Centers around actors or the acting industry.,演技,演技,演技,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Adoption,Theme-Other,否,Features a character who has been adopted by someone who is neither of their biological parents.,收养,收养,收养,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Advertisement,Technical,否,Produced in order to promote the products of a certain company.,广告,广告,广告,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Afterlife,Setting-Universe,否,Partly or completely set in the afterlife.,死后世界,死后世界,死后世界,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Age Gap,Theme-Romance,否,Prominently features romantic relations between people with a significant age difference.,年龄差,年龄差,年龄差,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Age Regression,Cast-Traits,否,Prominently features a character who was returned to a younger state.,年龄回溯,年龄倒退,年龄倒退,优化,已采用,由“年龄回溯”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Agender,Cast-Traits,否,Prominently features agender characters.,无性别,无性别,无性别,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Agriculture,Theme-Slice of Life,否,Prominently features agriculture practices.,农业,农业,农业,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Ahegao,Sexual Content,是,Features a character making an exaggerated orgasm face.,阿黑颜,阿黑颜,阿黑颜,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Airsoft,Theme-Game-Sport,否,Centers around the sport of airsoft.,软式气枪,软式气枪,软式气枪,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Alchemy,Theme-Fantasy,否,Features character(s) who practice alchemy.,炼金术,炼金术,炼金术,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Aliens,Cast-Traits,否,Prominently features extraterrestrial lifeforms.,外星人,外星人,外星人,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Alternate Universe,Setting-Universe,否,Features multiple alternate universes in the same series.,平行世界,平行世界,平行世界,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+American Football,Theme-Game-Sport,否,Centers around the sport of American football.,美式足球,美式足球,美式足球,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Amnesia,Cast-Traits,否,Prominently features a character(s) with memory loss.,失忆,失忆,失忆,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Amputation,Sexual Content,是,Features amputation or amputees.,,截肢,截肢,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Anachronism,Setting-Time,否,"Prominently features elements that are out of place in the historical period the work takes place in, particularly modern elements in a historical setting.",时代错置,时代错置,时代错置,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Anal Sex,Sexual Content,是,Features sexual penetration of the anal cavity.,肛交,肛交,肛交,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Ancient China,Setting-Time,否,"Setting in ancient china, does not apply to fantasy settings.",,中国古代,中国古代,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Angels,Cast-Traits,否,Prominently features spiritual beings usually represented with wings and halos and believed to be attendants of God.,天使,天使,天使,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Animals,Theme-Other,否,Prominently features animal characters in a leading role.,动物,动物,动物,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Anthology,Technical,否,A collection of separate works collated into a single release.,短篇集,短篇集,短篇集,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Anthropomorphism,Cast-Traits,否,Contains non-human character(s) that have attributes or characteristics of a human being.,拟人化,拟人化,拟人化,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Anti-Hero,Cast-Main Cast,否,Features a protagonist who lacks conventional heroic attributes and may be considered a borderline villain.,反英雄,反英雄,反英雄,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Archery,Theme-Action,否,"Centers around the sport of archery, or prominently features the use of archery in combat.",弓箭,弓箭,弓箭,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Armpits,Sexual Content,是,Features the sexual depiction or stimulation of a character's armpits.,,腋下,腋下,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Aromantic,Cast-Traits,否,Features a character who experiences little to no romantic attraction.,,无浪漫倾向,无浪漫倾向,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Arranged Marriage,Cast-Traits,否,"Features two characters made to marry each other, usually by their family.",,包办婚姻,包办婚姻,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Artificial Intelligence,Cast-Traits,否,Intelligent non-organic machines that work and react similarly to humans.,人工智能,人工智能,人工智能,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Asexual,Cast-Traits,否,Features a character who isn't sexually attracted to people of any sex or gender.,无性恋,无性恋,无性恋,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Ashikoki,Sexual Content,是,Footjob; features stimulation of genitalia by feet.,,足交,足交,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Asphyxiation,Sexual Content,是,Features breath play.,,窒息玩法,窒息玩法,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Assassins,Theme-Other-Organisations,否,Centers around characters who murder people as a profession.,刺客,刺客,刺客,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Astronomy,Theme-Other,否,"Relating or centered around the study of celestial objects and phenomena, space, or the universe.",天文学,天文学,天文学,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Athletics,Theme-Game-Sport,否,"Centers around sporting events that involve competitive running, jumping, throwing, or walking.",田径,田径,田径,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Augmented Reality,Setting-Universe,否,Prominently features events with augmented reality as the main setting.,增强现实,增强现实,增强现实,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Autobiographical,Theme-Other,否,Real stories and anecdotes written by the author about their own life.,自传体,自传体,自传体,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Aviation,Theme-Other-Vehicle,否,Regarding the flying or operation of aircraft.,航空,航空,航空,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Badminton,Theme-Game-Sport,否,Centers around the sport of badminton.,羽毛球,羽毛球,羽毛球,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Ballet,Theme-Arts,否,Prominently features the dance art of ballet. Both traditional and contemporary styles.,,芭蕾,芭蕾,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Band,Theme-Arts-Music,否,Main cast is a group of musicians.,乐队,乐队,乐队,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Bar,Setting-Scene,否,Partly or completely set in a bar.,酒吧,酒吧,酒吧,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Baseball,Theme-Game-Sport,否,Centers around the sport of baseball.,棒球,棒球,棒球,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Basketball,Theme-Game-Sport,否,Centers around the sport of basketball.,篮球,篮球,篮球,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Battle Royale,Theme-Action,否,"Centers around a fierce group competition, often violent and with only one winner.",大逃杀,大逃杀,大逃杀,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Biographical,Theme-Other,否,"Based on true stories of real persons living or dead, written by another.",传记,传记,传记,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Bisexual,Cast-Traits,否,Features a character who is romantically or sexually attracted to people of more than one sex or gender.,双性恋,双性恋,双性恋,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Blackmail,Theme-Other,否,Features a character blackmailing another.,,敲诈,敲诈,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Board Game,Theme-Game,否,Centers around characters playing board games.,,桌游,桌游,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Boarding School,Setting-Scene,否,Features characters attending a boarding school.,,寄宿学校,寄宿学校,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Body Horror,Theme-Other,否,"Features characters who undergo horrific transformations or disfigurement, often to their own detriment.",身体恐怖,肉体恐怖,肉体恐怖,优化,已采用,由“身体恐怖”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Body Image,Theme-Other,否,"Features themes of self-esteem concerning perceived defects or flaws in appearance, such as body weight or disfigurement, and may discuss topics such as eating disorders, fatphobia, and body dysmorphia.",,外貌焦虑,外貌焦虑,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Body Swapping,Theme-Fantasy,否,Centers around individuals swapping bodies with one another.,身体互换,身体互换,身体互换,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Bondage,Sexual Content,是,"Features BDSM, with or without the use of accessories.",束缚,束缚,束缚,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Boobjob,Sexual Content,是,Features the stimulation of male genitalia by breasts.,隆胸,乳交,乳交,优化,已采用,由“隆胸”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Bowling,Theme-Game-Sport,否,Centers around the sport of Bowling.,,保龄球,保龄球,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Boxing,Theme-Game-Sport,否,Centers around the sport of boxing.,拳击,拳击,拳击,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Boys' Love,Theme-Romance,否,"Prominently features romance between two males, not inherently sexual.",耽美,BL,BL,优化,已采用,由“耽美”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Brainwashing,Theme-Other,否,Centers on one or more characters who are mentally manipulated by others to behave abnormally or act against their own will.,,洗脑,洗脑,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Bullying,Theme-Drama,否,"Prominently features the use of force for intimidation, often in a school setting.",校园霸凌,霸凌,霸凌,优化,已采用,由“校园霸凌”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Butler,Cast-Traits,否,Prominently features a character who is a butler.,男仆,男仆,男仆,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Calligraphy,Theme-Arts,否,Centers around the art of calligraphy.,书法,书法,书法,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Camping,Setting-Scene,否,"Features the recreational activity of camping, either in a tent, vehicle, or simply sleeping outdoors.",,露营,露营,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cannibalism,Theme-Other,否,Prominently features the act of consuming another member of the same species as food.,食人,食人,食人,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Card Battle,Theme-Game-Card & Board Game,否,Centers around individuals competing in card games.,卡牌对战,卡牌对战,卡牌对战,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cars,Theme-Other-Vehicle,否,Centers around the use of automotive vehicles.,汽车,汽车,汽车,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Centaur,Cast-Traits,否,Prominently features a character with a human upper body and the lower body of a horse.,半人马,半人马,半人马,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cervix Penetration,Sexual Content,是,A sexual act in which the cervix is visibly penetrated.,,子宫颈插入,子宫颈插入,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+CGI,Technical,否,Prominently features scenes created with computer-generated imagery.,CGI,CGI,CGI,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cheating,Theme-Romance,否,Features a character with a partner shown being intimate with someone else consensually.,,出轨,出轨,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cheerleading,Theme-Game-Sport,否,Centers around the activity of cheerleading.,啦啦队,啦啦队,啦啦队,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Chibi,Theme-Other,否,"Features ""super deformed"" character designs with smaller, rounder proportions and a cute look.",Q版,Q版,Q版,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Chimera,Cast-Traits,否,"Features a beast made by combining animals, usually with humans.",奇美拉,奇美拉,奇美拉,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Chuunibyou,Cast-Traits,否,"Prominently features a character with ""Middle School 2nd Year Syndrome"", who either acts like a know-it-all adult or falsely believes they have special powers.",中二病,中二病,中二病,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Circus,Setting-Scene,否,Prominently features a circus.,马戏团,马戏团,马戏团,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Class Struggle,Theme-Drama,否,Contains conflict born between the different social classes. Generally between an dominant elite and a suffering oppressed group.,,阶级斗争,阶级斗争,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Classic Literature,Theme-Arts,否,Discusses or adapts a work of classic world literature.,古典文学,古典文学,古典文学,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Classical Music,Theme-Arts-Music,否,"Centers on the musical style of classical, not to be applied to anime that use classical in its soundtrack.",,古典音乐,古典音乐,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Clone,Cast-Traits,否,Prominently features a character who is an artificial exact copy of another organism.,克隆,克隆,克隆,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Coastal,Setting-Scene,否,Story prominently takes place near the beach or around a coastal area/town. Setting is near the ocean.,,滨海,滨海,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cohabitation,Theme-Romance,否,Features two or more people who live in the same household and develop a romantic or sexual relationship.,,同居,同居,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+College,Setting-Scene,否,Partly or completely set in a college or university.,大学,大学,大学,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Coming of Age,Theme-Drama,否,Centers around a character's transition from childhood to adulthood.,成长,成长,成长,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Conspiracy,Theme-Drama,否,Contains one or more factions controlling or attempting to control the world from the shadows.,阴谋,阴谋,阴谋,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cosmic Horror,Theme-Other,否,A type of horror that emphasizes human insignificance in the grand scope of cosmic reality; fearing the unknown and being powerless to fight it.,宇宙恐怖,宇宙恐怖,宇宙恐怖,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cosplay,Cast-Traits,否,Features dressing up as a different character or profession.,Cosplay,Cosplay,Cosplay,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cowboys,Cast-Traits,否,Features Western or Western-inspired cowboys.,,牛仔,牛仔,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Creature Taming,Theme-Other,否,"Features the taming of animals, monsters, or other creatures.",,驯兽,驯兽,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Crime,Theme-Other,否,Centers around unlawful activities punishable by the state or other authority.,犯罪,犯罪,犯罪,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Criminal Organization,Theme-Other-Organisations,否,Prominently features a group of people who commit crimes for illicit or violent purposes.,,犯罪组织,犯罪组织,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Crossdressing,Cast-Traits,否,Prominently features a character dressing up as the opposite sex.,异装癖,异性装扮,异性装扮,优化,已采用,由“异装癖”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Crossover,Theme-Other,否,"Centers around the placement of two or more otherwise discrete fictional characters, settings, or universes into the context of a single story.",跨界联动,跨界联动,跨界联动,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cult,Theme-Other-Organisations,否,"Features a social group with unorthodox religious, spiritual, or philosophical beliefs and practices.",,邪教,邪教,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cultivation,Theme-Fantasy,否,"Features characters using training, often martial arts-related, and other special methods to cultivate qi (a component of traditional Chinese philosophy, described as ""life force"") and gain strength or immortality.",修仙,修仙,修仙,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cumflation,Sexual Content,是,The stomach area expands outward like a balloon due to being filled specifically with semen.,,精液膨腹,精液膨腹,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cunnilingus,Sexual Content,是,Features oral sex performed on female genitalia.,,舔阴,舔阴,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Curses,Theme-Fantasy,否,"Features a character, object or area that has been cursed, usually by a malevolent supernatural force.",,诅咒,诅咒,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cute Boys Doing Cute Things,Theme-Slice of Life,否,"Centers around male characters doing cute activities, usually with little to no emphasis on drama and conflict.",男子萌系日常,萌系男子日常,萌系男子日常,优化,已采用,由“男子萌系日常”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cute Girls Doing Cute Things,Theme-Slice of Life,否,"Centers around female characters doing cute activities, usually with little to no emphasis on drama and conflict.
+",女子萌系日常,萌系少女日常,萌系少女日常,优化,已采用,由“女子萌系日常”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cyberpunk,Theme-Sci-Fi,否,Set in a future of advanced technological and scientific achievements that have resulted in social disorder.,赛博朋克,赛博朋克,赛博朋克,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cyborg,Cast-Traits,否,Prominently features a human character whose physiological functions are aided or enhanced by artificial means.,半机械人,半机械人,半机械人,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Cycling,Theme-Game-Sport,否,Centers around the sport of cycling.,自行车,自行车,自行车,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Dancing,Theme-Arts-Music,否,Centers around the art of dance.,舞蹈,舞蹈,舞蹈,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Death Game,Theme-Other,否,"Features characters participating in a game, where failure results in death.",死亡游戏,死亡游戏,死亡游戏,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Deepthroat,Sexual Content,是,"Features oral sex where the majority of the erect male genitalia is inside another person's mouth, usually stimulating some gagging in the back of their throat.",,深喉,深喉,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Defloration,Sexual Content,是,Features a female character who has never had sexual relations (until now).,,破处,破处,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Delinquents,Cast-Traits,否,"Features characters with a notorious image and attitude, sometimes referred to as ""yankees"".",不良少年,不良,不良,优化,已采用,由“不良少年”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Demons,Cast-Traits,否,Prominently features malevolent otherworldly creatures.,恶魔,恶魔,恶魔,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Denpa,Theme-Other,否,"Works that feature themes of social dissociation, delusions, and other issues like suicide, bullying, self-isolation, paranoia, and technological necessity in daily lives. Classic iconography: telephone poles, rooftops, and trains.",电波系,电波系,电波系,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Desert,Setting-Scene,否,Prominently features a desert environment.,沙漠,沙漠,沙漠,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Detective,Cast-Traits,否,Features a character who investigates and solves crimes.,侦探,侦探,侦探,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+DILF,Sexual Content,是,Features sexual intercourse with older men.,,熟男,熟男,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Dinosaurs,Cast-Traits,否,"Prominently features Dinosaurs, prehistoric reptiles that went extinct millions of years ago.",恐龙,恐龙,恐龙,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Disability,Cast-Traits,否,"A work that features one or more characters with a physical, mental, cognitive, or developmental condition that impairs, interferes with, or limits the person's ability to engage in certain tasks or actions.",残障,残障,残障,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Dissociative Identities,Cast-Traits,否,A case where one or more people share the same body.,解离性身份,多重人格,多重人格,优化,已采用,由“解离性身份”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Double Penetration,Sexual Content,是,A sexual act in which the vagina/anus are penetrated by two penises/toys.,,双重插入,双重插入,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Dragons,Cast-Traits,否,Prominently features mythical reptiles which generally have wings and can breathe fire.,龙,龙,龙,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Drawing,Theme-Arts,否,"Centers around the art of drawing, including manga and doujinshi.",绘画,绘画,绘画,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Drugs,Theme-Other,否,"Prominently features the usage of drugs such as opioids, stimulants, hallucinogens etc.",毒品,毒品,毒品,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Dullahan,Cast-Traits,否,"Prominently features a character who is a Dullahan, a creature from Irish Folklore with a head that can be detached from its main body.",无头骑士,无头骑士,无头骑士,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Dungeon,Setting-Scene,否,Prominently features a dungeon environment.,地下城,地下城,地下城,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Dystopian,Setting-Time,否,"Partly or completely set in a society characterized by poverty, squalor or oppression.",反乌托邦,反乌托邦,反乌托邦,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+E-Sports,Theme-Game,否,"Prominently features professional video game competitions, tournaments, players, etc.",电子竞技,电子竞技,电子竞技,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Eco-Horror,Theme-Drama,否,Utilizes a horrifying depiction of ecology to explore man and its relationship with nature.,,生态恐怖,生态恐怖,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Economics,Theme-Other,否,Centers around the field of economics.,经济学,经济学,经济学,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Educational,Theme-Other,否,Primary aim is to educate the audience.,教育,教育,教育,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Elderly Protagonist,Cast-Main Cast,否,"The protagonist is either over 60 years of age, has an elderly appearance, or, in the case of non-humans, is considered elderly for their species.",,老年主角,老年主角,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Elf,Cast-Traits,否,Prominently features a character who is an elf.,精灵,精灵,精灵,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Ensemble Cast,Cast-Main Cast,否,Features a large cast of characters with (almost) equal screen time and importance to the plot.,群像剧,群像剧,群像剧,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Environmental,Theme-Other,否,Concern with the state of the natural world and how humans interact with it.,环保,环保,环保,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Episodic,Technical,否,Features story arcs that are loosely tied or lack an overarching plot.,单元剧,单元剧,单元剧,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Ero Guro,Theme-Other,否,"Japanese literary and artistic movement originating in the 1930's. Works have a focus on grotesque eroticism, sexual corruption, and decadence.",猎奇,情色猎奇,情色猎奇,优化,已采用,由“猎奇”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Erotic Piercings,Sexual Content,是,"Features a type of body modification designed to enhance sexual pleasure and intimacy, and/or decoratively adorns portions of the body considered sexual in nature.",,情趣穿孔,情趣穿孔,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Espionage,Theme-Action,否,Prominently features characters infiltrating an organization in order to steal sensitive information.,间谍,间谍,间谍,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Estranged Family,Cast-Main Cast,否,At least one family member of the MC intentionally distances themselves or a family distances themselves from a person related to the MC.,,家庭疏离,家庭疏离,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Exhibitionism,Sexual Content,是,Features the act of exposing oneself in public for sexual pleasure.,,露出,露出,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Exiled,Theme-Other,否,Features a character or characters that get banished or ostracized from a place or group they belonged to.,,放逐,放逐,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Exorcism,Theme-Fantasy,否,"Involving religious methods of vanquishing youkai, demons, or other supernatural entities.",,驱魔,驱魔,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Facial,Sexual Content,是,Features sexual ejaculation onto an individual's face.,,颜射,颜射,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Fairy,Cast-Traits,否,Prominently features a character who is a fairy.,妖精,妖精,妖精,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Fairy Tale,Theme-Fantasy,否,"This work tells a fairy tale, centers around fairy tales, or is based on a classic fairy tale.",童话,童话,童话,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Fake Relationship,Theme-Drama,否,When two characters enter a fake relationship that mutually benefits one or both involved.,,假扮情侣,假扮情侣,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Family Life,Theme-Slice of Life,否,Centers around the activities of a family unit.,家庭生活,家庭生活,家庭生活,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Fashion,Theme-Arts,否,Centers around the fashion industry.,时尚,时尚,时尚,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Feet,Sexual Content,是,Features the sexual depiction or stimulation of a character's feet.,,足控,足控,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Fellatio,Sexual Content,是,Blowjob; features oral sex performed on male genitalia.,,口交,口交,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Female Harem,Theme-Romance,否,Main cast features the protagonist plus several female characters who are romantically interested in them.,后宫（女）,后宫,后宫,优化,已采用,由“后宫（女）”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Female Protagonist,Cast-Main Cast,否,Main character is female.,女主角,女主角,女主角,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Femboy,Cast-Traits,否,Features a boy who exhibits characteristics or behaviors considered in many cultures to be typical of girls.,伪娘,伪娘,伪娘,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Femdom,Sexual Content,是,Female Dominance. Features sexual acts with a woman in a dominant position.,,女王调教,女王调教,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Fencing,Theme-Game-Sport,否,Centers around the sport of fencing.,击剑,击剑,击剑,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Filmmaking,Theme-Other,否,Centers around the art of filmmaking.,,电影制作,电影制作,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Fingering,Sexual Content,是,Features vaginal or anal insertion of fingers.,,指交,指交,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Firefighters,Theme-Other-Organisations,否,Centered around the life and activities of rescuers specialised in firefighting.,消防员,消防员,消防员,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Fishing,Theme-Game-Sport,否,Centers around the sport of fishing.,钓鱼,钓鱼,钓鱼,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Fisting,Sexual Content,是,A sexual activity that involves inserting one or more hands into the vagina or rectum.,,拳交,拳交,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Fitness,Theme-Game-Sport,否,Centers around exercise with the aim of improving physical health.,健身,健身,健身,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Flash,Technical,否,Created using Flash animation techniques.,闪光,Flash动画,Flash动画,优化,已采用,由“闪光”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Flat Chest,Sexual Content,是,Features a female character with smaller-than-average breasts.,,贫乳,贫乳,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Food,Theme-Arts,否,Centers around cooking or food appraisal.,美食,美食,美食,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Football,Theme-Game-Sport,否,"Centers around the sport of football (known in the USA as ""soccer"").",足球,足球,足球,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Foreign,Setting-Scene,否,Partly or completely set in a country outside the country of origin.,异国,异国背景,异国背景,优化,已采用,由“异国”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Found Family,Theme-Other,否,Features a group of characters with no biological relations that are united in a group providing social support.,非血缘家人,非血缘家庭,非血缘家庭,优化,已采用,由“非血缘家人”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Fugitive,Theme-Action,否,Prominently features a character evading capture by an individual or organization.,逃亡者,逃亡者,逃亡者,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Full CGI,Technical,否,Almost entirely created with computer-generated imagery.,全CGI,全3DCG,全3DCG,优化,已采用,由“全CGI”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Full Color,Technical,否,Manga that were initially published in full color.,全彩,全彩,全彩,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Futanari,Sexual Content,是,Features female characters with male genitalia.,,扶她,扶她,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Gambling,Theme-Other,否,Centers around the act of gambling.,赌博,赌博,赌博,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Gangs,Theme-Other-Organisations,否,Centers around gang organizations.,帮派,帮派,帮派,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Gekiga,Technical,否,An alternative comics movement of mature manga with stylized and cinematic visuals predominantly from the late 1950s through 1970s.,,剧画,剧画,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Gender Bending,Theme-Other,否,"Prominently features a character who dresses and behaves in a way characteristic of another gender, or has been transformed into a person of another gender.",性别转换,性转,性转,优化,已采用,由“性别转换”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Ghost,Cast-Traits,否,Prominently features a character who is a ghost.,幽灵,幽灵,幽灵,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Go,Theme-Game-Card & Board Game,否,Centered around the game of Go.,围棋,围棋,围棋,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Goblin,Cast-Traits,否,"A goblin is a monstrous creature from European folklore. They are almost always small and grotesque, mischievous or outright malicious, and greedy. Sometimes with magical abilities.",哥布林,哥布林,哥布林,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Gods,Cast-Traits,否,Prominently features a character of divine or religious nature.,神明,神明,神明,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Golf,Theme-Game-Sport,否,Centers around the sport of golf.,高尔夫,高尔夫,高尔夫,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Gore,Theme-Other,否,Prominently features graphic bloodshed and violence.,血腥,血腥,血腥,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Graduation Project,Technical,否,"A work made by students in place of an exam, typically at higher levels of education, either as a work for the entire course or as a work for a specific year of a course.",,毕业作品,毕业作品,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Group Sex,Sexual Content,是,Features more than two participants engaged in sex simultaneously.,,群交,群交,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Guns,Theme-Action,否,Prominently features the use of guns in combat.,枪械,枪械,枪械,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Gyaru,Cast-Traits,否,"Prominently features a female character who has a distinct American-emulated fashion style, such as tanned skin, bleached hair, and excessive makeup. Also known as gal.",辣妹,辣妹,辣妹,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Hair Pulling,Sexual Content,是,A sexual act in which the giver will grab the receivers hair and tug whilst giving pleasure from behind.,,扯发,扯发,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Handball,Theme-Game-Sport,否,Centers around the sport of handball.,手球,手球,手球,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Handjob,Sexual Content,是,Features the stimulation of genitalia by another's hands.,,手交,手交,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Henshin,Theme-Fantasy,否,Prominently features character or costume transformations which often grant special abilities.,变身,变身,变身,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Heterosexual,Theme-Romance,否,"Prominently features a romance between a man and a woman, not inherently sexual.",异性恋,异性恋,异性恋,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Hikikomori,Cast-Traits,否,"Prominently features a character who withdraws from social life, often seeking extreme isolation.",家里蹲,家里蹲,家里蹲,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Hip-hop Music,Theme-Arts-Music,否,"Centers on the musical style of hip-hop, not to be applied to anime that use hip-hop in its soundtrack.",,嘻哈音乐,嘻哈音乐,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Historical,Setting-Time,否,Partly or completely set during a real period of world history.,历史,历史,历史,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Homeless,Cast-Traits,否,Prominently features a character that is homeless.,无家可归,无家可归,无家可归,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Horticulture,Theme-Slice of Life,否,The story prominently features plant care and gardening.,,园艺,园艺,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Human Experimentation,Theme-Other,否,Features experiments that use human and humanoid beings as test subjects.,,人体实验,人体实验,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Human Pet,Sexual Content,是,"Features characters in a master-slave relationship where one is the ""owner"" and the other is a ""pet.""",,人宠,人宠,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Hypersexuality,Sexual Content,是,"Portrays a character with a hypersexuality disorder, compulsive sexual behavior, or sex addiction.",,性欲亢进,性欲亢进,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Ice Sports,Theme-Game-Sport,否,Centers around Ice Sports.,,冰上运动,冰上运动,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Idol,Cast-Traits,否,Centers around the life and activities of an idol.,偶像,偶像,偶像,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Incest,Theme-Romance,否,Features sexual or romantic relations between characters who are related by blood.,,乱伦,乱伦,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Indigenous Cultures,Theme-Other,否,Prominently features real-life indigenous cultures.,,原住民文化,原住民文化,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Inn,Setting-Scene,否,Partially or completely set in an Inn or Hotel.,,旅馆,旅馆,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Inseki,Theme-Romance,否,"Features sexual or romantic relations among step, adopted, and other non-blood related family members.",,非血缘亲属恋爱,非血缘亲属恋爱,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Interspecies,Theme-Romance,否,Romance between characters of different species.,,跨种族恋爱,跨种族恋爱,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Irrumatio,Sexual Content,是,Oral rape; features a character thrusting their genitalia or a phallic object into the mouth of another character.,,强制口交,强制口交,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Isekai,Theme-Fantasy,否,Features a character from a modern-day setting being transported into an alternate world and has to adapt to their new surroundings.,异世界,异世界,异世界,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Iyashikei,Theme-Slice of Life,否,Primary aim is to heal the audience through serene depictions of characters' daily lives.,治愈系,治愈系,治愈系,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Jazz Music,Theme-Arts-Music,否,"Centers on the musical style of jazz, not to be applied to anime that use jazz in its soundtrack.",,爵士乐,爵士乐,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Josei,Demographic,否,Target demographic is adult females.,女性向,女性向,女性向,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Judo,Theme-Game-Sport,否,Centers around the sport of judo.,柔道,柔道,柔道,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Kabuki,Theme-Arts,否,Prominently features the traditional Japanese theater art of kabuki.,,歌舞伎,歌舞伎,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Kaiju,Theme-Fantasy,否,Prominently features giant monsters.,怪兽,怪兽,怪兽,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Karuta,Theme-Game-Card & Board Game,否,Centers around the game of karuta.,歌牌,歌牌,歌牌,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Kemonomimi,Cast-Traits,否,Prominently features humanoid characters with animal ears.,兽耳,兽耳,兽耳,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Kids,Demographic,否,Target demographic is young children.,儿童,儿童,儿童,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Kingdom Management,Theme-Drama,否,"Characters in these series take on the responsibility of running a town or kingdom, whether they take control of an existing one, or build their own from the ground up.",,领地经营,领地经营,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Konbini,Setting-Scene,否,Predominantly features a convenience store.,,便利店,便利店,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Kuudere,Cast-Traits,否,"Prominently features a character who generally retains a cold, blunt and cynical exterior, but once one gets to know them, they have a very warm and loving interior.",酷娇,冷娇,冷娇,优化,已采用,由“酷娇”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Lacrosse,Theme-Game-Sport,否,A team game played with a ball and lacrosse sticks.,长曲棍球,长曲棍球,长曲棍球,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Lactation,Sexual Content,是,Features breast milk play and production.,,乳汁,乳汁,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Language Barrier,Theme-Other,否,A barrier to communication between people who are unable to speak a common language.,语言障碍,语言障碍,语言障碍,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Large Breasts,Sexual Content,是,Features a character with larger-than-average breasts.,,巨乳,巨乳,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+LGBTQ+ Themes,Theme-Other,否,"Prominently features characters or themes associated with the LGBTQ+ community, such as sexuality or gender identity.",LGBTQ+主题,LGBTQ+主题,LGBTQ+主题,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Long Strip,Technical,否,"Manga originally published in a vertical, long-strip format, designed for viewing on smartphones. Also known as webtoons.",,条漫,条漫,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Lost Civilization,Theme-Other,否,Featuring a civilization with few ruins or records that exist in present day knowledge.,失落文明,失落文明,失落文明,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Love Triangle,Theme-Romance,否,Centered around romantic feelings between more than two people. Includes all love polygons.,三角恋,三角恋,三角恋,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Mafia,Theme-Other-Organisations,否,Centered around Italian organised crime syndicates.,黑手党,黑手党,黑手党,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Magic,Theme-Fantasy,否,Prominently features magical elements or the use of magic.,魔法,魔法,魔法,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Mahjong,Theme-Game-Card & Board Game,否,Centered around the game of mahjong.,麻将,麻将,麻将,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Maids,Cast-Traits,否,Prominently features a character who is a maid.,女仆,女仆,女仆,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Makeup,Theme-Arts,否,Centers around the makeup industry.,化妆,化妆,化妆,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Male Harem,Theme-Romance,否,Main cast features the protagonist plus several male characters who are romantically interested in them.,后宫（男）,逆后宫,逆后宫,优化,已采用,由“后宫（男）”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Male Pregnancy,Sexual Content,是,Features pregnant male characters in a sexual context.,,男性怀孕,男性怀孕,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Male Protagonist,Cast-Main Cast,否,Main character is male.,男主角,男主角,男主角,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Manzai,Theme-Arts,否,Prominently features an act of traditional Japanese comedy that involves two performers.,,漫才,漫才,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Marriage,Theme-Other,否,Centers around marriage between two or more characters.,婚姻,婚姻,婚姻,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Martial Arts,Theme-Action,否,Centers around the use of traditional hand-to-hand combat.,武术,武术,武术,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Masochism,Sexual Content,是,Prominently features characters who get sexual pleasure from being hurt or controlled by others.,,受虐癖,受虐癖,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Masturbation,Sexual Content,是,Features erotic stimulation of one's own genitalia or other erogenous regions.,,自慰,自慰,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Matchmaking,Theme-Romance,否,Prominently features either a matchmaker or events with the intent of matchmaking with eventual marriage in sight.,,相亲,相亲,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Mating Press,Sexual Content,是,"Features the sex position in which two partners face each other, with one of them thrusting downwards and the other's legs tucked up towards their head.",,种付位,种付位,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Matriarchy,Theme-Other,否,Prominently features a country that is ruled by a Queen or a society that is dominated by female inheritance.,,母系社会,母系社会,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Medicine,Theme-Other,否,Centered around the activities of people working in the field of medicine.,医学,医学,医学,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Medieval,Setting-Time,否,Partially or completely set in the Middle Ages or a Middle Ages-inspired setting. Commonly features elements such as European castles and knights.,,中世纪,中世纪,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Memory Manipulation,Theme-Other,否,Prominently features a character(s) who has had their memories altered.,记忆操纵,记忆操纵,记忆操纵,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Mermaid,Cast-Traits,否,A mythological creature with the body of a human and the tail of a fish.,人鱼,人鱼,人鱼,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Meta,Theme-Other,否,Features fourth wall-breaking references to itself or genre tropes.,元叙事,元叙事,元叙事,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Metal Music,Theme-Arts-Music,否,"Centers on the musical style of metal, not to be applied to anime that use metal in its soundtrack.",,金属乐,金属乐,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Middle east,Setting-Scene,否,"Partially or completely set in the Middle East, does not apply to fantasy settings.",,中东,中东,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+MILF,Sexual Content,是,Features sexual intercourse with older women.,,熟女,熟女,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Military,Theme-Other-Organisations,否,Centered around the life and activities of military personnel.,军事,军事,军事,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Mixed Gender Harem,Theme-Romance,否,"Main cast features the protagonist plus several people, regardless of gender, who are romantically interested in them.",男女混合后宫,混合后宫,混合后宫,优化,已采用,由“男女混合后宫”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Mixed Media,Technical,否,"Features a combination of different media and animation techniques. Often seen with puppetry, textiles, live action footage, stop motion, and more. This does not include works with normal usage of CGI in their production.",,混合媒介,混合媒介,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Modeling,Theme-Arts,否,"Features a line of work with the purpose of displaying and advertising products such as makeup, clothing, and jewelry. Also includes posing artistically for figure drawing, painting, sculpting, and photography.",,模特,模特,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Monster Boy,Cast-Traits,否,Prominently features a male character who is a part-monster.,男怪物,魔物男,魔物男,优化,已采用,由“男怪物”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Monster Girl,Cast-Traits,否,Prominently features a female character who is part-monster.,女怪物,魔物娘,魔物娘,优化,已采用,由“女怪物”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Mopeds,Theme-Other-Vehicle,否,Prominently features mopeds.,轻便摩托,轻便摩托,轻便摩托,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Motorcycles,Theme-Other-Vehicle,否,Prominently features the use of motorcycles.,摩托车,摩托车,摩托车,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Mountaineering,Theme-Other,否,Prominently features characters discussing or hiking mountains.,,登山,登山,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Musical Theater,Theme-Arts-Music,否,"Features a performance that combines songs, spoken dialogue, acting, and dance.",,音乐剧,音乐剧,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Mythology,Theme-Fantasy,否,"Prominently features mythological elements, especially those from religious or cultural tradition.",神话,神话,神话,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Nakadashi,Sexual Content,是,Creampie; features sexual ejaculation inside of a character.,,中出,中出,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Natural Disaster,Setting-Scene,否,"It focuses on catastrophic events of natural origin, such as earthquakes, tsunamis,  volcanic eruptions, and severe storms. These works often present situations of extreme danger in which the characters struggle to survive and overcome the adversity.",,自然灾害,自然灾害,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Necromancy,Theme-Fantasy,否,"When the dead are summoned as spirits, skeletons, or the undead, usually for the purpose of gaining information or to be used as a weapon.",死灵术,死灵术,死灵术,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Nekomimi,Cast-Traits,否,Humanoid characters with cat-like features such as cat ears and a tail.,猫耳,猫耳,猫耳,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Netorare,Sexual Content,是,Netorare is what happens when the protagonist gets their partner stolen from them by someone else. It is a sexual fetish designed to cause sexual jealousy by way of having the partner indulge in sexual activity with someone other than the protagonist.,,NTR,NTR,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Netorase,Sexual Content,是,Features characters in a romantic relationship who agree to be sexually intimate with others.,,寝取让（NTS）,寝取让（NTS）,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Netori,Sexual Content,是,Features the protagonist stealing the partner of someone else. The opposite of netorare.,,寝取,寝取,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Ninja,Cast-Traits,否,"Prominently features Japanese warriors traditionally trained in espionage, sabotage and assasination.",忍者,忍者,忍者,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+No Dialogue,Technical,否,This work contains no dialogue.,无对白,无对白,无对白,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Noir,Theme-Other,否,Stylized as a cynical crime drama with low-key visuals.,黑色电影,黑色犯罪剧,黑色犯罪剧,优化,已采用,由“黑色电影”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Non-fiction,Technical,否,A work that provides information regarding a real world topic and does not focus on an imaginary narrative.,非虚构,非虚构,非虚构,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Nudity,Cast-Traits,否,Features a character wearing no clothing or exposing intimate body parts.,裸体,裸露,裸露,优化,已采用,由“裸体”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Nun,Cast-Traits,否,Prominently features a character who is a nun.,修女,修女,修女,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Office,Setting-Scene,否,Features people who work in a business office.,,办公室,办公室,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Office Lady,Cast-Traits,否,Prominently features a female office worker or OL.,职场女性,OL,OL,优化,已采用,由“职场女性”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Oiran,Cast-Traits,否,Prominently features a courtesan character of the Japanese Edo Period.,花魁,花魁,花魁,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Ojou-sama,Cast-Traits,否,"Features a wealthy, high-class, oftentimes stuck up and demanding female character.",大小姐,大小姐,大小姐,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Omegaverse,Setting-Universe,是,"Alternative universe that prominently features dynamics modeled after wolves in which there are alphas, betas, and omegas and heat cycles as well as impregnation, regardless of gender.",,ABO设定,ABO设定,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Orphan,Cast-Traits,否,Prominently features a character that is an orphan.,孤儿,孤儿,孤儿,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Otaku Culture,Theme-Other,否,Centers around the culture of a fanatical fan-base.,宅文化,宅文化,宅文化,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Outdoor Activities,Setting-Scene,否,"Centers around hiking, camping or other outdoor activities.",,户外活动,户外活动,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Oyakodon,Sexual Content,是,Features a character who has sexual relations with both the mother and her daughter.,,母女丼,母女丼,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Pandemic,Theme-Other,否,Prominently features a disease prevalent over a whole country or the world.,疫情,疫情,疫情,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Parenthood,Theme-Slice of Life,否,Centers around the experience of raising a child.,,育儿,育儿,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Parkour,Theme-Game-Sport,否,Centers around the sport of parkour.,跑酷,跑酷,跑酷,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Parody,Theme-Comedy,否,Features deliberate exaggeration of popular tropes or a particular genre to comedic effect.,恶搞,恶搞,恶搞,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Pet Play,Sexual Content,是,Treating a participant as though they were a pet animal. Often involves a collar and possibly BDSM.,,宠物扮演,宠物扮演,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Philosophy,Theme-Other,否,"Relating or devoted to the study of the fundamental nature of knowledge, reality, and existence.",哲学,哲学,哲学,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Photography,Theme-Arts,否,Centers around the use of cameras to capture photos.,摄影,摄影,摄影,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Pirates,Cast-Traits,否,Prominently features sea-faring adventurers branded as criminals by the law.,海盗,海盗,海盗,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Poker,Theme-Game-Card & Board Game,否,Centers around the game of poker or its variations.,扑克,扑克,扑克,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Police,Theme-Other-Organisations,否,Centers around the life and activities of law enforcement officers.,警察,警察,警察,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Politics,Theme-Other,否,"Centers around politics, politicians, or government activities.",政治,政治,政治,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Polyamorous,Theme-Romance,否,Features a character who is in a consenting relationship with multiple people at one time.,,多边恋,多边恋,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Post-Apocalyptic,Setting-Universe,否,Partly or completely set in a world or civilization after a global disaster.,末日题材,末世,末世,优化,已采用,由“末日题材”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+POV,Technical,否,Point of View; features scenes shown from the perspective of the series protagonist.,主观视角,主观视角,主观视角,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Pregnancy,Theme-Other,否,Features pregnant female characters or discusses the topic of pregnancy.,,怀孕,怀孕,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Primarily Adult Cast,Cast-Main Cast,否,Main cast is mostly composed of characters above a high school age.,成人角色为主,成人角色为主,成人角色为主,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Primarily Animal Cast,Cast-Main Cast,否,Main cast is mostly composed animal or animal-like characters.,,动物角色为主,动物角色为主,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Primarily Child Cast,Cast-Main Cast,否,Main cast is mostly composed of characters below a high school age.,儿童角色为主,儿童角色为主,儿童角色为主,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Primarily Female Cast,Cast-Main Cast,否,Main cast is mostly composed of female characters.,女性角色为主,女性角色为主,女性角色为主,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Primarily Male Cast,Cast-Main Cast,否,Main cast is mostly composed of male characters.,男性角色为主,男性角色为主,男性角色为主,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Primarily Teen Cast,Cast-Main Cast,否,Main cast is mostly composed of teen characters.,青少年角色为主,青少年角色为主,青少年角色为主,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Prison,Setting-Scene,否,Partly or completely set in a prison.,监狱,监狱,监狱,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Prophecy,Theme-Other,否,Features characters or plot elements that revolve around predicting the future.,,预言,预言,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Prostitution,Sexual Content,是,Features characters who are paid for sexual favors.,,性交易,性交易,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Proxy Battle,Theme-Other,否,"A proxy battle is a battle where humans use creatures/robots to do the fighting for them, either by commanding those creatures/robots or by simply evolving them/changing them into battle mode.",,代理战斗,代理战斗,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Psychosexual,Theme-Other,否,Work that involves the psychological aspects of sexual impulses.,,性心理,性心理,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Public Sex,Sexual Content,是,Features sexual acts performed in public settings.,,公开场合性爱,公开场合性爱,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Puppetry,Technical,否,Animation style involving the manipulation of puppets to act out scenes.,木偶戏,木偶动画,木偶动画,优化,已采用,由“木偶戏”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Rakugo,Theme-Arts,否,Rakugo is the traditional Japanese performance art of comic storytelling.,落语,落语,落语,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Rape,Sexual Content,是,Features non-consensual sexual penetration.,,强奸,强奸,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Real Robot,Theme-Sci-Fi-Mecha,否,Prominently features mechanical designs loosely influenced by real-world robotics.,真实系机器人,真实系机器人,真实系机器人,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Rehabilitation,Theme-Drama,否,Prominently features the recovery of a character who became incapable of social life or work.,康复,社会复健,社会复健,优化,已采用,由“康复”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Reincarnation,Theme-Other,否,"Features a character being born again after death, typically as another person or in another world.",转生,转生,转生,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Religion,Theme-Other,否,"Centers on the belief that humanity is related to supernatural, transcendental, and spiritual elements.",宗教,宗教,宗教,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Rescue,Theme-Other,否,"Centers around operations that carry out urgent treatment of injuries, remove people from danger, or save lives. This includes series that are about search-and-rescue teams, trauma surgeons, firefighters, and more.",,救援,救援,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Restaurant,Setting-Scene,否,Features a business that prepares and serves food and drinks to customers. Also encompasses cafes and bistros.,,餐饮店,餐饮店,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Revenge,Theme-Drama,否,Prominently features a character who aims to exact punishment in a resentful or vindictive manner.,复仇,复仇,复仇,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Reverse Isekai,Theme-Fantasy,否,Features a character from a fantasy world who is transported into a modern-day setting.,,反向异世界,反向异世界,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Rimjob,Sexual Content,是,Features oral sex performed on the anus.,,舔肛,舔肛,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Robots,Cast-Traits,否,Prominently features humanoid machines.,机器人,机器人,机器人,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Rock Music,Theme-Arts-Music,否,"Centers on the musical style of rock, not to be applied to anime that use rock in its soundtrack.",,摇滚乐,摇滚乐,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Rotoscoping,Technical,否,"Animation technique that animators use to trace over motion picture footage, frame by frame, to produce realistic action.",转描,转描动画,转描动画,优化,已采用,由“转描”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Royal Affairs,Theme-Other,否,"Features nobility, alliances, arranged marriage, succession disputes, religious orders and other elements of royal politics.",,宫廷政治,宫廷政治,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Rugby,Theme-Game-Sport,否,Centers around the sport of rugby.,,橄榄球,橄榄球,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Rural,Setting-Scene,否,Partly or completely set in the countryside.,乡村,乡村,乡村,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Sadism,Sexual Content,是,"Prominently features characters deriving pleasure, especially sexual gratification, from inflicting pain, suffering, or humiliation on others.",,施虐癖,施虐癖,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Samurai,Cast-Traits,否,Prominently features warriors of medieval Japanese nobility bound by a code of honor.,武士,武士,武士,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Satire,Theme-Comedy,否,Prominently features the use of comedy or ridicule to expose and criticise social phenomena.,讽刺,讽刺,讽刺,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Scat,Sexual Content,是,Lots of feces.,,粪便癖,粪便癖,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+School,Setting-Scene,否,Partly or completely set in a primary or secondary educational institution.,校园,校园,校园,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+School Club,Setting-Scene,否,Partly or completely set in a school club scene.,社团,社团,社团,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Scissoring,Sexual Content,是,A form of sexual activity between women in which the genitals are stimulated by being rubbed against one another.,,交叉摩擦,交叉摩擦,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Scuba Diving,Theme-Game-Sport,否,Prominently features characters diving with the aid of special breathing equipment.,水肺潜水,水肺潜水,水肺潜水,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Seinen,Demographic,否,Target demographic is adult males.,青年向,青年向,青年向,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Sex Toys,Sexual Content,是,Features objects that are designed to stimulate sexual pleasure.,,性玩具,性玩具,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Shapeshifting,Theme-Fantasy,否,Features character(s) who changes one's appearance or form.,变身,变形,变形,优化,已采用,由“变身”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Shimaidon,Sexual Content,是,Features a character who has sexual relations with two sisters.,,姐妹丼,姐妹丼,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Ships,Theme-Other-Vehicle,否,Prominently features the use of sea-based transportation vessels.,船,船,船,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Shogi,Theme-Game-Card & Board Game,否,Centers around the game of shogi.,将棋,将棋,将棋,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Short-Form Chapter,Technical,否,Manga which consists of the chapters being up to two pages long.,,超短篇章节,超短篇章节,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Shoujo,Demographic,否,Target demographic is teenage and young adult females.,少女向,少女向,少女向,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Shounen,Demographic,否,Target demographic is teenage and young adult males.,少年向,少年向,少年向,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Shrine Maiden,Cast-Traits,否,Prominently features a character who is a shrine maiden.,巫女,巫女,巫女,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Sixty-nine,Sexual Content,是,Features two characters partaking in oral sex simultaneously.,,69式,69式,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Skateboarding,Theme-Game-Sport,否,Centers around or prominently features skateboarding as a sport.,滑板,滑板,滑板,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Skeleton,Cast-Traits,否,Prominently features skeleton(s) as a character.,骷髅,骷髅,骷髅,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Slapstick,Theme-Comedy,否,Prominently features comedy based on deliberately clumsy actions or embarrassing events.,闹剧,肢体喜剧,肢体喜剧,优化,已采用,由“闹剧”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Slavery,Theme-Other,否,"Prominently features slaves, slavery, or slave trade.",奴隶,奴隶,奴隶,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Snowscape,Setting-Scene,否,Prominently or partially set in a snowy environment.,,雪景,雪景,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Software Development,Theme-Other,否,"Centers around characters developing or programming a piece of technology, software, gaming, etc.",软件开发,软件开发,软件开发,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Space,Setting-Universe,否,Partly or completely set in outer space.,太空,太空,太空,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Space Opera,Theme-Sci-Fi,否,"Centers around space warfare, advanced technology, chivalric romance and adventure.",太空歌剧,太空歌剧,太空歌剧,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Spearplay,Theme-Action,否,Prominently features the use of spears in combat.,枪术,枪术,枪术,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Squirting,Sexual Content,是,Female ejaculation; features the expulsion of liquid from the female genitalia.,,潮吹,潮吹,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Steampunk,Theme-Fantasy,否,Prominently features technology and designs inspired by 19th-century industrial steam-powered machinery.,蒸汽朋克,蒸汽朋克,蒸汽朋克,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Stop Motion,Technical,否,Animation style characterized by physical objects being moved incrementally between frames to create the illusion of movement.,定格动画,定格动画,定格动画,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Strap-on,Sexual Content,是,Features vaginal or anal intercourse with the aid of a strap-on.,,穿戴式假阳具,穿戴式假阳具,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Succubus,Cast-Traits,否,"Prominently features a character who is a succubus, a creature in medieval folklore that typically uses their sexual prowess to trap and seduce people to feed off them.",魅魔,魅魔,魅魔,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Suicide,Theme-Drama,否,The act or an instance of taking or attempting to take one's own life voluntarily and intentionally.,自杀,自杀,自杀,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Sumata,Sexual Content,是,Pussyjob; features the stimulation of male genitalia by the thighs and labia majora of a female character.,,素股,素股,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Sumo,Theme-Game-Sport,否,Centers around the sport of sumo.,相扑,相扑,相扑,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Super Power,Theme-Fantasy,否,Prominently features characters with special abilities that allow them to do what would normally be physically or logically impossible.,超能力,超能力,超能力,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Super Robot,Theme-Sci-Fi-Mecha,否,Prominently features large robots often piloted by hot-blooded protagonists.,超级机器人,超级机器人,超级机器人,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Superhero,Theme-Fantasy,否,Prominently features super-powered humans who aim to serve the greater good.,超级英雄,超级英雄,超级英雄,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Surfing,Theme-Game-Sport,否,Centers around surfing as a sport.,冲浪,冲浪,冲浪,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Surreal Comedy,Theme-Comedy,否,"Prominently features comedic moments that defy casual reasoning, resulting in illogical events.",,超现实喜剧,超现实喜剧,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Survival,Theme-Other,否,Centers around the struggle to live in spite of extreme obstacles.,生存,生存,生存,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Swapping,Sexual Content,是,Features consensual partner swapping between couples during sexual activities.,,交换伴侣,交换伴侣,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Sweat,Sexual Content,是,Lots of sweat.,,汗液,汗液,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Swimming,Theme-Game-Sport,否,Centers around the sport of swimming.,游泳,游泳,游泳,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Swordplay,Theme-Action,否,Prominently features the use of swords in combat.,剑术,剑术,剑术,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Table Tennis,Theme-Game-Sport,否,"Centers around the sport of table tennis (also known as ""ping pong"").",乒乓球,乒乓球,乒乓球,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Tanks,Theme-Other-Vehicle,否,Prominently features the use of tanks or other armoured vehicles.,坦克,坦克,坦克,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Tanned Skin,Cast-Traits,否,Prominently features characters with tanned skin.,小麦色肌肤,晒黑肌肤,晒黑肌肤,优化,已采用,由“小麦色肌肤”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Teacher,Cast-Traits,否,"Protagonist is an educator, usually in a school setting.",教师,教师,教师,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Teens' Love,Theme-Romance,否,"Sexually explicit love-story between individuals of the opposite sex, specifically targeting females of teens and young adult age.",少年爱,TL（少女向成人恋爱）,TL（少女向成人恋爱）,优化,已采用,由“少年爱”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Tennis,Theme-Game-Sport,否,Centers around the sport of tennis.,网球,网球,网球,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Tentacles,Sexual Content,是,"Features the long appendages most commonly associated with octopuses or squid, often sexually penetrating a character.",,触手,触手,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Terrorism,Theme-Other,否,Centers around the activities of a terrorist or terrorist organization.,恐怖主义,恐怖主义,恐怖主义,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Threesome,Sexual Content,是,Features sexual acts between three people.,,3P,3P,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Time Loop,Theme-Sci-Fi,否,A character is stuck in a repetitive cycle that they are attempting to break out of. This is distinct from a manipulating time of their own choice.,,时间循环,时间循环,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Time Manipulation,Theme-Sci-Fi,否,Prominently features time-traveling or other time-warping phenomena.,时间操纵,时间操纵,时间操纵,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Time Skip,Setting-Time,否,Features a gap in time used to advance the story.,时间跳跃,时间跳跃,时间跳跃,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Tokusatsu,Theme-Sci-Fi,否,Prominently features elements that resemble special effects in Japanese live-action shows,特摄,特摄,特摄,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Tomboy,Cast-Traits,否,Features a girl who exhibits characteristics or behaviors considered in many cultures to be typical of boys.,假小子,假小子,假小子,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Torture,Theme-Other,否,The act of deliberately inflicting severe pain or suffering upon another individual or oneself as a punishment or with a specific purpose.,拷问,拷问,拷问,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Tragedy,Theme-Drama,否,Centers around tragic events and unhappy endings.,悲剧,悲剧,悲剧,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Trains,Theme-Other-Vehicle,否,Prominently features trains.,列车,列车,列车,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Transgender,Cast-Traits,否,Features a character whose gender identity differs from the sex they were assigned at birth.,跨性别,跨性别,跨性别,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Travel,Theme-Other,否,Centers around character(s) moving between places a significant distance apart.,旅行,旅行,旅行,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Triads,Theme-Other-Organisations,否,Centered around Chinese organised crime syndicates.,三合会,三合会,三合会,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Tsundere,Cast-Traits,否,Prominently features a character who acts cold and hostile in order to mask warmer emotions.,傲娇,傲娇,傲娇,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Twins,Cast-Traits,否,Prominently features two or more siblings that were born at one birth.,双胞胎,双胞胎,双胞胎,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Unrequited Love,Theme-Romance,否,One or more characters are experiencing an unrequited love that may or may not be reciprocated.,,单恋,单恋,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Urban,Setting-Scene,否,Partly or completely set in a city.,都市,都市,都市,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Urban Fantasy,Setting-Universe,否,"Set in a world similar to the real world, but with the existence of magic or other supernatural elements.",都市奇幻,都市奇幻,都市奇幻,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Vampire,Cast-Traits,否,Prominently features a character who is a vampire.,吸血鬼,吸血鬼,吸血鬼,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Vertical Video,Technical,否,"Animated works originally created in a vertical aspect ratio (such as 9:16), intended for viewing on smartphones.",,竖屏动画,竖屏动画,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Veterinarian,Cast-Traits,否,Prominently features a veterinarian or one of the main characters is a veterinarian.,,兽医,兽医,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Video Games,Theme-Game,否,Centers around characters playing video games.,电子游戏,电子游戏,电子游戏,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Vikings,Cast-Traits,否,Prominently features Scandinavian seafaring pirates and warriors.,维京人,维京人,维京人,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Villainess,Cast-Traits,否,Centers around or prominently features a villainous noble lady.,恶役千金,恶役千金,恶役千金,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Virginity,Sexual Content,是,Features a male character who has never had sexual relations (until now).,,处男,处男,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Virtual World,Setting-Universe,否,Partly or completely set in the world inside a video game.,虚拟世界,虚拟世界,虚拟世界,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Vocal Synth,Theme-Other,否,"Features one or more singers or characters that are products of a synthesize singing program. Popular examples are Vocaloids, UTAUloids, and CeVIOs.",,歌声合成,歌声合成,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Volleyball,Theme-Game-Sport,否,Centers around the sport of volleyball.,排球,排球,排球,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Vore,Sexual Content,是,Features a character being swallowed or swallowing another creature whole.,,吞食,吞食,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Voyeur,Sexual Content,是,Features a character who enjoys seeing the sex acts or sex organs of others.,,窥淫,窥淫,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+VTuber,Cast-Traits,否,Prominently features a character who is either an actual or fictive VTuber.,虚拟主播,虚拟主播,虚拟主播,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+War,Theme-Other,否,Partly or completely set during wartime.,战争,战争,战争,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Watersports,Sexual Content,是,Features sexual situations involving urine.,,尿液玩法,尿液玩法,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Werewolf,Cast-Traits,否,Prominently features a character who is a werewolf.,狼人,狼人,狼人,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Wilderness,Setting-Scene,否,"Predominantly features a location with little to no human activity, such as a deserted island, a jungle, or a snowy mountain range.",,荒野,荒野,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Witch,Cast-Traits,否,Prominently features a character who is a witch.,魔女,魔女,魔女,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Work,Setting-Scene,否,Centers around the activities of a certain occupation.,职场,职业题材,职业题材,优化,已采用,由“职场”调整为更符合大陆动漫社区语境的说法,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Wrestling,Theme-Game-Sport,否,Centers around the sport of wrestling.,摔角,摔角,摔角,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Writing,Theme-Arts,否,Centers around the profession of writing books or novels.,写作,写作,写作,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Wuxia,Theme-Fantasy,否,Chinese fiction concerning the adventures of martial artists in Ancient China.,武侠,武侠,武侠,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Yakuza,Theme-Other-Organisations,否,Centered around Japanese organised crime syndicates.,极道,极道,极道,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Yandere,Cast-Traits,否,"Prominently features a character who is obsessively in love with another, to the point of acting deranged or violent.",病娇,病娇,病娇,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Youkai,Theme-Fantasy,否,Prominently features supernatural creatures from Japanese folklore.,妖怪,妖怪,妖怪,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Yuri,Theme-Romance,否,"Prominently features romance between two females, not inherently sexual. Also known as Girls' Love.",百合,百合,百合,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Zombie,Cast-Traits,否,Prominently features reanimated corpses which often prey on live humans and turn them into zombies.,僵尸,僵尸,僵尸,保持,沿用,本轮未发现明显歧义，后续继续复核,现有词典 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"
+Zoophilia,Sexual Content,是,Features a character who has a sexual attraction for non-human animals.,,恋兽癖,恋兽癖,新增,已采用,旧词典缺失，本轮按 AniList 定义补齐,大陆动漫社区语境 + AniList 定义,"https://docs.anilist.co/reference/object/mediatag
+https://github.com/nz3u/bangumi-data"

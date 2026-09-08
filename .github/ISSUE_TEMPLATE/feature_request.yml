@@ -1,0 +1,23 @@
+name: 功能建议
+description: 建议新的页面覆盖、数据来源或维护工具
+title: "[建议] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 使用场景
+      description: 说明当前遇到的具体问题和对应 AniList 页面。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: 参考资料
+      description: 可附类似项目、数据源或页面截图。
