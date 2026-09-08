@@ -38,16 +38,29 @@ describe('description translator', () => {
     const html = renderDescriptionHtml(summary, original);
 
     expect(html).toContain('【剧情简介】');
-    expect(html).toContain(summary);
+    expect(html).toContain('赏金猎人斯派克的故事。');
     expect(html).toContain('【原简介】');
     expect(html).toContain(original);
   });
 
-  it('translates description element on media overview route', async () => {
+  it('translates description element on media route', async () => {
     const attributes = new Map<string, string>();
+    let content = '<p>Original English synopsis</p>';
     const descEl = {
-      innerHTML: '<p>Original English synopsis</p>',
+      get innerHTML() {
+        return content;
+      },
+      set innerHTML(v: string) {
+        content = v;
+      },
+      textContent: 'Original English synopsis',
       matches: () => true,
+      querySelector: (sel: string) => {
+        if (sel.includes('anilist-zh-cn-description-content') && content.includes('anilist-zh-cn-description-content')) {
+          return {};
+        }
+        return null;
+      },
       getAttribute: (k: string) => attributes.get(k) ?? null,
       setAttribute: (k: string, v: string) => void attributes.set(k, v),
       hasAttribute: (k: string) => attributes.has(k),
@@ -87,19 +100,17 @@ describe('description translator', () => {
     expect(duplicate).toBe(false);
   });
 
-  it('ignores sub-tabs such as /characters', async () => {
+  it('ignores non-media routes', async () => {
     const mockService: BangumiDescriptionService = {
       getDescription: async () => ({ summary: 'Test' }),
     };
 
-    const subTabRoute: Route = {
-      section: 'media',
-      type: 'anime',
-      id: 1,
-      path: '/anime/1/cowboy-bebop/characters',
+    const nonMediaRoute: Route = {
+      section: 'search',
+      path: '/search/anime',
     };
 
-    const result = await translateDescription({} as Element, subTabRoute, mockService);
+    const result = await translateDescription({} as Element, nonMediaRoute, mockService);
     expect(result).toBe(false);
   });
 });
