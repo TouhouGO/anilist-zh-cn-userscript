@@ -1,4 +1,4 @@
-export const userscriptVersion = '0.1.20';
+export const userscriptVersion = '0.1.21';
 
 export const userscriptMetadata = `// ==UserScript==
 // @name         AniList 简体中文

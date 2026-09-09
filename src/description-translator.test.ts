@@ -65,15 +65,14 @@ describe('description translator', () => {
     expect(extractSidebarReleaseYear(mockRoot)).toBe(2005);
   });
 
-  it('renders bilingual description HTML structure properly', () => {
+  it('renders Chinese-only description HTML structure properly', () => {
     const summary = '<p>赏金猎人斯派克的故事。</p>';
     const original = '<p>Original synopsis in English.</p>';
     const html = renderDescriptionHtml(summary, original);
 
-    expect(html).toContain('【剧情简介】');
     expect(html).toContain('赏金猎人斯派克的故事。');
-    expect(html).toContain('【原简介】');
-    expect(html).toContain(original);
+    expect(html).not.toContain('【剧情简介】');
+    expect(html).not.toContain(original);
   });
 
   it('translates description element on media route', async () => {
@@ -123,9 +122,8 @@ describe('description translator', () => {
 
     const success = await translateDescription(mockRoot, route, mockService);
     expect(success).toBe(true);
-    expect(descEl.innerHTML).toContain('【剧情简介】');
     expect(descEl.innerHTML).toContain('星际牛仔中文剧情简介');
-    expect(descEl.innerHTML).toContain('Original English synopsis');
+    expect(descEl.innerHTML).not.toContain('Original English synopsis');
     expect(attributes.get('data-anilist-zh-cn-desc-id')).toBe('1');
 
     // Re-running on same route should skip

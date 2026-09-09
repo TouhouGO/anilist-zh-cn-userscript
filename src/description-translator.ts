@@ -48,32 +48,12 @@ export function extractSidebarReleaseYear(root: Element): number | undefined {
   return undefined;
 }
 
-export function renderDescriptionHtml(summaryHtml: string, originalHtml: string): string {
-  const divider = '<span class="anilist-zh-cn-summary-divider" style="display: block; margin: 14px 0; border-top: 1px solid rgba(120, 140, 160, 0.25);"></span>';
-  const headingStyle = 'display: block; margin-bottom: 8px; font-weight: 700; color: rgb(var(--color-text, 146, 166, 187));';
-
+export function renderDescriptionHtml(summaryHtml: string, _originalHtml?: string): string {
   const formattedSummary = summaryHtml
     .replace(/<p>/gi, '<span style="display: block; margin-bottom: 8px;">')
     .replace(/<\/p>/gi, '</span>');
 
-  if (!originalHtml.trim()) {
-    return [
-      '<span class="anilist-zh-cn-description-content" style="display: block;">',
-      `<span class="anilist-zh-cn-summary-heading" style="${headingStyle}">【剧情简介】</span>`,
-      formattedSummary,
-      '</span>',
-    ].join('');
-  }
-
-  return [
-    '<span class="anilist-zh-cn-description-content" style="display: block;">',
-    `<span class="anilist-zh-cn-summary-heading" style="${headingStyle}">【剧情简介】</span>`,
-    formattedSummary,
-    divider,
-    `<span class="anilist-zh-cn-summary-heading" style="${headingStyle}">【原简介】</span>`,
-    `<span class="anilist-zh-cn-original-content" style="display: block;">${originalHtml}</span>`,
-    '</span>',
-  ].join('');
+  return `<span class="anilist-zh-cn-description-content" style="display: block;">${formattedSummary}</span>`;
 }
 
 export async function translateDescription(
