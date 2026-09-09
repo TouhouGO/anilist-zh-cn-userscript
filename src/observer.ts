@@ -1,14 +1,68 @@
+let isTranslatingDom = false;
+
+export function runWithoutDomObservation<T>(action: () => T): T {
+  const prev = isTranslatingDom;
+  isTranslatingDom = true;
+  try {
+    return action();
+  } finally {
+    isTranslatingDom = prev;
+  }
+}
+
 export function startDomObserver(onNodes: (nodes: Element[]) => void): () => void {
-  let queued = false; const pending = new Set<Element>();
-  const flush = () => { queued = false; const nodes = [...pending]; pending.clear(); if (nodes.length) onNodes(nodes); };
-  const observer = new MutationObserver(mutations => {
-    for (const mutation of mutations) {
-      if (mutation.type === 'childList') for (const node of mutation.addedNodes) if (node.nodeType === Node.ELEMENT_NODE) pending.add(node as Element);
-      if (mutation.type === 'characterData' || mutation.type === 'attributes') if (mutation.target.parentElement) pending.add(mutation.target.parentElement);
+  let queued = false;
+  const pending = new Set<Element>();
+
+  const flush = () => {
+    queued = false;
+    const nodes = [...pending];
+    pending.clear();
+    if (nodes.length) {
+      runWithoutDomObservation(() => onNodes(nodes));
     }
-    if (!queued) { queued = true; queueMicrotask(flush); }
+  };
+
+  const observer = new MutationObserver(mutations => {
+    if (isTranslatingDom) return;
+    for (const mutation of mutations) {
+      if (mutation.type === 'childList') {
+        for (const node of mutation.addedNodes) {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const el = node as HTMLElement;
+            if (
+              el.classList?.contains('anilist-zh-cn-description-content') ||
+              el.id === 'anilist-zh-cn-search-matches' ||
+              el.id === 'anilist-zh-cn-quick-search-matches' ||
+              el.id === 'anilist-zh-cn-search-style' ||
+              el.hasAttribute?.('data-anilist-zh-cn-original') ||
+              el.dataset?.anilistZhCnEntityKey
+            ) {
+              continue;
+            }
+            pending.add(el);
+          }
+        }
+      } else if (mutation.type === 'attributes') {
+        const target = mutation.target as HTMLElement;
+        if (target && !target.hasAttribute?.('data-anilist-zh-cn-original')) {
+          pending.add(target);
+        }
+      }
+    }
+    if (pending.size > 0 && !queued) {
+      queued = true;
+      queueMicrotask(flush);
+    }
   });
-  observer.observe(document.body || document.documentElement, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['placeholder', 'title', 'aria-label'] });
+
+  observer.observe(document.body || document.documentElement, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['placeholder', 'title', 'aria-label'],
+  });
+
   return () => observer.disconnect();
 }
 

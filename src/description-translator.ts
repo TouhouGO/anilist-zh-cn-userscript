@@ -1,4 +1,5 @@
 import type { BangumiDescriptionService } from './bangumi-description-service';
+import { runWithoutDomObservation } from './observer';
 import { isMediaOverview, isMediaTab } from './title-translator';
 import type { Route } from './types';
 
@@ -56,6 +57,8 @@ export function renderDescriptionHtml(summaryHtml: string, _originalHtml?: strin
   return `<span class="anilist-zh-cn-description-content" style="display: block;">${formattedSummary}</span>`;
 }
 
+const inFlightDescriptions = new Set<number>();
+
 export async function translateDescription(
   root: Element,
   route: Route,
@@ -64,51 +67,68 @@ export async function translateDescription(
   if (route.section !== 'media' || !route.id || !route.type) return false;
 
   const descElement = (
-    root.matches('.description')
-      ? root
-      : root.querySelector<HTMLElement>('.description')
-  ) || (typeof document !== 'undefined' ? document.querySelector<HTMLElement>('.description') : null) as HTMLElement | null;
+    root.matches?.('.description')
+      ? (root as HTMLElement)
+      : (root.querySelector?.<HTMLElement>('.description') ?? null)
+  );
 
   if (!descElement) return false;
 
-  // If already rendered with our translated content, do not re-render
-  if (descElement.querySelector('.anilist-zh-cn-description-content')) {
+  const mediaId = route.id;
+
+  // If already rendered with our translated content for this mediaId, do not re-render
+  if (descElement.getAttribute?.(MARKER_DESC_ID) === String(mediaId)) {
+    return false;
+  }
+  if (descElement.querySelector?.('.anilist-zh-cn-description-content')) {
+    descElement.setAttribute?.(MARKER_DESC_ID, String(mediaId));
+    return false;
+  }
+
+  // Prevent multiple concurrent fetches for the same mediaId
+  if (inFlightDescriptions.has(mediaId)) {
     return false;
   }
 
   const rawText = descElement.textContent?.trim();
   if (!rawText) return false;
 
-  const originalHtml = descElement.getAttribute(MARKER_DESC_ORIGINAL) || descElement.innerHTML;
-  if (!descElement.hasAttribute(MARKER_DESC_ORIGINAL)) {
-    descElement.setAttribute(MARKER_DESC_ORIGINAL, originalHtml);
+  const originalHtml = descElement.getAttribute?.(MARKER_DESC_ORIGINAL) || descElement.innerHTML;
+  if (!descElement.hasAttribute?.(MARKER_DESC_ORIGINAL)) {
+    descElement.setAttribute?.(MARKER_DESC_ORIGINAL, originalHtml);
   }
 
   const queryRoot = typeof document !== 'undefined' ? (document.body || root) : root;
   const nativeTitle = extractSidebarNativeTitle(queryRoot);
   const h1El = queryRoot.querySelector ? queryRoot.querySelector<HTMLElement>('h1') : null;
-  const fallbackTitle = h1El?.getAttribute('data-anilist-zh-cn-original') || h1El?.textContent?.trim() || undefined;
+  const fallbackTitle = h1El?.getAttribute?.('data-anilist-zh-cn-original') || h1El?.textContent?.trim() || undefined;
   const releaseYear = extractSidebarReleaseYear(queryRoot);
 
-  const info = await descriptionService.getDescription(route.id, {
-    isAnime: route.type === 'anime',
-    nativeTitle: nativeTitle || fallbackTitle,
-    releaseYear,
-  });
+  inFlightDescriptions.add(mediaId);
+  try {
+    const info = await descriptionService.getDescription(mediaId, {
+      isAnime: route.type === 'anime',
+      nativeTitle: nativeTitle || fallbackTitle,
+      releaseYear,
+    });
 
-  if (!info.summary) {
-    descElement.setAttribute(MARKER_DESC_ID, String(route.id));
-    return false;
+    // Check if route changed during async network fetch
+    const currentPath = typeof location !== 'undefined' ? location.pathname : route.path;
+    const currentMediaId = currentPath.match(/^\/(?:anime|manga)\/(\d+)/)?.[1];
+    if (currentMediaId && currentMediaId !== String(mediaId)) {
+      return false;
+    }
+
+    descElement.setAttribute?.(MARKER_DESC_ID, String(mediaId));
+    if (!info.summary) {
+      return false;
+    }
+
+    runWithoutDomObservation(() => {
+      descElement.innerHTML = renderDescriptionHtml(info.summary!, originalHtml);
+    });
+    return true;
+  } finally {
+    inFlightDescriptions.delete(mediaId);
   }
-
-  // Check if route changed during async network fetch
-  const currentPath = typeof location !== 'undefined' ? location.pathname : route.path;
-  const currentMediaId = currentPath.match(/^\/(?:anime|manga)\/(\d+)/)?.[1];
-  if (currentMediaId && currentMediaId !== String(route.id)) {
-    return false;
-  }
-
-  descElement.innerHTML = renderDescriptionHtml(info.summary, originalHtml);
-  descElement.setAttribute(MARKER_DESC_ID, String(route.id));
-  return true;
 }

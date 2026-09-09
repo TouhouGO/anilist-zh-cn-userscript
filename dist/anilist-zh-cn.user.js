@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         AniList 简体中文
 // @namespace    https://github.com/TouhouGO/anilist-zh-cn-userscript
-// @version      0.1.23
+// @version      0.1.24
 // @description  将 AniList 界面、作品标题和人物名称显示为简体中文
 // @match        https://anilist.co/*
+// @noframes
 // @grant        GM_registerMenuCommand
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -19,6 +20,16 @@
 // ==/UserScript==
 (function() {
   "use strict";
+  let isTranslatingDom = false;
+  function runWithoutDomObservation(action) {
+    const prev = isTranslatingDom;
+    isTranslatingDom = true;
+    try {
+      return action();
+    } finally {
+      isTranslatingDom = prev;
+    }
+  }
   function startDomObserver(onNodes) {
     let queued = false;
     const pending = /* @__PURE__ */ new Set();
@@ -26,23 +37,42 @@
       queued = false;
       const nodes = [...pending];
       pending.clear();
-      if (nodes.length) onNodes(nodes);
+      if (nodes.length) {
+        runWithoutDomObservation(() => onNodes(nodes));
+      }
     };
     const observer = new MutationObserver((mutations) => {
+      var _a, _b, _c, _d;
+      if (isTranslatingDom) return;
       for (const mutation of mutations) {
         if (mutation.type === "childList") {
-          for (const node of mutation.addedNodes) if (node.nodeType === Node.ELEMENT_NODE) pending.add(node);
-        }
-        if (mutation.type === "characterData" || mutation.type === "attributes") {
-          if (mutation.target.parentElement) pending.add(mutation.target.parentElement);
+          for (const node of mutation.addedNodes) {
+            if (node.nodeType === Node.ELEMENT_NODE) {
+              const el = node;
+              if (((_a = el.classList) == null ? void 0 : _a.contains("anilist-zh-cn-description-content")) || el.id === "anilist-zh-cn-search-matches" || el.id === "anilist-zh-cn-quick-search-matches" || el.id === "anilist-zh-cn-search-style" || ((_b = el.hasAttribute) == null ? void 0 : _b.call(el, "data-anilist-zh-cn-original")) || ((_c = el.dataset) == null ? void 0 : _c.anilistZhCnEntityKey)) {
+                continue;
+              }
+              pending.add(el);
+            }
+          }
+        } else if (mutation.type === "attributes") {
+          const target = mutation.target;
+          if (target && !((_d = target.hasAttribute) == null ? void 0 : _d.call(target, "data-anilist-zh-cn-original"))) {
+            pending.add(target);
+          }
         }
       }
-      if (!queued) {
+      if (pending.size > 0 && !queued) {
         queued = true;
         queueMicrotask(flush);
       }
     });
-    observer.observe(document.body || document.documentElement, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ["placeholder", "title", "aria-label"] });
+    observer.observe(document.body || document.documentElement, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["placeholder", "title", "aria-label"]
+    });
     return () => observer.disconnect();
   }
   function startMediaHoverObserver(onHover, root = document, schedule = setTimeout) {
@@ -26297,7 +26327,7 @@
               result.set(key, { ...ref, name: cached.name, source: cached.source });
               continue;
             }
-            if (cached.source === "miss" && !context && !ref.actorStaffId) {
+            if (cached.source === "miss") {
               continue;
             }
           }
@@ -26430,15 +26460,10 @@
     return [...new Set(headings)];
   }
   function findStaffInCard(characterLink) {
-    let parent = characterLink.parentElement;
-    while (parent && parent !== document.body && parent.children.length <= 10) {
-      const staffLink = typeof parent.querySelector === "function" ? parent.querySelector('a[href*="/staff/"]') : null;
-      if (staffLink && staffLink !== characterLink) {
-        return staffLink;
-      }
-      parent = parent.parentElement;
-    }
-    return null;
+    const card = typeof characterLink.closest === "function" ? characterLink.closest('.role-card, [class*="roleCard"], [class*="role-card"], [class*="role"]') : null;
+    if (!card) return null;
+    const staffLink = typeof card.querySelector === "function" ? card.querySelector('a[href*="/staff/"]') : null;
+    return staffLink && staffLink !== characterLink ? staffLink : null;
   }
   function createEntityNameTranslator(service, scheduler = queueMicrotask) {
     let generation = 0;
@@ -26448,6 +26473,7 @@
     const queueCandidate = (candidate) => {
       if (!prepareTarget(candidate.target, candidate.ref)) return;
       const key = entityKey(candidate.ref);
+      if (candidate.target.dataset.anilistZhCnEntityDone === key) return;
       const pendingToken = `${generation}:${key}`;
       if (candidate.target.dataset.anilistZhCnEntityPending === pendingToken) return;
       const candidates = pending.get(key) || [];
@@ -26516,19 +26542,21 @@
       }
       if (requestGeneration !== generation) return 0;
       let count = 0;
-      for (const [key, candidates] of batch) {
-        const resolved = names.get(key);
-        if (!resolved) continue;
-        for (const candidate of candidates) {
-          if (candidate.target.isConnected === false) continue;
-          if (candidate.target.dataset.anilistZhCnEntityKey !== key) continue;
-          if (candidate.link) {
-            const currentRef = extractEntityRef(new URL(candidate.link.href, "https://anilist.co").pathname);
-            if (!sameRef(currentRef, candidate.ref)) continue;
+      runWithoutDomObservation(() => {
+        for (const [key, candidates] of batch) {
+          const resolved = names.get(key);
+          for (const candidate of candidates) {
+            if (candidate.target.isConnected === false) continue;
+            if (candidate.target.dataset.anilistZhCnEntityKey !== key) continue;
+            candidate.target.dataset.anilistZhCnEntityDone = key;
+            if (candidate.link) {
+              const currentRef = extractEntityRef(new URL(candidate.link.href, "https://anilist.co").pathname);
+              if (!sameRef(currentRef, candidate.ref)) continue;
+            }
+            if (resolved && applyEntityName(candidate.target, candidate.ref, resolved.name)) count++;
           }
-          if (applyEntityName(candidate.target, candidate.ref, resolved.name)) count++;
         }
-      }
+      });
       return count;
     }
     return {
@@ -26762,42 +26790,57 @@
     const formattedSummary = summaryHtml.replace(/<p>/gi, '<span style="display: block; margin-bottom: 8px;">').replace(/<\/p>/gi, "</span>");
     return `<span class="anilist-zh-cn-description-content" style="display: block;">${formattedSummary}</span>`;
   }
+  const inFlightDescriptions = /* @__PURE__ */ new Set();
   async function translateDescription(root, route, descriptionService) {
-    var _a, _b, _c;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m;
     if (route.section !== "media" || !route.id || !route.type) return false;
-    const descElement = (root.matches(".description") ? root : root.querySelector(".description")) || (typeof document !== "undefined" ? document.querySelector(".description") : null);
+    const descElement = ((_a = root.matches) == null ? void 0 : _a.call(root, ".description")) ? root : ((_b = root.querySelector) == null ? void 0 : _b.call(root, ".description")) ?? null;
     if (!descElement) return false;
-    if (descElement.querySelector(".anilist-zh-cn-description-content")) {
+    const mediaId = route.id;
+    if (((_c = descElement.getAttribute) == null ? void 0 : _c.call(descElement, MARKER_DESC_ID)) === String(mediaId)) {
       return false;
     }
-    const rawText = (_a = descElement.textContent) == null ? void 0 : _a.trim();
+    if ((_d = descElement.querySelector) == null ? void 0 : _d.call(descElement, ".anilist-zh-cn-description-content")) {
+      (_e = descElement.setAttribute) == null ? void 0 : _e.call(descElement, MARKER_DESC_ID, String(mediaId));
+      return false;
+    }
+    if (inFlightDescriptions.has(mediaId)) {
+      return false;
+    }
+    const rawText = (_f = descElement.textContent) == null ? void 0 : _f.trim();
     if (!rawText) return false;
-    const originalHtml = descElement.getAttribute(MARKER_DESC_ORIGINAL) || descElement.innerHTML;
-    if (!descElement.hasAttribute(MARKER_DESC_ORIGINAL)) {
-      descElement.setAttribute(MARKER_DESC_ORIGINAL, originalHtml);
+    const originalHtml = ((_g = descElement.getAttribute) == null ? void 0 : _g.call(descElement, MARKER_DESC_ORIGINAL)) || descElement.innerHTML;
+    if (!((_h = descElement.hasAttribute) == null ? void 0 : _h.call(descElement, MARKER_DESC_ORIGINAL))) {
+      (_i = descElement.setAttribute) == null ? void 0 : _i.call(descElement, MARKER_DESC_ORIGINAL, originalHtml);
     }
     const queryRoot = typeof document !== "undefined" ? document.body || root : root;
     const nativeTitle = extractSidebarNativeTitle(queryRoot);
     const h1El = queryRoot.querySelector ? queryRoot.querySelector("h1") : null;
-    const fallbackTitle = (h1El == null ? void 0 : h1El.getAttribute("data-anilist-zh-cn-original")) || ((_b = h1El == null ? void 0 : h1El.textContent) == null ? void 0 : _b.trim()) || void 0;
+    const fallbackTitle = ((_j = h1El == null ? void 0 : h1El.getAttribute) == null ? void 0 : _j.call(h1El, "data-anilist-zh-cn-original")) || ((_k = h1El == null ? void 0 : h1El.textContent) == null ? void 0 : _k.trim()) || void 0;
     const releaseYear = extractSidebarReleaseYear(queryRoot);
-    const info = await descriptionService.getDescription(route.id, {
-      isAnime: route.type === "anime",
-      nativeTitle: nativeTitle || fallbackTitle,
-      releaseYear
-    });
-    if (!info.summary) {
-      descElement.setAttribute(MARKER_DESC_ID, String(route.id));
-      return false;
+    inFlightDescriptions.add(mediaId);
+    try {
+      const info = await descriptionService.getDescription(mediaId, {
+        isAnime: route.type === "anime",
+        nativeTitle: nativeTitle || fallbackTitle,
+        releaseYear
+      });
+      const currentPath = typeof location !== "undefined" ? location.pathname : route.path;
+      const currentMediaId = (_l = currentPath.match(/^\/(?:anime|manga)\/(\d+)/)) == null ? void 0 : _l[1];
+      if (currentMediaId && currentMediaId !== String(mediaId)) {
+        return false;
+      }
+      (_m = descElement.setAttribute) == null ? void 0 : _m.call(descElement, MARKER_DESC_ID, String(mediaId));
+      if (!info.summary) {
+        return false;
+      }
+      runWithoutDomObservation(() => {
+        descElement.innerHTML = renderDescriptionHtml(info.summary, originalHtml);
+      });
+      return true;
+    } finally {
+      inFlightDescriptions.delete(mediaId);
     }
-    const currentPath = typeof location !== "undefined" ? location.pathname : route.path;
-    const currentMediaId = (_c = currentPath.match(/^\/(?:anime|manga)\/(\d+)/)) == null ? void 0 : _c[1];
-    if (currentMediaId && currentMediaId !== String(route.id)) {
-      return false;
-    }
-    descElement.innerHTML = renderDescriptionHtml(info.summary);
-    descElement.setAttribute(MARKER_DESC_ID, String(route.id));
-    return true;
   }
   function entityContext(route) {
     if (route.section !== "media" || !route.id || !route.type) return void 0;
@@ -26822,7 +26865,6 @@
       translateDocumentTitle(route, service);
       if (document.body) {
         translateElement(document.body, route);
-        void translateDescription(document.body, route, descriptionService);
       }
       chineseSearch.refresh();
     };
@@ -26835,7 +26877,6 @@
     startDomObserver((nodes) => {
       const route = parseRoute(location.href);
       for (const node of nodes) translateElement(node, route);
-      if (document.body) void translateDescription(document.body, route, descriptionService);
       translateDocumentTitle(route, service);
     });
     startMediaHoverObserver((path) => {
