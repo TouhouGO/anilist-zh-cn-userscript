@@ -60,7 +60,7 @@ describe('Entity name translator', () => {
     const count = await translator.flush();
 
     expect(seen).toHaveLength(1);
-    expect(seen[0]).toEqual([{ kind: 'character', id: 1 }]);
+    expect(seen[0]).toMatchObject([{ kind: 'character', id: 1 }]);
     expect(count).toBe(2);
     expect(first.textContent).toBe('史派克·斯皮格尔');
     expect(second.textContent).toBe('史派克·斯皮格尔');

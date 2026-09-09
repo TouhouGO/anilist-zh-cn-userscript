@@ -102,10 +102,37 @@ export function createEntityNameTranslator(
     for (const link of linksWithin(root)) {
       const ref = extractEntityRef(new URL(link.href, 'https://anilist.co').pathname);
       const target = ref ? findNameTarget(link) : undefined;
-      if (ref && target) queueCandidate({ target, ref, link });
+      if (ref && target) {
+        ref.currentName = target.textContent?.trim();
+
+        // If inside a role card with character and staff, pair them up
+        if (ref.kind === 'character' && typeof link.closest === 'function') {
+          const card = link.closest('.role-card, [class*="role-card"], [class*="roleCard"], .character');
+          if (card && typeof card.querySelector === 'function') {
+            const staffLink = card.querySelector<HTMLAnchorElement>('a[href*="/staff/"]');
+            if (staffLink && staffLink !== link) {
+              const staffRef = extractEntityRef(new URL(staffLink.href, 'https://anilist.co').pathname);
+              if (staffRef && staffRef.kind === 'staff') {
+                ref.actorStaffId = staffRef.id;
+                const staffTarget = findNameTarget(staffLink);
+                if (staffTarget?.textContent?.trim()) {
+                  ref.actorName = staffTarget.textContent.trim();
+                }
+              }
+            }
+          }
+        }
+
+        queueCandidate({ target, ref, link });
+      }
     }
     const pageRef = extractEntityRef(path);
-    if (pageRef) for (const heading of headingsWithin(root)) queueCandidate({ target: heading, ref: pageRef });
+    if (pageRef) {
+      for (const heading of headingsWithin(root)) {
+        pageRef.currentName = heading.textContent?.trim();
+        queueCandidate({ target: heading, ref: pageRef });
+      }
+    }
   };
 
   async function flush(): Promise<number> {

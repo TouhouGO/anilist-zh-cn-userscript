@@ -25,7 +25,8 @@ function boot() {
   const tagService = createBangumiTagService();
   const descriptionService = createBangumiDescriptionService(service);
   const diagnostics = createDiagnostics(false);
-  const entityTranslator = createEntityNameTranslator(createEntityNameService());
+  const entityService = createEntityNameService();
+  const entityTranslator = createEntityNameTranslator(entityService);
   const chineseSearch = startChineseTitleSearch(service);
 
   const translateElement = (root: Element, route = parseRoute(location.href)) => {
@@ -69,6 +70,10 @@ function boot() {
 
   void service.refresh().catch(() => diagnostics.record('title data refresh failed')).then(() => {
     syncPage();
+  });
+
+  void entityService.loadBundle().catch(() => {}).then(loaded => {
+    if (loaded) syncPage();
   });
 
   if (typeof GM_registerMenuCommand === 'function') {

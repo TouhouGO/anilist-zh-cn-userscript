@@ -82,4 +82,33 @@ describe('Bangumi entity fallback', () => {
     expect(result).toEqual(new Map());
     expect(calls).toBe(0);
   });
+
+  it('matches character through voice actor credit and fetches detail', async () => {
+    const request = async (url: string) => {
+      if (url.endsWith('/subjects/253/characters')) {
+        return [
+          {
+            id: 2767,
+            name: 'アリシア・フローレンス',
+            actors: [{ id: 3890, name: '大原さやか' }],
+          },
+        ];
+      }
+      if (url.endsWith('/characters/2767')) {
+        return { infobox: [{ key: '简体中文名', value: '艾莉西亚·佛罗伦斯' }] };
+      }
+      throw new Error(url);
+    };
+
+    const source = createBangumiEntitySource(request);
+    const result = await source.load(
+      { mediaId: 1, mediaType: 'ANIME' },
+      'character',
+      [379],
+      [{ kind: 'character', id: 379, currentName: 'Alicia Florence', actorStaffId: 95092 }],
+      (staffId) => (staffId === 95092 ? '大原沙耶香' : undefined)
+    );
+
+    expect(result).toEqual(new Map([[379, '艾莉西亚·佛罗伦斯']]));
+  });
 });
