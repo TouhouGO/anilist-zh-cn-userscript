@@ -8,8 +8,12 @@ const MARKER_DESC_ORIGINAL = 'data-anilist-zh-cn-desc-original';
 export function extractSidebarNativeTitle(root: Element): string | undefined {
   const sets = Array.from(root.querySelectorAll<HTMLElement>('.data-set, .data-item'));
   for (const set of sets) {
-    const type = set.querySelector('.type')?.textContent?.trim().toLowerCase();
-    if (type === 'native' || type === 'romaji') {
+    const typeEl = set.querySelector('.type');
+    const type = (typeEl?.getAttribute?.('data-anilist-zh-cn-original') || typeEl?.textContent || '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+    if (type === 'native' || type === 'romaji' || type === '原名' || type === '罗马字') {
       const val = set.querySelector('.value')?.textContent?.trim();
       if (val) return val;
     }
@@ -20,8 +24,20 @@ export function extractSidebarNativeTitle(root: Element): string | undefined {
 export function extractSidebarReleaseYear(root: Element): number | undefined {
   const sets = Array.from(root.querySelectorAll<HTMLElement>('.data-set, .data-item'));
   for (const set of sets) {
-    const type = set.querySelector('.type')?.textContent?.trim().toLowerCase();
-    if (type === 'start date' || type === 'release date' || type === 'season') {
+    const typeEl = set.querySelector('.type');
+    const type = (typeEl?.getAttribute?.('data-anilist-zh-cn-original') || typeEl?.textContent || '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+    if (
+      type === 'start date' ||
+      type === 'release date' ||
+      type === 'season' ||
+      type === '开始日期' ||
+      type === '播出日期' ||
+      type === '季度' ||
+      type === '播出季度'
+    ) {
       const val = set.querySelector('.value')?.textContent?.trim();
       if (val) {
         const match = val.match(/\b(19\d{2}|20\d{2})\b/);
@@ -90,11 +106,13 @@ export async function translateDescription(
 
   const queryRoot = typeof document !== 'undefined' ? (document.body || root) : root;
   const nativeTitle = extractSidebarNativeTitle(queryRoot);
+  const h1El = queryRoot.querySelector ? queryRoot.querySelector<HTMLElement>('h1') : null;
+  const fallbackTitle = h1El?.getAttribute('data-anilist-zh-cn-original') || h1El?.textContent?.trim() || undefined;
   const releaseYear = extractSidebarReleaseYear(queryRoot);
 
   const info = await descriptionService.getDescription(route.id, {
     isAnime: route.type === 'anime',
-    nativeTitle,
+    nativeTitle: nativeTitle || fallbackTitle,
     releaseYear,
   });
 

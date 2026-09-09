@@ -32,6 +32,39 @@ describe('description translator', () => {
     expect(extractSidebarReleaseYear(mockRoot)).toBe(1998);
   });
 
+  it('extracts native title and release year when translated Chinese labels or attributes are present', () => {
+    const mockRoot = {
+      querySelectorAll: (sel: string) => {
+        if (sel.includes('.data-set')) {
+          return [
+            {
+              querySelector: (s: string) =>
+                s.includes('.type')
+                  ? {
+                      getAttribute: (attr: string) => (attr === 'data-anilist-zh-cn-original' ? 'Native' : null),
+                      textContent: '原名',
+                    }
+                  : { textContent: 'ARIA The ANIMATION' },
+            },
+            {
+              querySelector: (s: string) =>
+                s.includes('.type')
+                  ? {
+                      getAttribute: (attr: string) => (attr === 'data-anilist-zh-cn-original' ? 'Start Date' : null),
+                      textContent: '开始日期',
+                    }
+                  : { textContent: 'Oct 6, 2005' },
+            },
+          ];
+        }
+        return [];
+      },
+    } as unknown as Element;
+
+    expect(extractSidebarNativeTitle(mockRoot)).toBe('ARIA The ANIMATION');
+    expect(extractSidebarReleaseYear(mockRoot)).toBe(2005);
+  });
+
   it('renders bilingual description HTML structure properly', () => {
     const summary = '<p>赏金猎人斯派克的故事。</p>';
     const original = '<p>Original synopsis in English.</p>';

@@ -50,29 +50,38 @@ export function createTitleService(storage: StorageLike = getSafeStorage(), fetc
     if (native) item.native = native;
   }
 
-  try {
-    const cached = JSON.parse(storage.getItem(KEY) || 'null');
-    if (cached && typeof cached === 'object' && cached.delta) {
-      for (const [idStr, title] of Object.entries(cached.delta as Record<string, string>)) {
-        const id = Number(idStr);
-        if (Number.isInteger(id) && !entries.has(id)) {
-          const chinese = toMainlandChinese(title);
-          entries.set(id, chinese);
-          searchable.set(id, { id, title: titleOverrides[id] || chinese });
+  const cacheKeys = [KEY, 'anilist-zh-cn-title-cache-v2', 'anilist-zh-cn-title-cache-v1'];
+  for (const cacheKey of cacheKeys) {
+    try {
+      const raw = storage.getItem(cacheKey);
+      if (!raw) continue;
+      const cached = JSON.parse(raw);
+      if (cached && typeof cached === 'object' && cached.delta) {
+        for (const [idStr, rawVal] of Object.entries(cached.delta as Record<string, string>)) {
+          const id = Number(idStr);
+          if (Number.isInteger(id) && !entries.has(id)) {
+            const { title, bangumiId } = parseEntryValue(String(rawVal));
+            const chinese = toMainlandChinese(title);
+            entries.set(id, chinese);
+            if (bangumiId && !bangumiIds.has(id)) bangumiIds.set(id, bangumiId);
+            searchable.set(id, { id, title: titleOverrides[id] || chinese });
+          }
+        }
+      } else if (cached?.entries && Array.isArray(cached.entries)) {
+        for (const [id, rawVal] of cached.entries) {
+          const numId = Number(id);
+          if (Number.isInteger(numId) && !entries.has(numId)) {
+            const { title, bangumiId } = parseEntryValue(String(rawVal));
+            const chinese = toMainlandChinese(title);
+            entries.set(numId, chinese);
+            if (bangumiId && !bangumiIds.has(numId)) bangumiIds.set(numId, bangumiId);
+            searchable.set(numId, { id: numId, title: titleOverrides[numId] || chinese });
+          }
         }
       }
-    } else if (cached?.entries && Array.isArray(cached.entries)) {
-      for (const [id, title] of cached.entries) {
-        const numId = Number(id);
-        if (Number.isInteger(numId) && !entries.has(numId)) {
-          const chinese = toMainlandChinese(title);
-          entries.set(numId, chinese);
-          searchable.set(numId, { id: numId, title: titleOverrides[numId] || chinese });
-        }
-      }
+    } catch {
+      /* ignore malformed local cache */
     }
-  } catch {
-    /* ignore malformed local cache */
   }
 
   return {
