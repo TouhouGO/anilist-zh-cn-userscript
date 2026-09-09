@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AniList 简体中文
 // @namespace    https://github.com/TouhouGO/anilist-zh-cn-userscript
-// @version      0.1.24
+// @version      0.1.25
 // @description  将 AniList 界面、作品标题和人物名称显示为简体中文
 // @match        https://anilist.co/*
 // @noframes
@@ -1499,12 +1499,42 @@
     if (match) return `落后 ${match[1]} 集`;
     match = trimmed.match(/^(\d+)d(?:\s+(\d+)h)?(?:\s+(\d+)m)?$/);
     if (match) return `${match[1]}天${match[2] ? ` ${match[2]}小时` : ""}${match[3] ? ` ${match[3]}分钟` : ""}`;
-    match = trimmed.match(/^Ep (\d+) airing in (\d+) days?$/);
-    if (match) return `第 ${match[1]} 集，将于 ${match[2]} 天后播出`;
-    match = trimmed.match(/^Ep (\d+) airing in 1 day$/);
-    if (match) return `第 ${match[1]} 集，将于 1 天后播出`;
+    match = trimmed.match(/^Ep (\d+)\s+airing in\s+(.+)$/i);
+    if (match) {
+      const ep = match[1];
+      const duration = match[2].replace(/(\d+)\s+days?/gi, "$1 天").replace(/(\d+)\s+hours?/gi, "$1 小时").replace(/(\d+)\s+mins?/gi, "$1 分钟").replace(/,\s*/g, " ");
+      return `第 ${ep} 集，将于 ${duration.trim()}后播出`;
+    }
+    match = trimmed.match(/^Ep (\d+)\s+airing in$/i);
+    if (match) return `第 ${match[1]} 集，还剩`;
     match = trimmed.match(/^TV Show • (\d+) episodes?$/);
     if (match) return `电视动画 · ${match[1]} 集`;
+    match = trimmed.match(/^(TV|TV Short|Movie|Special|OVA|ONA)\s*[•·]\s*(\d+)\s+episodes?$/i);
+    if (match) return `${match[1]} · ${match[2]} 集`;
+    match = trimmed.match(/^(\d+)\s+episodes?$/i);
+    if (match) return `${match[1]} 集`;
+    match = trimmed.match(/^(\d+)\s+chapters?$/i);
+    if (match) return `${match[1]} 话`;
+    match = trimmed.match(/^(\d+)\s+(?:volumes?|vols?)$/i);
+    if (match) return `${match[1]} 卷`;
+    match = trimmed.match(/^Airing Since (\d{4})$/i);
+    if (match) return `${match[1]}年起播出`;
+    match = trimmed.match(/^Publishing Since (\d{4})$/i);
+    if (match) return `${match[1]}年起连载`;
+    if (/^Publishing Now$/i.test(trimmed)) return "连载中";
+    match = trimmed.match(/^(\d+)\s+days?(?:,\s*(\d+)\s+hours?)?(?:,\s*(\d+)\s+mins?)?$/i);
+    if (match) {
+      let res = `${match[1]} 天`;
+      if (match[2]) res += ` ${match[2]} 小时`;
+      if (match[3]) res += ` ${match[3]} 分钟`;
+      return res;
+    }
+    match = trimmed.match(/^(\d+)\s+hours?(?:,\s*(\d+)\s+mins?)?$/i);
+    if (match) {
+      let res = `${match[1]} 小时`;
+      if (match[2]) res += ` ${match[2]} 分钟`;
+      return res;
+    }
     match = trimmed.match(/^#(\d+)\s+(Highest Rated|Most Popular)(?:\s+(\d{4}|All Time))?$/i);
     if (match) {
       const rank = match[1];
@@ -1543,11 +1573,11 @@
     }
     match = trimmed.match(/^(Spring|Summer|Fall|Winter) (\d{4})$/);
     if (match) return `${match[2]}年${{ Spring: "春季", Summer: "夏季", Fall: "秋季", Winter: "冬季" }[match[1]]}`;
-    match = trimmed.match(/^(\d+) mins?$/);
+    match = trimmed.match(/^(\d+) mins?$/i);
     if (match) return `${match[1]} 分钟`;
-    match = trimmed.match(/^(\d+) hours?, (\d+) mins?$/);
+    match = trimmed.match(/^(\d+) hours?,\s*(\d+) mins?$/i);
     if (match) return `${match[1]} 小时 ${match[2]} 分钟`;
-    match = trimmed.match(/^(\d+) Users$/);
+    match = trimmed.match(/^(\d+)\s+users?$/i);
     if (match) return `${match[1]} 名用户`;
     const time = trimmed.match(/^(\d+)\s+(second|minute|hour|day|week|month|year)s? ago$/);
     if (time) return `${time[1]} ${{ second: "秒", minute: "分钟", hour: "小时", day: "天", week: "周", month: "个月", year: "年" }[time[2]]}前`;
@@ -25481,7 +25511,7 @@
     if (isMediaTab(path)) return false;
     if (detailTabLabels.has(((_a = link.textContent) == null ? void 0 : _a.trim()) || "")) return false;
     if (link.closest(".nav, .tabs, .media-tabs, .footer, .breadcrumb")) return false;
-    if (link.closest(".cover, .image")) return false;
+    if (link.closest(".cover, .image") && !link.matches('.title, .title-link, [class*="title"]') && !link.closest(".overlay, .title-wrap")) return false;
     if (link.querySelector("img") && !((_b = link.textContent) == null ? void 0 : _b.trim())) return false;
     return Boolean(
       link.matches('.title, .title-link, [class*="title"], .media-card a, .media-preview-card a, .recommendation-card a, .list-row a, .status a, h1 a, .entry a, .medialist a') || link.closest(".entry-card, .media-card, .media-preview-card, .recommendation-card, .list-row, .status, .medialist, .entry, .title, .lists, .list-entries")
@@ -25529,21 +25559,23 @@
           restoreTarget.textContent = link.dataset.anilistZhCnOriginal;
           delete link.dataset.anilistZhCnTitle;
           delete link.dataset.anilistZhCnOriginal;
+          delete link.dataset.anilistZhCnMediaId;
         }
         continue;
       }
-      if (link.dataset.anilistZhCnTitle) continue;
-      const original = ((titleTarget == null ? void 0 : titleTarget.textContent) || (text == null ? void 0 : text.textContent) || link.textContent || "").trim();
-      if (!original) continue;
+      const currentText = ((titleTarget == null ? void 0 : titleTarget.textContent) || (text == null ? void 0 : text.textContent) || link.textContent || "").trim();
+      if (!currentText) continue;
+      const original = link.dataset.anilistZhCnMediaId === String(media.id) && link.dataset.anilistZhCnOriginal ? link.dataset.anilistZhCnOriginal : currentText;
       const title = service.getTitle(media.id, original);
-      if (title !== original) {
-        const target = titleTarget || text || link;
-        link.dataset.anilistZhCnTitle = "1";
-        link.dataset.anilistZhCnOriginal = original;
-        if (target.nodeType === 3) target.textContent = target.textContent.replace(original, title);
-        else target.textContent = title;
-        count++;
-      }
+      if (title === original) continue;
+      if (link.dataset.anilistZhCnMediaId === String(media.id) && currentText === title) continue;
+      const target = titleTarget || text || link;
+      link.dataset.anilistZhCnMediaId = String(media.id);
+      link.dataset.anilistZhCnTitle = "1";
+      link.dataset.anilistZhCnOriginal = original;
+      if (target.nodeType === 3) target.textContent = target.textContent.replace(currentText, title);
+      else target.textContent = title;
+      count++;
     }
     const origin = typeof location !== "undefined" ? location.origin : "https://anilist.co";
     const currentPath = typeof location !== "undefined" ? location.pathname : "/";
@@ -26882,6 +26914,14 @@
     startMediaHoverObserver((path) => {
       if (document.body) translateFavouriteTooltips(document.body, path, service);
     });
+    document.addEventListener("click", (event) => {
+      var _a;
+      const target = event.target;
+      if ((_a = target == null ? void 0 : target.closest) == null ? void 0 : _a.call(target, ".icon-wrap, .sort-wrap, .selects-wrap, .filter-wrap")) {
+        requestAnimationFrame(() => syncPage());
+        setTimeout(() => syncPage(), 80);
+      }
+    }, true);
     syncPage();
     requestAnimationFrame(() => syncPage());
     void service.refresh().catch(() => diagnostics.record("title data refresh failed")).then(() => {

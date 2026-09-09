@@ -37,12 +37,51 @@ function translateDynamic(trimmed: string, _section: string): string | undefined
   match = trimmed.match(/^(\d+) episodes? behind$/); if (match) return `落后 ${match[1]} 集`;
   match = trimmed.match(/^(\d+)d(?:\s+(\d+)h)?(?:\s+(\d+)m)?$/); if (match) return `${match[1]}天${match[2] ? ` ${match[2]}小时` : ''}${match[3] ? ` ${match[3]}分钟` : ''}`;
 
-  match = trimmed.match(/^Ep (\d+) airing in (\d+) days?$/);
-  if (match) return `第 ${match[1]} 集，将于 ${match[2]} 天后播出`;
-  match = trimmed.match(/^Ep (\d+) airing in 1 day$/);
-  if (match) return `第 ${match[1]} 集，将于 1 天后播出`;
+  match = trimmed.match(/^Ep (\d+)\s+airing in\s+(.+)$/i);
+  if (match) {
+    const ep = match[1];
+    const duration = match[2]
+      .replace(/(\d+)\s+days?/gi, '$1 天')
+      .replace(/(\d+)\s+hours?/gi, '$1 小时')
+      .replace(/(\d+)\s+mins?/gi, '$1 分钟')
+      .replace(/,\s*/g, ' ');
+    return `第 ${ep} 集，将于 ${duration.trim()}后播出`;
+  }
+  match = trimmed.match(/^Ep (\d+)\s+airing in$/i);
+  if (match) return `第 ${match[1]} 集，还剩`;
+
   match = trimmed.match(/^TV Show • (\d+) episodes?$/);
   if (match) return `电视动画 · ${match[1]} 集`;
+  match = trimmed.match(/^(TV|TV Short|Movie|Special|OVA|ONA)\s*[•·]\s*(\d+)\s+episodes?$/i);
+  if (match) return `${match[1]} · ${match[2]} 集`;
+
+  match = trimmed.match(/^(\d+)\s+episodes?$/i);
+  if (match) return `${match[1]} 集`;
+  match = trimmed.match(/^(\d+)\s+chapters?$/i);
+  if (match) return `${match[1]} 话`;
+  match = trimmed.match(/^(\d+)\s+(?:volumes?|vols?)$/i);
+  if (match) return `${match[1]} 卷`;
+
+  match = trimmed.match(/^Airing Since (\d{4})$/i);
+  if (match) return `${match[1]}年起播出`;
+  match = trimmed.match(/^Publishing Since (\d{4})$/i);
+  if (match) return `${match[1]}年起连载`;
+  if (/^Publishing Now$/i.test(trimmed)) return '连载中';
+
+  // Standalone countdown durations, e.g. "2 days, 4 hours", "5 hours", "30 mins"
+  match = trimmed.match(/^(\d+)\s+days?(?:,\s*(\d+)\s+hours?)?(?:,\s*(\d+)\s+mins?)?$/i);
+  if (match) {
+    let res = `${match[1]} 天`;
+    if (match[2]) res += ` ${match[2]} 小时`;
+    if (match[3]) res += ` ${match[3]} 分钟`;
+    return res;
+  }
+  match = trimmed.match(/^(\d+)\s+hours?(?:,\s*(\d+)\s+mins?)?$/i);
+  if (match) {
+    let res = `${match[1]} 小时`;
+    if (match[2]) res += ` ${match[2]} 分钟`;
+    return res;
+  }
 
   // Rankings badge, e.g. "#93 Highest Rated 2009", "#32 Most Popular 2009", "#1 Highest Rated All Time"
   match = trimmed.match(/^#(\d+)\s+(Highest Rated|Most Popular)(?:\s+(\d{4}|All Time))?$/i);
@@ -88,11 +127,11 @@ function translateDynamic(trimmed: string, _section: string): string | undefined
 
   match = trimmed.match(/^(Spring|Summer|Fall|Winter) (\d{4})$/);
   if (match) return `${match[2]}年${({ Spring: '春季', Summer: '夏季', Fall: '秋季', Winter: '冬季' } as Record<string, string>)[match[1]]}`;
-  match = trimmed.match(/^(\d+) mins?$/);
+  match = trimmed.match(/^(\d+) mins?$/i);
   if (match) return `${match[1]} 分钟`;
-  match = trimmed.match(/^(\d+) hours?, (\d+) mins?$/);
+  match = trimmed.match(/^(\d+) hours?,\s*(\d+) mins?$/i);
   if (match) return `${match[1]} 小时 ${match[2]} 分钟`;
-  match = trimmed.match(/^(\d+) Users$/);
+  match = trimmed.match(/^(\d+)\s+users?$/i);
   if (match) return `${match[1]} 名用户`;
   const time = trimmed.match(/^(\d+)\s+(second|minute|hour|day|week|month|year)s? ago$/);
   if (time) return `${time[1]} ${({ second: '秒', minute: '分钟', hour: '小时', day: '天', week: '周', month: '个月', year: '年' } as Record<string, string>)[time[2]]}前`;

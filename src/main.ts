@@ -63,6 +63,14 @@ function boot() {
     if (document.body) translateFavouriteTooltips(document.body, path, service);
   });
 
+  document.addEventListener('click', event => {
+    const target = event.target as HTMLElement | null;
+    if (target?.closest?.('.icon-wrap, .sort-wrap, .selects-wrap, .filter-wrap')) {
+      requestAnimationFrame(() => syncPage());
+      setTimeout(() => syncPage(), 80);
+    }
+  }, true);
+
   syncPage();
   requestAnimationFrame(() => syncPage());
 

@@ -28,6 +28,15 @@ describe('translateText', () => {
     expect(translateText('Ep 10 airing in 6 days', { section: 'search' })).toBe('第 10 集，将于 6 天后播出');
     expect(translateText('TV Show • 26 episodes', { section: 'search' })).toBe('电视动画 · 26 集');
     expect(translateText('Fall 2026', { section: 'search' })).toBe('2026年秋季');
+    expect(translateText('12543 users', { section: 'search' })).toBe('12543 名用户');
+    expect(translateText('12 episodes', { section: 'search' })).toBe('12 集');
+    expect(translateText('45 chapters', { section: 'search' })).toBe('45 话');
+    expect(translateText('1 vol', { section: 'search' })).toBe('1 卷');
+    expect(translateText('Airing Since 2024', { section: 'search' })).toBe('2024年起播出');
+    expect(translateText('Publishing Since 2023', { section: 'search' })).toBe('2023年起连载');
+    expect(translateText('Publishing Now', { section: 'search' })).toBe('连载中');
+    expect(translateText('Ep 5 airing in', { section: 'search' })).toBe('第 5 集，还剩');
+    expect(translateText('2 days, 4 hours', { section: 'search' })).toBe('2 天 4 小时');
   });
   it('translates media detail metadata and tag labels', () => {
     expect(translateText('Episode Duration', { section: 'media' })).toBe('单集时长');
