@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AniList 简体中文
 // @namespace    https://github.com/TouhouGO/anilist-zh-cn-userscript
-// @version      0.1.19
+// @version      0.1.20
 // @description  将 AniList 界面、作品标题和人物名称显示为简体中文
 // @match        https://anilist.co/*
 // @grant        GM_registerMenuCommand
@@ -25311,28 +25311,37 @@
       const native = nativeByTitle.get(item.title);
       if (native) item.native = native;
     }
-    try {
-      const cached = JSON.parse(storage.getItem(KEY) || "null");
-      if (cached && typeof cached === "object" && cached.delta) {
-        for (const [idStr, title] of Object.entries(cached.delta)) {
-          const id = Number(idStr);
-          if (Number.isInteger(id) && !entries.has(id)) {
-            const chinese = toMainlandChinese(title);
-            entries.set(id, chinese);
-            searchable.set(id, { id, title: titleOverrides[id] || chinese });
+    const cacheKeys = [KEY, "anilist-zh-cn-title-cache-v2", "anilist-zh-cn-title-cache-v1"];
+    for (const cacheKey of cacheKeys) {
+      try {
+        const raw = storage.getItem(cacheKey);
+        if (!raw) continue;
+        const cached = JSON.parse(raw);
+        if (cached && typeof cached === "object" && cached.delta) {
+          for (const [idStr, rawVal] of Object.entries(cached.delta)) {
+            const id = Number(idStr);
+            if (Number.isInteger(id) && !entries.has(id)) {
+              const { title, bangumiId } = parseEntryValue(String(rawVal));
+              const chinese = toMainlandChinese(title);
+              entries.set(id, chinese);
+              if (bangumiId && !bangumiIds.has(id)) bangumiIds.set(id, bangumiId);
+              searchable.set(id, { id, title: titleOverrides[id] || chinese });
+            }
+          }
+        } else if ((cached == null ? void 0 : cached.entries) && Array.isArray(cached.entries)) {
+          for (const [id, rawVal] of cached.entries) {
+            const numId = Number(id);
+            if (Number.isInteger(numId) && !entries.has(numId)) {
+              const { title, bangumiId } = parseEntryValue(String(rawVal));
+              const chinese = toMainlandChinese(title);
+              entries.set(numId, chinese);
+              if (bangumiId && !bangumiIds.has(numId)) bangumiIds.set(numId, bangumiId);
+              searchable.set(numId, { id: numId, title: titleOverrides[numId] || chinese });
+            }
           }
         }
-      } else if ((cached == null ? void 0 : cached.entries) && Array.isArray(cached.entries)) {
-        for (const [id, title] of cached.entries) {
-          const numId = Number(id);
-          if (Number.isInteger(numId) && !entries.has(numId)) {
-            const chinese = toMainlandChinese(title);
-            entries.set(numId, chinese);
-            searchable.set(numId, { id: numId, title: titleOverrides[numId] || chinese });
-          }
-        }
+      } catch {
       }
-    } catch {
     }
     return {
       getTitle(id, fallback) {
@@ -26394,24 +26403,26 @@
   const MARKER_DESC_ID = "data-anilist-zh-cn-desc-id";
   const MARKER_DESC_ORIGINAL = "data-anilist-zh-cn-desc-original";
   function extractSidebarNativeTitle(root) {
-    var _a, _b, _c, _d;
+    var _a, _b, _c;
     const sets = Array.from(root.querySelectorAll(".data-set, .data-item"));
     for (const set of sets) {
-      const type = (_b = (_a = set.querySelector(".type")) == null ? void 0 : _a.textContent) == null ? void 0 : _b.trim().toLowerCase();
-      if (type === "native" || type === "romaji") {
-        const val = (_d = (_c = set.querySelector(".value")) == null ? void 0 : _c.textContent) == null ? void 0 : _d.trim();
+      const typeEl = set.querySelector(".type");
+      const type = (((_a = typeEl == null ? void 0 : typeEl.getAttribute) == null ? void 0 : _a.call(typeEl, "data-anilist-zh-cn-original")) || (typeEl == null ? void 0 : typeEl.textContent) || "").replace(/\s+/g, " ").trim().toLowerCase();
+      if (type === "native" || type === "romaji" || type === "原名" || type === "罗马字") {
+        const val = (_c = (_b = set.querySelector(".value")) == null ? void 0 : _b.textContent) == null ? void 0 : _c.trim();
         if (val) return val;
       }
     }
     return void 0;
   }
   function extractSidebarReleaseYear(root) {
-    var _a, _b, _c, _d;
+    var _a, _b, _c;
     const sets = Array.from(root.querySelectorAll(".data-set, .data-item"));
     for (const set of sets) {
-      const type = (_b = (_a = set.querySelector(".type")) == null ? void 0 : _a.textContent) == null ? void 0 : _b.trim().toLowerCase();
-      if (type === "start date" || type === "release date" || type === "season") {
-        const val = (_d = (_c = set.querySelector(".value")) == null ? void 0 : _c.textContent) == null ? void 0 : _d.trim();
+      const typeEl = set.querySelector(".type");
+      const type = (((_a = typeEl == null ? void 0 : typeEl.getAttribute) == null ? void 0 : _a.call(typeEl, "data-anilist-zh-cn-original")) || (typeEl == null ? void 0 : typeEl.textContent) || "").replace(/\s+/g, " ").trim().toLowerCase();
+      if (type === "start date" || type === "release date" || type === "season" || type === "开始日期" || type === "播出日期" || type === "季度" || type === "播出季度") {
+        const val = (_c = (_b = set.querySelector(".value")) == null ? void 0 : _b.textContent) == null ? void 0 : _c.trim();
         if (val) {
           const match = val.match(/\b(19\d{2}|20\d{2})\b/);
           if (match) return parseInt(match[1], 10);
@@ -26443,7 +26454,7 @@
     ].join("");
   }
   async function translateDescription(root, route, descriptionService) {
-    var _a, _b;
+    var _a, _b, _c;
     if (route.section !== "media" || !route.id || !route.type) return false;
     const descElement = (root.matches(".description") ? root : root.querySelector(".description")) || (typeof document !== "undefined" ? document.querySelector(".description") : null);
     if (!descElement) return false;
@@ -26458,10 +26469,12 @@
     }
     const queryRoot = typeof document !== "undefined" ? document.body || root : root;
     const nativeTitle = extractSidebarNativeTitle(queryRoot);
+    const h1El = queryRoot.querySelector ? queryRoot.querySelector("h1") : null;
+    const fallbackTitle = (h1El == null ? void 0 : h1El.getAttribute("data-anilist-zh-cn-original")) || ((_b = h1El == null ? void 0 : h1El.textContent) == null ? void 0 : _b.trim()) || void 0;
     const releaseYear = extractSidebarReleaseYear(queryRoot);
     const info = await descriptionService.getDescription(route.id, {
       isAnime: route.type === "anime",
-      nativeTitle,
+      nativeTitle: nativeTitle || fallbackTitle,
       releaseYear
     });
     if (!info.summary) {
@@ -26469,7 +26482,7 @@
       return false;
     }
     const currentPath = typeof location !== "undefined" ? location.pathname : route.path;
-    const currentMediaId = (_b = currentPath.match(/^\/(?:anime|manga)\/(\d+)/)) == null ? void 0 : _b[1];
+    const currentMediaId = (_c = currentPath.match(/^\/(?:anime|manga)\/(\d+)/)) == null ? void 0 : _c[1];
     if (currentMediaId && currentMediaId !== String(route.id)) {
       return false;
     }
