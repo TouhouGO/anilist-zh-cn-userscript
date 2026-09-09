@@ -12,7 +12,7 @@ export function isTitleLink(link: HTMLAnchorElement, path: string): boolean {
   if (isMediaTab(path)) return false;
   if (detailTabLabels.has(link.textContent?.trim() || '')) return false;
   if (link.closest('.nav, .tabs, .media-tabs, .footer, .breadcrumb')) return false;
-  if (link.closest('.cover, .image')) return false;
+  if (link.closest('.cover, .image') && !link.matches('.title, .title-link, [class*="title"]') && !link.closest('.overlay, .title-wrap')) return false;
   if (link.querySelector('img') && !link.textContent?.trim()) return false;
   return Boolean(
     link.matches('.title, .title-link, [class*="title"], .media-card a, .media-preview-card a, .recommendation-card a, .list-row a, .status a, h1 a, .entry a, .medialist a') ||
@@ -67,23 +67,29 @@ export function translateTitles(root: Element, service: TitleService): number {
         restoreTarget.textContent = link.dataset.anilistZhCnOriginal;
         delete link.dataset.anilistZhCnTitle;
         delete link.dataset.anilistZhCnOriginal;
+        delete link.dataset.anilistZhCnMediaId;
       }
       continue;
     }
 
-    if (link.dataset.anilistZhCnTitle) continue;
-    const original = (titleTarget?.textContent || text?.textContent || link.textContent || '').trim();
-    if (!original) continue;
+    const currentText = (titleTarget?.textContent || text?.textContent || link.textContent || '').trim();
+    if (!currentText) continue;
+
+    const original = (link.dataset.anilistZhCnMediaId === String(media.id) && link.dataset.anilistZhCnOriginal)
+      ? link.dataset.anilistZhCnOriginal
+      : currentText;
 
     const title = service.getTitle(media.id, original);
-    if (title !== original) {
-      const target = titleTarget || text || link;
-      link.dataset.anilistZhCnTitle = '1';
-      link.dataset.anilistZhCnOriginal = original;
-      if (target.nodeType === 3) target.textContent = target.textContent!.replace(original, title);
-      else target.textContent = title;
-      count++;
-    }
+    if (title === original) continue;
+    if (link.dataset.anilistZhCnMediaId === String(media.id) && currentText === title) continue;
+
+    const target = titleTarget || text || link;
+    link.dataset.anilistZhCnMediaId = String(media.id);
+    link.dataset.anilistZhCnTitle = '1';
+    link.dataset.anilistZhCnOriginal = original;
+    if (target.nodeType === 3) target.textContent = target.textContent!.replace(currentText, title);
+    else target.textContent = title;
+    count++;
   }
 
   const origin = typeof location !== 'undefined' ? location.origin : 'https://anilist.co';
