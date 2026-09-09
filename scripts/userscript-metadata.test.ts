@@ -3,7 +3,7 @@ import { replaceUserscriptMetadata, userscriptMetadata, userscriptVersion } from
 
 describe('userscript metadata', () => {
   it('defines the public install and update metadata in one canonical block', () => {
-    expect(userscriptVersion).toBe('0.1.25');
+    expect(userscriptVersion).toBe('0.1.26');
     expect(userscriptMetadata).toContain('// @noframes');
     expect(userscriptMetadata).toContain('// @namespace    https://github.com/TouhouGO/anilist-zh-cn-userscript');
     expect(userscriptMetadata).toContain('// @updateURL    https://raw.githubusercontent.com/TouhouGO/anilist-zh-cn-userscript/main/dist/anilist-zh-cn.user.js');

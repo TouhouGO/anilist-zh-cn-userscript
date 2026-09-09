@@ -188,5 +188,58 @@ describe('extractMediaId', () => {
     expect(tableTextNode.textContent).toBe('海贼王');
     expect(tableTitleLink.dataset.anilistZhCnMediaId).toBe('21');
   });
+
+  it('translates title text node without injecting text into the list-status circle for logged-in users', () => {
+    const service = {
+      getTitle: (id: number, fallback: string) => {
+        if (id === 171018) return '在地下城寻求邂逅是否搞错了什么 第五季';
+        return fallback;
+      },
+    };
+
+    const statusCircle = {
+      nodeName: 'DIV',
+      className: 'list-status circle',
+      textContent: '待在地下城', // simulate previously corrupted text inside the status dot
+      matches: (selector: string) => selector.includes('.list-status'),
+      querySelector: () => null,
+    } as unknown as HTMLElement;
+
+    const textNode = {
+      nodeType: 3,
+      textContent: '\n\t\tダンジョンに出会いを求めるのは間違っているだろうかV 豊穣の女神篇\n\t',
+    } as unknown as Node;
+
+    const titleLink = {
+      href: 'https://anilist.co/anime/171018/Dungeon-ni-Deai-wo-Motomeru-no-wa-Machigatteiru-Darou-ka-V-Houjou-no-Megami-hen/',
+      textContent: 'ダンジョンに出会いを求めるのは間違っているだろうかV 丰穣の女神篇',
+      dataset: {} as Record<string, string>,
+      childNodes: [statusCircle, textNode],
+      children: [statusCircle],
+      childElementCount: 1,
+      firstElementChild: statusCircle,
+      matches: (selector: string) => selector.includes('.title'),
+      closest: (selector: string) => selector.includes('.media-card') ? {} : null,
+      querySelector: (selector: string) => selector.includes('.list-status') ? statusCircle : null,
+      querySelectorAll: () => [],
+    } as unknown as HTMLAnchorElement;
+
+    expect(isTitleLink(titleLink, '/anime/171018/danmachi')).toBe(true);
+
+    const root = {
+      matches: () => false,
+      querySelectorAll: (sel: string) => sel.includes('a[href]') ? [titleLink] : [],
+    } as unknown as Element;
+
+    const count = translateTitles(root, service as never);
+    expect(count).toBe(1);
+
+    // Status circle must be cleared of corrupted text
+    expect(statusCircle.textContent).toBe('');
+
+    // Title text node must contain the Chinese title
+    expect(textNode.textContent).toBe('\n\t\t在地下城寻求邂逅是否搞错了什么 第五季\n\t');
+  });
 });
+
 

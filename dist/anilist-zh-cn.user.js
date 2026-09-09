@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AniList 简体中文
 // @namespace    https://github.com/TouhouGO/anilist-zh-cn-userscript
-// @version      0.1.25
+// @version      0.1.26
 // @description  将 AniList 界面、作品标题和人物名称显示为简体中文
 // @match        https://anilist.co/*
 // @noframes
@@ -25538,7 +25538,7 @@
     return count;
   }
   function translateTitles(root, service) {
-    var _a;
+    var _a, _b, _c;
     let count = 0;
     for (const link of [
       root.matches("a[href]") ? root : null,
@@ -25548,14 +25548,18 @@
       const path = new URL(link.href, origin2).pathname;
       const media = extractMediaId(path);
       if (!media) continue;
-      const titleTarget = link.querySelector('.title, .title-link, [class*="title"]') || (link.children.length === 1 && !link.querySelector("img") ? link.firstElementChild : void 0);
+      const statusCircle = link.querySelector(".list-status");
+      if (statusCircle && statusCircle.textContent) {
+        statusCircle.textContent = "";
+      }
       const text = [...link.childNodes].find((node) => {
         var _a2;
-        return node.nodeType === 3 && ((_a2 = node.textContent) == null ? void 0 : _a2.trim());
+        return node.nodeType === 3 && Boolean((_a2 = node.textContent) == null ? void 0 : _a2.trim());
       });
+      const titleTarget = !text ? link.querySelector('.title, .title-link, [class*="title"]') || (link.children.length === 1 && !link.querySelector("img, .list-status, .circle, .icon") && ((_b = (_a = link.firstElementChild) == null ? void 0 : _a.textContent) == null ? void 0 : _b.trim()) ? link.firstElementChild : void 0) : void 0;
       if (!isTitleLink(link, path)) {
         if (link.dataset.anilistZhCnTitle && link.dataset.anilistZhCnOriginal) {
-          const restoreTarget = titleTarget || text || link;
+          const restoreTarget = text || titleTarget || link;
           restoreTarget.textContent = link.dataset.anilistZhCnOriginal;
           delete link.dataset.anilistZhCnTitle;
           delete link.dataset.anilistZhCnOriginal;
@@ -25563,13 +25567,13 @@
         }
         continue;
       }
-      const currentText = ((titleTarget == null ? void 0 : titleTarget.textContent) || (text == null ? void 0 : text.textContent) || link.textContent || "").trim();
+      const currentText = ((text == null ? void 0 : text.textContent) || (titleTarget == null ? void 0 : titleTarget.textContent) || link.textContent || "").trim();
       if (!currentText) continue;
       const original = link.dataset.anilistZhCnMediaId === String(media.id) && link.dataset.anilistZhCnOriginal ? link.dataset.anilistZhCnOriginal : currentText;
       const title = service.getTitle(media.id, original);
       if (title === original) continue;
       if (link.dataset.anilistZhCnMediaId === String(media.id) && currentText === title) continue;
-      const target = titleTarget || text || link;
+      const target = text || titleTarget || link;
       link.dataset.anilistZhCnMediaId = String(media.id);
       link.dataset.anilistZhCnTitle = "1";
       link.dataset.anilistZhCnOriginal = original;
@@ -25583,7 +25587,7 @@
     if (currentMedia) {
       for (const heading of Array.from(root.querySelectorAll("h1"))) {
         if (heading.dataset.anilistZhCnTitle) continue;
-        const original = (_a = heading.textContent) == null ? void 0 : _a.trim();
+        const original = (_c = heading.textContent) == null ? void 0 : _c.trim();
         if (!original) continue;
         const title = service.getTitle(currentMedia.id, original);
         if (title === original) continue;
