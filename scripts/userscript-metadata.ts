@@ -1,4 +1,4 @@
-export const userscriptVersion = '0.1.21';
+export const userscriptVersion = '0.1.22';
 
 export const userscriptMetadata = `// ==UserScript==
 // @name         AniList 简体中文
@@ -14,6 +14,8 @@ export const userscriptMetadata = `// ==UserScript==
 // @connect      graphql.anilist.co
 // @connect      query.wikidata.org
 // @connect      raw.githubusercontent.com
+// @connect      fastly.jsdelivr.net
+// @connect      testingcf.jsdelivr.net
 // @updateURL    https://raw.githubusercontent.com/TouhouGO/anilist-zh-cn-userscript/main/dist/anilist-zh-cn.user.js
 // @downloadURL  https://raw.githubusercontent.com/TouhouGO/anilist-zh-cn-userscript/main/dist/anilist-zh-cn.user.js
 // ==/UserScript==

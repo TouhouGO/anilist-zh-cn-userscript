@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AniList 简体中文
 // @namespace    https://github.com/TouhouGO/anilist-zh-cn-userscript
-// @version      0.1.21
+// @version      0.1.22
 // @description  将 AniList 界面、作品标题和人物名称显示为简体中文
 // @match        https://anilist.co/*
 // @grant        GM_registerMenuCommand
@@ -12,6 +12,8 @@
 // @connect      graphql.anilist.co
 // @connect      query.wikidata.org
 // @connect      raw.githubusercontent.com
+// @connect      fastly.jsdelivr.net
+// @connect      testingcf.jsdelivr.net
 // @updateURL    https://raw.githubusercontent.com/TouhouGO/anilist-zh-cn-userscript/main/dist/anilist-zh-cn.user.js
 // @downloadURL  https://raw.githubusercontent.com/TouhouGO/anilist-zh-cn-userscript/main/dist/anilist-zh-cn.user.js
 // ==/UserScript==
@@ -25822,21 +25824,26 @@
   }
   async function loadNativeNames(requester, kind, ids) {
     var _a, _b, _c, _d;
-    const field = kind === "character" ? "characters" : "staff";
-    const query = `query ($ids: [Int]) { Page(page: 1, perPage: 50) {
+    if (!ids.length) return /* @__PURE__ */ new Map();
+    try {
+      const field = kind === "character" ? "characters" : "staff";
+      const query = `query ($ids: [Int]) { Page(page: 1, perPage: 50) {
   ${field}(id_in: $ids) { id name { native } }
 } }`;
-    const payload = await requester("https://graphql.anilist.co", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ query, variables: { ids } })
-    });
-    const entities = ((_b = (_a = payload.data) == null ? void 0 : _a.Page) == null ? void 0 : _b[field]) || [];
-    const result = /* @__PURE__ */ new Map();
-    for (const entity of entities) {
-      if (Number.isInteger(entity.id) && ((_d = (_c = entity.name) == null ? void 0 : _c.native) == null ? void 0 : _d.trim())) result.set(entity.id, entity.name.native.trim());
+      const payload = await requester("https://graphql.anilist.co", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ query, variables: { ids } })
+      });
+      const entities = ((_b = (_a = payload.data) == null ? void 0 : _a.Page) == null ? void 0 : _b[field]) || [];
+      const result = /* @__PURE__ */ new Map();
+      for (const entity of entities) {
+        if (Number.isInteger(entity.id) && ((_d = (_c = entity.name) == null ? void 0 : _c.native) == null ? void 0 : _d.trim())) result.set(entity.id, entity.name.native.trim());
+      }
+      return result;
+    } catch {
+      return /* @__PURE__ */ new Map();
     }
-    return result;
   }
   function uniqueCandidates(items) {
     return [...new Map(items.map((item) => [item.id, item])).values()];
@@ -25884,37 +25891,129 @@
     await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
     return results;
   }
+  function normalizeSimple(text) {
+    return text.toLowerCase().replace(/[^a-z0-9\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/gu, "");
+  }
   function createBangumiEntitySource(requester = requestJson) {
+    const charactersCache = /* @__PURE__ */ new Map();
+    const personsCache = /* @__PURE__ */ new Map();
+    const detailCache = /* @__PURE__ */ new Map();
+    function fetchSubjectCharacters(subjectId) {
+      let p2 = charactersCache.get(subjectId);
+      if (!p2) {
+        p2 = requester(`https://api.bgm.tv/v0/subjects/${subjectId}/characters`).then((data) => collectCharacters(data)).catch(() => []);
+        charactersCache.set(subjectId, p2);
+      }
+      return p2;
+    }
+    function fetchSubjectPersons(subjectId) {
+      let p2 = personsCache.get(subjectId);
+      if (!p2) {
+        p2 = requester(`https://api.bgm.tv/v0/subjects/${subjectId}/persons`).then((data) => asArray(data)).catch(() => []);
+        personsCache.set(subjectId, p2);
+      }
+      return p2;
+    }
+    function fetchEntityDetailName(path, id) {
+      const key = `${path}:${id}`;
+      let p2 = detailCache.get(key);
+      if (!p2) {
+        p2 = requester(`https://api.bgm.tv/v0/${path}/${id}`).then((data) => extractSimplifiedName(data)).catch(() => void 0);
+        detailCache.set(key, p2);
+      }
+      return p2;
+    }
     return {
-      async load(context, kind, ids) {
+      async load(context, kind, ids, refs, actorResolver) {
+        var _a;
         const subjectId = mediaToSubject.get(context.mediaId);
+        if (!subjectId) return /* @__PURE__ */ new Map();
         const uniqueIds = [...new Set(ids.filter((id) => Number.isInteger(id) && id > 0))];
-        if (!subjectId || !uniqueIds.length) return /* @__PURE__ */ new Map();
-        const nativeNames = await loadNativeNames(requester, kind, uniqueIds);
+        if (!uniqueIds.length) return /* @__PURE__ */ new Map();
+        const normalizedRefs = refs && refs.length > 0 ? refs.filter((r2) => uniqueIds.includes(r2.id)) : uniqueIds.map((id) => ({ kind, id }));
+        const nativeNames = /* @__PURE__ */ new Map();
+        const missingIds = [];
+        for (const ref of normalizedRefs) {
+          if (ref.currentName && /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u.test(ref.currentName)) {
+            nativeNames.set(ref.id, ref.currentName.trim());
+          } else {
+            missingIds.push(ref.id);
+          }
+        }
+        if (missingIds.length > 0) {
+          const loaded = await loadNativeNames(requester, kind, missingIds);
+          for (const [id, name] of loaded) nativeNames.set(id, name);
+        }
         let candidates;
+        let rawCharacters = [];
         if (kind === "character") {
-          const characters = collectCharacters(await requester(`https://api.bgm.tv/v0/subjects/${subjectId}/characters`));
-          candidates = collectPeople(characters);
+          rawCharacters = await fetchSubjectCharacters(subjectId);
+          candidates = rawCharacters.map((c2) => ({ id: c2.id, name: c2.name.trim(), actors: c2.actors }));
         } else {
           const [peoplePayload, charactersPayload] = await Promise.all([
-            requester(`https://api.bgm.tv/v0/subjects/${subjectId}/persons`),
-            requester(`https://api.bgm.tv/v0/subjects/${subjectId}/characters`)
+            fetchSubjectPersons(subjectId),
+            fetchSubjectCharacters(subjectId)
           ]);
-          const actors = collectCharacters(charactersPayload).flatMap((character) => collectPeople(character.actors));
+          rawCharacters = charactersPayload;
+          const actors = charactersPayload.flatMap((character) => collectPeople(character.actors));
           candidates = [...collectPeople(peoplePayload), ...actors];
         }
         const byNativeName = candidateIndex(candidates);
         const matches = [];
-        for (const [anilistId, nativeName] of nativeNames) {
-          const found = byNativeName.get(normalizeEntityNativeName(nativeName)) || [];
-          if (found.length === 1) matches.push({ anilistId, bangumiId: found[0].id });
+        const matchedIds = /* @__PURE__ */ new Set();
+        if (kind === "character" && actorResolver) {
+          for (const ref of normalizedRefs) {
+            if (matchedIds.has(ref.id) || !ref.actorStaffId && !ref.actorName) continue;
+            const actorZh = ref.actorStaffId ? actorResolver(ref.actorStaffId) : void 0;
+            const actorQuery = normalizeSimple(actorZh || ref.actorName || "");
+            if (!actorQuery) continue;
+            for (const bgmChar of rawCharacters) {
+              if (!bgmChar.id || !bgmChar.name) continue;
+              const hasActorMatch = (_a = bgmChar.actors) == null ? void 0 : _a.some((a2) => {
+                if (!a2.name) return false;
+                const aName = normalizeSimple(toMainlandChinese(a2.name));
+                if (aName === actorQuery || actorQuery.includes(aName) || aName.includes(actorQuery)) return true;
+                if (aName.length >= 2 && actorQuery.length >= 2 && aName.slice(0, 2) === actorQuery.slice(0, 2)) return true;
+                return false;
+              });
+              if (hasActorMatch) {
+                matches.push({ anilistId: ref.id, bangumiId: bgmChar.id, bgmName: bgmChar.name });
+                matchedIds.add(ref.id);
+                break;
+              }
+            }
+          }
         }
+        for (const ref of normalizedRefs) {
+          if (matchedIds.has(ref.id)) continue;
+          const nativeName = nativeNames.get(ref.id);
+          if (!nativeName) continue;
+          const found = byNativeName.get(normalizeEntityNativeName(nativeName)) || [];
+          if (found.length === 1) {
+            matches.push({ anilistId: ref.id, bangumiId: found[0].id, bgmName: found[0].name });
+            matchedIds.add(ref.id);
+          }
+        }
+        for (const ref of normalizedRefs) {
+          if (matchedIds.has(ref.id) || !ref.currentName) continue;
+          const refNorm = normalizeSimple(ref.currentName);
+          if (!refNorm) continue;
+          const found = candidates.filter((c2) => normalizeSimple(c2.name) === refNorm);
+          if (found.length === 1) {
+            matches.push({ anilistId: ref.id, bangumiId: found[0].id, bgmName: found[0].name });
+            matchedIds.add(ref.id);
+          }
+        }
+        const path = kind === "character" ? "characters" : "persons";
         const entries = await mapLimit(matches, 2, async (match) => {
           try {
-            const path = kind === "character" ? "characters" : "persons";
-            const detail = await requester(`https://api.bgm.tv/v0/${path}/${match.bangumiId}`);
-            const name = extractSimplifiedName(detail);
-            return name ? [match.anilistId, name] : void 0;
+            const detailName = await fetchEntityDetailName(path, match.bangumiId);
+            if (detailName) return [match.anilistId, detailName];
+            const directZh = toMainlandChinese(match.bgmName);
+            if (/[\p{Script=Han}]/u.test(directZh) && directZh !== match.bgmName) {
+              return [match.anilistId, directZh];
+            }
+            return void 0;
           } catch {
             return void 0;
           }
@@ -25927,6 +26026,94 @@
     character: {},
     staff: {}
   };
+  const BUNDLE_STORAGE_KEY = "anilist-zh-cn-staff-chars-v1";
+  const BUNDLE_URL_PRIMARY = "https://raw.githubusercontent.com/TouhouGO/anilist-zh-cn-userscript/main/data/staff_characters_zh_cn.json";
+  const BUNDLE_URL_FALLBACK = "https://fastly.jsdelivr.net/gh/TouhouGO/anilist-zh-cn-userscript@main/data/staff_characters_zh_cn.json";
+  function normalizeEntityName(name) {
+    return name.toLowerCase().replace(/[^a-z0-9]/g, "");
+  }
+  function readStoredBundle(storage) {
+    try {
+      if (typeof GM_getValue === "function") {
+        const gmData = GM_getValue(BUNDLE_STORAGE_KEY, null);
+        if (gmData) {
+          if (typeof gmData === "object") return gmData;
+          return JSON.parse(gmData);
+        }
+      }
+      const raw = storage.getItem(BUNDLE_STORAGE_KEY);
+      if (raw) return JSON.parse(raw);
+    } catch {
+    }
+    return null;
+  }
+  function writeStoredBundle(storage, data) {
+    try {
+      const serialized = JSON.stringify(data);
+      if (typeof GM_setValue === "function") {
+        GM_setValue(BUNDLE_STORAGE_KEY, serialized);
+      } else {
+        storage.setItem(BUNDLE_STORAGE_KEY, serialized);
+      }
+    } catch {
+    }
+  }
+  function createEntityBundleService(storage = getSafeStorage(), requester = requestJson, initialBundle) {
+    let bundle = readStoredBundle(storage);
+    let loadingPromise = null;
+    async function fetchBundle() {
+      const urls = [BUNDLE_URL_PRIMARY, BUNDLE_URL_FALLBACK];
+      for (const url of urls) {
+        try {
+          const payload = await requester(url);
+          if (payload && typeof payload === "object" && !Array.isArray(payload)) {
+            bundle = payload;
+            writeStoredBundle(storage, bundle);
+            return true;
+          }
+        } catch {
+        }
+      }
+      return false;
+    }
+    return {
+      get(key) {
+        return bundle ? bundle[key] : void 0;
+      },
+      getById(kind, id) {
+        if (!bundle || !Number.isInteger(id) || id <= 0) return void 0;
+        const prefix = kind === "character" ? "char_" : "person_";
+        return bundle[prefix + id];
+      },
+      getByName(name) {
+        if (!bundle || !name) return void 0;
+        const norm = normalizeEntityName(name);
+        if (!norm) return void 0;
+        const direct = bundle["name_" + norm];
+        if (direct) return direct;
+        const parts = name.trim().split(/\s+/);
+        if (parts.length === 2) {
+          const reversed = normalizeEntityName(`${parts[1]} ${parts[0]}`);
+          return bundle["name_" + reversed];
+        }
+        return void 0;
+      },
+      isLoaded() {
+        return bundle !== null && Object.keys(bundle).length > 0;
+      },
+      async load() {
+        if (this.isLoaded()) return true;
+        if (loadingPromise) return loadingPromise;
+        loadingPromise = fetchBundle().finally(() => {
+          loadingPromise = null;
+        });
+        return loadingPromise;
+      },
+      setBundle(data) {
+        bundle = data;
+      }
+    };
+  }
   const properties = {
     character: "P11736",
     staff: "P11227"
@@ -25996,17 +26183,39 @@
     const storage = getSafeStorage(options.storage);
     const now = options.now || Date.now;
     const overrides = options.overrides || entityNameOverrides;
+    const bundle = options.bundle || createEntityBundleService(storage);
     const wikidata = options.wikidata || createWikidataNameSource();
     const bangumi = options.bangumi || createBangumiEntitySource();
     const cache = readCache(storage);
+    if (!bundle.isLoaded()) {
+      void bundle.load();
+    }
     const saveCache = () => storage.setItem(CACHE_KEY, JSON.stringify({ version: 1, entries: cache }));
     const storePositive = (ref, name, source) => {
       cache[entityKey(ref)] = { name, source, expiresAt: now() + POSITIVE_TTL };
     };
+    const actorResolver = (staffId) => {
+      return overrides.staff[staffId] || bundle.getById("staff", staffId);
+    };
     return {
+      async loadBundle() {
+        return bundle.load();
+      },
       async resolve(refs, context) {
         const unique = /* @__PURE__ */ new Map();
-        for (const ref of refs) if ((ref.kind === "character" || ref.kind === "staff") && Number.isInteger(ref.id) && ref.id > 0) unique.set(entityKey(ref), ref);
+        for (const ref of refs) {
+          if ((ref.kind === "character" || ref.kind === "staff") && Number.isInteger(ref.id) && ref.id > 0) {
+            const key = entityKey(ref);
+            const existing = unique.get(key);
+            if (!existing) {
+              unique.set(key, ref);
+            } else {
+              if (!existing.currentName && ref.currentName) existing.currentName = ref.currentName;
+              if (!existing.actorStaffId && ref.actorStaffId) existing.actorStaffId = ref.actorStaffId;
+              if (!existing.actorName && ref.actorName) existing.actorName = ref.actorName;
+            }
+          }
+        }
         const result = /* @__PURE__ */ new Map();
         const pending = /* @__PURE__ */ new Map();
         let cacheChanged = false;
@@ -26016,9 +26225,27 @@
             result.set(key, { ...ref, name: override, source: "override" });
             continue;
           }
+          const bundleById = validName(bundle.getById(ref.kind, ref.id));
+          if (bundleById) {
+            result.set(key, { ...ref, name: bundleById, source: "bundle" });
+            storePositive(ref, bundleById, "bundle");
+            cacheChanged = true;
+            continue;
+          }
+          if (ref.currentName) {
+            const bundleByName = validName(bundle.getByName(ref.currentName));
+            if (bundleByName) {
+              result.set(key, { ...ref, name: bundleByName, source: "bundle" });
+              storePositive(ref, bundleByName, "bundle");
+              cacheChanged = true;
+              continue;
+            }
+          }
           const cached = cache[key];
           if (cached && cached.expiresAt > now()) {
-            if (cached.name && cached.source !== "miss") result.set(key, { ...ref, name: cached.name, source: cached.source });
+            if (cached.name && cached.source !== "miss") {
+              result.set(key, { ...ref, name: cached.name, source: cached.source });
+            }
             continue;
           }
           if (cached) {
@@ -26028,28 +26255,31 @@
           pending.set(key, ref);
         }
         const failed = /* @__PURE__ */ new Set();
-        for (const [kind, group] of Object.entries(groupPending(pending))) {
-          if (!group.length) continue;
-          try {
-            const names = await wikidata.load(kind, group.map((ref) => ref.id));
-            for (const ref of group) {
-              const name = validName(names.get(ref.id));
-              if (!name) continue;
-              const key = entityKey(ref);
-              result.set(key, { ...ref, name, source: "wikidata" });
-              storePositive(ref, name, "wikidata");
-              pending.delete(key);
-              cacheChanged = true;
-            }
-          } catch {
-            for (const ref of group) failed.add(entityKey(ref));
-          }
-        }
-        if (context) {
+        if (pending.size > 0) {
           for (const [kind, group] of Object.entries(groupPending(pending))) {
             if (!group.length) continue;
             try {
-              const names = await bangumi.load(context, kind, group.map((ref) => ref.id));
+              const names = await wikidata.load(kind, group.map((ref) => ref.id));
+              for (const ref of group) {
+                const name = validName(names.get(ref.id));
+                if (!name) continue;
+                const key = entityKey(ref);
+                result.set(key, { ...ref, name, source: "wikidata" });
+                storePositive(ref, name, "wikidata");
+                pending.delete(key);
+                cacheChanged = true;
+              }
+            } catch {
+              for (const ref of group) failed.add(entityKey(ref));
+            }
+          }
+        }
+        if (context && pending.size > 0) {
+          for (const [kind, group] of Object.entries(groupPending(pending))) {
+            if (!group.length) continue;
+            try {
+              const ids = group.map((ref) => ref.id);
+              const names = await bangumi.load(context, kind, ids, group, actorResolver);
               for (const ref of group) {
                 const name = validName(names.get(ref.id));
                 if (!name) continue;
@@ -26061,6 +26291,17 @@
               }
             } catch {
               for (const ref of group) failed.add(entityKey(ref));
+            }
+          }
+        }
+        for (const [key, ref] of pending) {
+          if (ref.currentName && /[\p{Script=Han}]/u.test(ref.currentName)) {
+            const simplified = validName(ref.currentName);
+            if (simplified) {
+              result.set(key, { ...ref, name: simplified, source: "cjk" });
+              storePositive(ref, simplified, "cjk");
+              pending.delete(key);
+              cacheChanged = true;
             }
           }
         }
@@ -26159,14 +26400,39 @@
       }
     };
     const translate = (root, context, path = typeof location === "undefined" ? "/" : location.pathname) => {
+      var _a, _b, _c;
       currentContext = context;
       for (const link of linksWithin(root)) {
         const ref = extractEntityRef(new URL(link.href, "https://anilist.co").pathname);
         const target = ref ? findNameTarget(link) : void 0;
-        if (ref && target) queueCandidate({ target, ref, link });
+        if (ref && target) {
+          ref.currentName = (_a = target.textContent) == null ? void 0 : _a.trim();
+          if (ref.kind === "character" && typeof link.closest === "function") {
+            const card = link.closest('.role-card, [class*="role-card"], [class*="roleCard"], .character');
+            if (card && typeof card.querySelector === "function") {
+              const staffLink = card.querySelector('a[href*="/staff/"]');
+              if (staffLink && staffLink !== link) {
+                const staffRef = extractEntityRef(new URL(staffLink.href, "https://anilist.co").pathname);
+                if (staffRef && staffRef.kind === "staff") {
+                  ref.actorStaffId = staffRef.id;
+                  const staffTarget = findNameTarget(staffLink);
+                  if ((_b = staffTarget == null ? void 0 : staffTarget.textContent) == null ? void 0 : _b.trim()) {
+                    ref.actorName = staffTarget.textContent.trim();
+                  }
+                }
+              }
+            }
+          }
+          queueCandidate({ target, ref, link });
+        }
       }
       const pageRef = extractEntityRef(path);
-      if (pageRef) for (const heading of headingsWithin(root)) queueCandidate({ target: heading, ref: pageRef });
+      if (pageRef) {
+        for (const heading of headingsWithin(root)) {
+          pageRef.currentName = (_c = heading.textContent) == null ? void 0 : _c.trim();
+          queueCandidate({ target: heading, ref: pageRef });
+        }
+      }
     };
     async function flush() {
       scheduled = false;
@@ -26481,7 +26747,8 @@
     const tagService = createBangumiTagService();
     const descriptionService = createBangumiDescriptionService(service);
     const diagnostics = createDiagnostics(false);
-    const entityTranslator = createEntityNameTranslator(createEntityNameService());
+    const entityService = createEntityNameService();
+    const entityTranslator = createEntityNameTranslator(entityService);
     const chineseSearch = startChineseTitleSearch(service);
     const translateElement = (root, route = parseRoute(location.href)) => {
       translateRoot(root, route);
@@ -26517,6 +26784,10 @@
     requestAnimationFrame(() => syncPage());
     void service.refresh().catch(() => diagnostics.record("title data refresh failed")).then(() => {
       syncPage();
+    });
+    void entityService.loadBundle().catch(() => {
+    }).then((loaded) => {
+      if (loaded) syncPage();
     });
     if (typeof GM_registerMenuCommand === "function") {
       GM_registerMenuCommand("显示汉化诊断信息", () => console.info("[AniList zh-CN] unmatched candidates", [...diagnostics.misses]));

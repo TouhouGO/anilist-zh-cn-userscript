@@ -110,4 +110,47 @@ describe('Entity name service', () => {
 
     expect(calls).toBe(2);
   });
+
+  it('resolves character and staff from entity bundle by ID and name', async () => {
+    const service = createEntityNameService({
+      storage: memoryStorage(),
+      overrides: { character: {}, staff: {} },
+      bundle: {
+        isLoaded: () => true,
+        load: async () => true,
+        get: () => undefined,
+        getById: (kind, id) => (kind === 'character' && id === 378 ? '水无灯里' : kind === 'staff' && id === 95585 ? '叶月绘理乃' : undefined),
+        getByName: (name) => (name === 'Frieren' ? '芙莉莲' : undefined),
+        setBundle: () => {},
+      },
+      wikidata: { load: async () => new Map() },
+      bangumi: { load: async () => new Map() },
+    });
+
+    const result = await service.resolve([
+      { kind: 'character', id: 378 },
+      { kind: 'staff', id: 95585 },
+      { kind: 'character', id: 999, currentName: 'Frieren' },
+    ]);
+
+    expect(result.get('character:378')).toMatchObject({ name: '水无灯里', source: 'bundle' });
+    expect(result.get('staff:95585')).toMatchObject({ name: '叶月绘理乃', source: 'bundle' });
+    expect(result.get('character:999')).toMatchObject({ name: '芙莉莲', source: 'bundle' });
+  });
+
+  it('falls back to CJK conversion when name contains Kanji', async () => {
+    const service = createEntityNameService({
+      storage: memoryStorage(),
+      overrides: { character: {}, staff: {} },
+      wikidata: { load: async () => new Map() },
+      bangumi: { load: async () => new Map() },
+    });
+
+    const result = await service.resolve([
+      { kind: 'character', id: 888, currentName: '竈門炭治郎' },
+    ]);
+
+    expect(result.get('character:888')).toMatchObject({ name: '灶门炭治郎', source: 'cjk' });
+  });
 });
+
