@@ -57,13 +57,22 @@ export function translateTitles(root: Element, service: TitleService): number {
     const media = extractMediaId(path);
     if (!media) continue;
 
-    const titleTarget = link.querySelector<HTMLElement>('.title, .title-link, [class*="title"]')
-      || (link.children.length === 1 && !link.querySelector('img') ? (link.firstElementChild as HTMLElement) : undefined);
-    const text = [...link.childNodes].find(node => node.nodeType === 3 && node.textContent?.trim());
+    const statusCircle = link.querySelector<HTMLElement>('.list-status');
+    if (statusCircle && statusCircle.textContent) {
+      statusCircle.textContent = '';
+    }
+
+    const text = [...link.childNodes].find(node => node.nodeType === 3 && Boolean(node.textContent?.trim()));
+    const titleTarget = !text
+      ? (link.querySelector<HTMLElement>('.title, .title-link, [class*="title"]')
+        || (link.children.length === 1 && !link.querySelector('img, .list-status, .circle, .icon') && link.firstElementChild?.textContent?.trim()
+          ? (link.firstElementChild as HTMLElement)
+          : undefined))
+      : undefined;
 
     if (!isTitleLink(link, path)) {
       if (link.dataset.anilistZhCnTitle && link.dataset.anilistZhCnOriginal) {
-        const restoreTarget = titleTarget || text || link;
+        const restoreTarget = text || titleTarget || link;
         restoreTarget.textContent = link.dataset.anilistZhCnOriginal;
         delete link.dataset.anilistZhCnTitle;
         delete link.dataset.anilistZhCnOriginal;
@@ -72,7 +81,7 @@ export function translateTitles(root: Element, service: TitleService): number {
       continue;
     }
 
-    const currentText = (titleTarget?.textContent || text?.textContent || link.textContent || '').trim();
+    const currentText = (text?.textContent || titleTarget?.textContent || link.textContent || '').trim();
     if (!currentText) continue;
 
     const original = (link.dataset.anilistZhCnMediaId === String(media.id) && link.dataset.anilistZhCnOriginal)
@@ -83,7 +92,7 @@ export function translateTitles(root: Element, service: TitleService): number {
     if (title === original) continue;
     if (link.dataset.anilistZhCnMediaId === String(media.id) && currentText === title) continue;
 
-    const target = titleTarget || text || link;
+    const target = text || titleTarget || link;
     link.dataset.anilistZhCnMediaId = String(media.id);
     link.dataset.anilistZhCnTitle = '1';
     link.dataset.anilistZhCnOriginal = original;
