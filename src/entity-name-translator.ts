@@ -1,6 +1,7 @@
 import type { EntityMediaContext } from './bangumi-entity-source';
 import { entityKey, type EntityNameService } from './entity-name-service';
 import type { EntityRef } from './entity-name-types';
+import { runWithoutDomObservation } from './observer';
 
 type Scheduler = (callback: () => void) => void;
 type Candidate = { target: HTMLElement; ref: EntityRef; link?: HTMLAnchorElement; pendingToken: string };
@@ -72,17 +73,14 @@ function headingsWithin(root: Element): HTMLElement[] {
 }
 
 function findStaffInCard(characterLink: HTMLAnchorElement): HTMLAnchorElement | null {
-  let parent = characterLink.parentElement;
-  while (parent && parent !== document.body && parent.children.length <= 10) {
-    const staffLink = typeof parent.querySelector === 'function'
-      ? parent.querySelector<HTMLAnchorElement>('a[href*="/staff/"]')
-      : null;
-    if (staffLink && staffLink !== characterLink) {
-      return staffLink;
-    }
-    parent = parent.parentElement;
-  }
-  return null;
+  const card = typeof characterLink.closest === 'function'
+    ? characterLink.closest('.role-card, [class*="roleCard"], [class*="role-card"], [class*="role"]')
+    : null;
+  if (!card) return null;
+  const staffLink = typeof card.querySelector === 'function'
+    ? card.querySelector<HTMLAnchorElement>('a[href*="/staff/"]')
+    : null;
+  return staffLink && staffLink !== characterLink ? staffLink : null;
 }
 
 export function createEntityNameTranslator(
@@ -97,6 +95,7 @@ export function createEntityNameTranslator(
   const queueCandidate = (candidate: Omit<Candidate, 'pendingToken'>) => {
     if (!prepareTarget(candidate.target, candidate.ref)) return;
     const key = entityKey(candidate.ref);
+    if (candidate.target.dataset.anilistZhCnEntityDone === key) return;
     const pendingToken = `${generation}:${key}`;
     if (candidate.target.dataset.anilistZhCnEntityPending === pendingToken) return;
     const candidates = pending.get(key) || [];
@@ -167,19 +166,21 @@ export function createEntityNameTranslator(
     if (requestGeneration !== generation) return 0;
 
     let count = 0;
-    for (const [key, candidates] of batch) {
-      const resolved = names.get(key);
-      if (!resolved) continue;
-      for (const candidate of candidates) {
-        if (candidate.target.isConnected === false) continue;
-        if (candidate.target.dataset.anilistZhCnEntityKey !== key) continue;
-        if (candidate.link) {
-          const currentRef = extractEntityRef(new URL(candidate.link.href, 'https://anilist.co').pathname);
-          if (!sameRef(currentRef, candidate.ref)) continue;
+    runWithoutDomObservation(() => {
+      for (const [key, candidates] of batch) {
+        const resolved = names.get(key);
+        for (const candidate of candidates) {
+          if (candidate.target.isConnected === false) continue;
+          if (candidate.target.dataset.anilistZhCnEntityKey !== key) continue;
+          candidate.target.dataset.anilistZhCnEntityDone = key;
+          if (candidate.link) {
+            const currentRef = extractEntityRef(new URL(candidate.link.href, 'https://anilist.co').pathname);
+            if (!sameRef(currentRef, candidate.ref)) continue;
+          }
+          if (resolved && applyEntityName(candidate.target, candidate.ref, resolved.name)) count++;
         }
-        if (applyEntityName(candidate.target, candidate.ref, resolved.name)) count++;
       }
-    }
+    });
     return count;
   }
 

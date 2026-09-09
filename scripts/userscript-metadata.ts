@@ -1,4 +1,4 @@
-export const userscriptVersion = '0.1.23';
+export const userscriptVersion = '0.1.24';
 
 export const userscriptMetadata = `// ==UserScript==
 // @name         AniList 简体中文
@@ -6,6 +6,7 @@ export const userscriptMetadata = `// ==UserScript==
 // @version      ${userscriptVersion}
 // @description  将 AniList 界面、作品标题和人物名称显示为简体中文
 // @match        https://anilist.co/*
+// @noframes
 // @grant        GM_registerMenuCommand
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue

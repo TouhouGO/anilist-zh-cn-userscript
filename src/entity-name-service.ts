@@ -163,7 +163,7 @@ export function createEntityNameService(options: EntityNameServiceOptions = {}):
             result.set(key, { ...ref, name: cached.name, source: cached.source });
             continue;
           }
-          if (cached.source === 'miss' && !context && !ref.actorStaffId) {
+          if (cached.source === 'miss') {
             continue;
           }
         }

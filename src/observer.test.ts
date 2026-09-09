@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { startMediaHoverObserver } from './observer';
+import { runWithoutDomObservation, startDomObserver, startMediaHoverObserver } from './observer';
 
 describe('media hover observer', () => {
   it('keeps only the latest favourite when moving across covers', () => {
@@ -14,4 +14,15 @@ describe('media hover observer', () => {
     scheduled.forEach(callback => callback());
     expect(seen).toEqual(['/anime/6165/WHITE-ALBUM-2/', '/anime/6165/WHITE-ALBUM-2/', '/anime/6165/WHITE-ALBUM-2/']);
   });
+
+  it('runs actions with observation suppressed', () => {
+    let executed = false;
+    const result = runWithoutDomObservation(() => {
+      executed = true;
+      return 42;
+    });
+    expect(executed).toBe(true);
+    expect(result).toBe(42);
+  });
 });
+
