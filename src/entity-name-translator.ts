@@ -71,6 +71,20 @@ function headingsWithin(root: Element): HTMLElement[] {
   return [...new Set(headings)];
 }
 
+function findStaffInCard(characterLink: HTMLAnchorElement): HTMLAnchorElement | null {
+  let parent = characterLink.parentElement;
+  while (parent && parent !== document.body && parent.children.length <= 10) {
+    const staffLink = typeof parent.querySelector === 'function'
+      ? parent.querySelector<HTMLAnchorElement>('a[href*="/staff/"]')
+      : null;
+    if (staffLink && staffLink !== characterLink) {
+      return staffLink;
+    }
+    parent = parent.parentElement;
+  }
+  return null;
+}
+
 export function createEntityNameTranslator(
   service: Pick<EntityNameService, 'resolve'>,
   scheduler: Scheduler = queueMicrotask,
@@ -106,18 +120,15 @@ export function createEntityNameTranslator(
         ref.currentName = target.textContent?.trim();
 
         // If inside a role card with character and staff, pair them up
-        if (ref.kind === 'character' && typeof link.closest === 'function') {
-          const card = link.closest('.role-card, [class*="role-card"], [class*="roleCard"], .character');
-          if (card && typeof card.querySelector === 'function') {
-            const staffLink = card.querySelector<HTMLAnchorElement>('a[href*="/staff/"]');
-            if (staffLink && staffLink !== link) {
-              const staffRef = extractEntityRef(new URL(staffLink.href, 'https://anilist.co').pathname);
-              if (staffRef && staffRef.kind === 'staff') {
-                ref.actorStaffId = staffRef.id;
-                const staffTarget = findNameTarget(staffLink);
-                if (staffTarget?.textContent?.trim()) {
-                  ref.actorName = staffTarget.textContent.trim();
-                }
+        if (ref.kind === 'character') {
+          const staffLink = findStaffInCard(link);
+          if (staffLink) {
+            const staffRef = extractEntityRef(new URL(staffLink.href, 'https://anilist.co').pathname);
+            if (staffRef && staffRef.kind === 'staff') {
+              ref.actorStaffId = staffRef.id;
+              const staffTarget = findNameTarget(staffLink);
+              if (staffTarget?.textContent?.trim()) {
+                ref.actorName = staffTarget.textContent.trim();
               }
             }
           }

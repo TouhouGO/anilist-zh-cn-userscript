@@ -143,9 +143,7 @@ export function createBangumiEntitySource(requester: JsonRequester = requestJson
     const key = `${path}:${id}`;
     let p = detailCache.get(key);
     if (!p) {
-      p = requester(`https://api.bgm.tv/v0/${path}/${id}`)
-        .then(data => extractSimplifiedName(data))
-        .catch(() => undefined);
+      p = requester(`https://api.bgm.tv/v0/${path}/${id}`).then(data => extractSimplifiedName(data));
       detailCache.set(key, p);
     }
     return p;
@@ -256,7 +254,7 @@ export function createBangumiEntitySource(requester: JsonRequester = requestJson
           if (detailName) return [match.anilistId, detailName] as const;
 
           const directZh = toMainlandChinese(match.bgmName);
-          if (/[\p{Script=Han}]/u.test(directZh) && directZh !== match.bgmName) {
+          if (/[\p{Script=Han}]/u.test(directZh) && !/[\p{Script=Hiragana}\p{Script=Katakana}]/u.test(directZh)) {
             return [match.anilistId, directZh] as const;
           }
 
