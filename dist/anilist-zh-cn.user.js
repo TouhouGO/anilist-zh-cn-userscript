@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AniList 简体中文
 // @namespace    https://github.com/TouhouGO/anilist-zh-cn-userscript
-// @version      0.1.22
+// @version      0.1.23
 // @description  将 AniList 界面、作品标题和人物名称显示为简体中文
 // @match        https://anilist.co/*
 // @grant        GM_registerMenuCommand
@@ -1791,7 +1791,43 @@
     ["會", "会"],
     ["與", "与"],
     ["為", "为"],
-    ["臺", "台"]
+    ["臺", "台"],
+    // Common Japanese Shinjitai names to Mainland Simplified Chinese
+    ["絵", "绘"],
+    ["斎", "斋"],
+    ["齋", "斋"],
+    ["広", "广"],
+    ["沢", "泽"],
+    ["渋", "涩"],
+    ["辺", "边"],
+    ["邉", "边"],
+    ["浜", "滨"],
+    ["桜", "樱"],
+    ["島", "岛"],
+    ["黒", "黑"],
+    ["竜", "龙"],
+    ["徳", "德"],
+    ["塩", "盐"],
+    ["蔵", "藏"],
+    ["豊", "丰"],
+    ["実", "实"],
+    ["戸", "户"],
+    ["関", "关"],
+    ["総", "总"],
+    ["条", "条"],
+    ["歩", "步"],
+    ["塚", "冢"],
+    ["聡", "聪"],
+    ["純", "纯"],
+    ["橋", "桥"],
+    ["涼", "凉"],
+    ["葉", "叶"],
+    ["薫", "薰"],
+    ["滝", "瀑"],
+    ["栄", "荣"],
+    ["寿", "寿"],
+    ["仮", "假"],
+    ["仏", "佛"]
   ];
   function toMainlandChinese(value) {
     let result = converter(value);
@@ -25918,7 +25954,7 @@
       const key = `${path}:${id}`;
       let p2 = detailCache.get(key);
       if (!p2) {
-        p2 = requester(`https://api.bgm.tv/v0/${path}/${id}`).then((data) => extractSimplifiedName(data)).catch(() => void 0);
+        p2 = requester(`https://api.bgm.tv/v0/${path}/${id}`).then((data) => extractSimplifiedName(data));
         detailCache.set(key, p2);
       }
       return p2;
@@ -26010,7 +26046,7 @@
             const detailName = await fetchEntityDetailName(path, match.bangumiId);
             if (detailName) return [match.anilistId, detailName];
             const directZh = toMainlandChinese(match.bgmName);
-            if (/[\p{Script=Han}]/u.test(directZh) && directZh !== match.bgmName) {
+            if (/[\p{Script=Han}]/u.test(directZh) && !/[\p{Script=Hiragana}\p{Script=Katakana}]/u.test(directZh)) {
               return [match.anilistId, directZh];
             }
             return void 0;
@@ -26154,7 +26190,7 @@
       }
     };
   }
-  const CACHE_KEY = "anilist-zh-cn-entity-name-cache-v1";
+  const CACHE_KEY = "anilist-zh-cn-entity-name-cache-v2";
   const DAY = 864e5;
   const POSITIVE_TTL = 30 * DAY;
   const NEGATIVE_TTL = 7 * DAY;
@@ -26163,8 +26199,22 @@
   }
   function readCache(storage) {
     try {
-      const payload = JSON.parse(storage.getItem(CACHE_KEY) || "null");
-      if ((payload == null ? void 0 : payload.version) === 1 && payload.entries && typeof payload.entries === "object") return payload.entries;
+      const rawV2 = storage.getItem(CACHE_KEY);
+      if (rawV2) {
+        const payload = JSON.parse(rawV2);
+        if ((payload == null ? void 0 : payload.version) === 1 && payload.entries && typeof payload.entries === "object") return payload.entries;
+      }
+      const rawV1 = storage.getItem("anilist-zh-cn-entity-name-cache-v1");
+      if (rawV1) {
+        const payload = JSON.parse(rawV1);
+        if ((payload == null ? void 0 : payload.entries) && typeof payload.entries === "object") {
+          const migrated = {};
+          for (const [k2, v2] of Object.entries(payload.entries)) {
+            if (v2 && v2.name && v2.source !== "miss") migrated[k2] = v2;
+          }
+          return migrated;
+        }
+      }
     } catch {
     }
     return {};
@@ -26245,8 +26295,11 @@
           if (cached && cached.expiresAt > now()) {
             if (cached.name && cached.source !== "miss") {
               result.set(key, { ...ref, name: cached.name, source: cached.source });
+              continue;
             }
-            continue;
+            if (cached.source === "miss" && !context && !ref.actorStaffId) {
+              continue;
+            }
           }
           if (cached) {
             delete cache[key];
@@ -26376,6 +26429,17 @@
     headings.push(...Array.from(root.querySelectorAll("h1")));
     return [...new Set(headings)];
   }
+  function findStaffInCard(characterLink) {
+    let parent = characterLink.parentElement;
+    while (parent && parent !== document.body && parent.children.length <= 10) {
+      const staffLink = typeof parent.querySelector === "function" ? parent.querySelector('a[href*="/staff/"]') : null;
+      if (staffLink && staffLink !== characterLink) {
+        return staffLink;
+      }
+      parent = parent.parentElement;
+    }
+    return null;
+  }
   function createEntityNameTranslator(service, scheduler = queueMicrotask) {
     let generation = 0;
     let scheduled = false;
@@ -26407,18 +26471,15 @@
         const target = ref ? findNameTarget(link) : void 0;
         if (ref && target) {
           ref.currentName = (_a = target.textContent) == null ? void 0 : _a.trim();
-          if (ref.kind === "character" && typeof link.closest === "function") {
-            const card = link.closest('.role-card, [class*="role-card"], [class*="roleCard"], .character');
-            if (card && typeof card.querySelector === "function") {
-              const staffLink = card.querySelector('a[href*="/staff/"]');
-              if (staffLink && staffLink !== link) {
-                const staffRef = extractEntityRef(new URL(staffLink.href, "https://anilist.co").pathname);
-                if (staffRef && staffRef.kind === "staff") {
-                  ref.actorStaffId = staffRef.id;
-                  const staffTarget = findNameTarget(staffLink);
-                  if ((_b = staffTarget == null ? void 0 : staffTarget.textContent) == null ? void 0 : _b.trim()) {
-                    ref.actorName = staffTarget.textContent.trim();
-                  }
+          if (ref.kind === "character") {
+            const staffLink = findStaffInCard(link);
+            if (staffLink) {
+              const staffRef = extractEntityRef(new URL(staffLink.href, "https://anilist.co").pathname);
+              if (staffRef && staffRef.kind === "staff") {
+                ref.actorStaffId = staffRef.id;
+                const staffTarget = findNameTarget(staffLink);
+                if ((_b = staffTarget == null ? void 0 : staffTarget.textContent) == null ? void 0 : _b.trim()) {
+                  ref.actorName = staffTarget.textContent.trim();
                 }
               }
             }

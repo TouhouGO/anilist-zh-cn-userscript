@@ -3,7 +3,7 @@ import { replaceUserscriptMetadata, userscriptMetadata, userscriptVersion } from
 
 describe('userscript metadata', () => {
   it('defines the public install and update metadata in one canonical block', () => {
-    expect(userscriptVersion).toBe('0.1.21');
+    expect(userscriptVersion).toBe('0.1.23');
     expect(userscriptMetadata).toContain('// @namespace    https://github.com/TouhouGO/anilist-zh-cn-userscript');
     expect(userscriptMetadata).toContain('// @updateURL    https://raw.githubusercontent.com/TouhouGO/anilist-zh-cn-userscript/main/dist/anilist-zh-cn.user.js');
     expect(userscriptMetadata).toContain('// @downloadURL  https://raw.githubusercontent.com/TouhouGO/anilist-zh-cn-userscript/main/dist/anilist-zh-cn.user.js');
@@ -20,7 +20,7 @@ describe('userscript metadata', () => {
     const result = replaceUserscriptMetadata(old);
 
     expect(result.match(/\/\/ ==UserScript==/g)).toHaveLength(1);
-    expect(result).toContain('// @version      0.1.21');
+    expect(result).toContain(`// @version      ${userscriptVersion}`);
     expect(result).not.toContain('@version 0.1.0');
     expect(result.endsWith("console.log('ready');\n")).toBe(true);
   });

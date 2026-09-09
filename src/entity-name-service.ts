@@ -35,7 +35,7 @@ export type EntityNameService = {
   loadBundle(): Promise<boolean>;
 };
 
-const CACHE_KEY = 'anilist-zh-cn-entity-name-cache-v1';
+const CACHE_KEY = 'anilist-zh-cn-entity-name-cache-v2';
 const DAY = 86_400_000;
 const POSITIVE_TTL = 30 * DAY;
 const NEGATIVE_TTL = 7 * DAY;
@@ -46,8 +46,22 @@ export function entityKey(ref: EntityRef): string {
 
 function readCache(storage: StorageLike): Record<string, CacheEntry> {
   try {
-    const payload = JSON.parse(storage.getItem(CACHE_KEY) || 'null') as CachePayload | null;
-    if (payload?.version === 1 && payload.entries && typeof payload.entries === 'object') return payload.entries;
+    const rawV2 = storage.getItem(CACHE_KEY);
+    if (rawV2) {
+      const payload = JSON.parse(rawV2) as CachePayload | null;
+      if (payload?.version === 1 && payload.entries && typeof payload.entries === 'object') return payload.entries;
+    }
+    const rawV1 = storage.getItem('anilist-zh-cn-entity-name-cache-v1');
+    if (rawV1) {
+      const payload = JSON.parse(rawV1) as CachePayload | null;
+      if (payload?.entries && typeof payload.entries === 'object') {
+        const migrated: Record<string, CacheEntry> = {};
+        for (const [k, v] of Object.entries(payload.entries)) {
+          if (v && v.name && v.source !== 'miss') migrated[k] = v;
+        }
+        return migrated;
+      }
+    }
   } catch {
     /* ignore malformed local cache */
   }
@@ -147,8 +161,11 @@ export function createEntityNameService(options: EntityNameServiceOptions = {}):
         if (cached && cached.expiresAt > now()) {
           if (cached.name && cached.source !== 'miss') {
             result.set(key, { ...ref, name: cached.name, source: cached.source });
+            continue;
           }
-          continue;
+          if (cached.source === 'miss' && !context && !ref.actorStaffId) {
+            continue;
+          }
         }
         if (cached) {
           delete cache[key];
