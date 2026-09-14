@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-08T10:28:36.496Z",
+  "generatedAt": "2026-09-14T02:29:35.399Z",
   "sources": [
     "https://unpkg.com/bangumi-data@0.3/dist/data.json",
     "https://raw.githubusercontent.com/soruly/anilist-chinese/master/anilist-chinese.json",
@@ -55414,7 +55414,6 @@
       "id": 53774,
       "title": "小神拳",
       "native": "",
-      "bangumiId": 89332,
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -70603,6 +70602,14 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 101898,
+      "title": "通过扭蛋增加同伴 建立最强美少女军团",
+      "native": "",
+      "bangumiId": 247798,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 101902,
       "title": "エルフの教え子と先生",
       "native": "",
@@ -73594,6 +73601,14 @@
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
+    },
+    {
+      "id": 105523,
+      "title": "通过扭蛋增加同伴 建立最强美少女军团",
+      "native": "",
+      "bangumiId": 247793,
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 105562,
@@ -104558,6 +104573,12 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 204431,
+      "title": "怪兽 8 号 鸣海的平日",
+      "native": "",
+      "source": "anilist-chinese"
+    },
+    {
       "id": 204432,
       "title": "CHOPPER's",
       "native": "",
@@ -105168,6 +105189,12 @@
     {
       "id": 212617,
       "title": "田舎にはこれくらいしか娯楽がない",
+      "native": "",
+      "source": "anilist-chinese"
+    },
+    {
+      "id": 212667,
+      "title": "人付き合いが苦手な未亡人の雪女さんと呪いの指轮",
       "native": "",
       "source": "anilist-chinese"
     },
