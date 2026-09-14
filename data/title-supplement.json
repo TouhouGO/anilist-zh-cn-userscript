@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-14T02:29:35.399Z",
+  "generatedAt": "2026-09-14T02:34:30.370Z",
   "sources": [
     "https://unpkg.com/bangumi-data@0.3/dist/data.json",
     "https://raw.githubusercontent.com/soruly/anilist-chinese/master/anilist-chinese.json",
@@ -75203,7 +75203,7 @@
     },
     {
       "id": 107979,
-      "title": "转生后的我成了英雄爸爸和精灵妈妈的女儿",
+      "title": "无敌的我是英雄爸爸和精灵妈妈的女儿",
       "native": "",
       "source": "wikidata-manga",
       "rank": 3
