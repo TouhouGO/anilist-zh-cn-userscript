@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-14T09:42:57.098Z",
+  "generatedAt": "2026-09-21T09:47:20.157Z",
   "sources": [
     "https://unpkg.com/bangumi-data@0.3/dist/data.json",
     "https://raw.githubusercontent.com/soruly/anilist-chinese/master/anilist-chinese.json",
@@ -6262,13 +6262,6 @@
       "source": "anilist-chinese"
     },
     {
-      "id": 1130,
-      "title": "渥大利亚",
-      "native": "ウインダリア",
-      "bangumiId": 39292,
-      "source": "bangumi-data"
-    },
-    {
       "id": 1132,
       "title": "数码暴龙04无限地带",
       "native": "デジモンフロンティア",
@@ -6367,6 +6360,13 @@
       "title": "水晶国传说",
       "native": "レジェンド・オブ・クリスタニア",
       "bangumiId": 24058,
+      "source": "bangumi-data"
+    },
+    {
+      "id": 1152,
+      "title": "特搜战车队Dominion",
+      "native": "特捜戦車隊ドミニオン",
+      "bangumiId": 35799,
       "source": "bangumi-data"
     },
     {
@@ -8367,6 +8367,13 @@
       "title": "心跳回忆Only Love",
       "native": "ときめきメモリアル Only Love",
       "bangumiId": 1804,
+      "source": "bangumi-data"
+    },
+    {
+      "id": 1556,
+      "title": "鬼公子炎魔",
+      "native": "鬼公子炎魔",
+      "bangumiId": 7654,
       "source": "bangumi-data"
     },
     {
@@ -21134,6 +21141,13 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 5353,
+      "title": "变色龙",
+      "native": "カメレオン",
+      "bangumiId": 161771,
+      "source": "bangumi-data"
+    },
+    {
       "id": 5355,
       "title": "战国BASARA",
       "native": "戦国BASARA",
@@ -27011,9 +27025,10 @@
     },
     {
       "id": 9441,
-      "title": "梦色蛋糕师 SP Professional",
-      "native": "",
-      "source": "anilist-chinese"
+      "title": "梦色蛋糕师SP Professional",
+      "native": "夢色パティシエールSP プロフェッショナル",
+      "bangumiId": 425179,
+      "source": "bangumi-data"
     },
     {
       "id": 9442,
@@ -45419,7 +45434,6 @@
       "id": 30246,
       "title": "变身公主",
       "native": "",
-      "bangumiId": 9425,
       "source": "wikidata-manga",
       "rank": 3
     },
@@ -48282,6 +48296,13 @@
       "title": "奇奇的异想世界",
       "native": "",
       "bangumiId": 1511,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 31401,
+      "title": "间之楔",
+      "native": "",
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -66179,7 +66200,6 @@
       "id": 99093,
       "title": "猫咪日常",
       "native": "",
-      "bangumiId": 193282,
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -82507,6 +82527,13 @@
       "rank": 3
     },
     {
+      "id": 120966,
+      "title": "落乡文士传",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 1
+    },
+    {
       "id": 121026,
       "title": "电影 Healin' Good ♥ 光之美少女 梦想的小镇心动不已！GoGo！大变身！！",
       "native": "映画 ヒーリングっど♥プリキュア ゆめのまちでキュン！っとGoGo！大変身！！",
@@ -95080,8 +95107,9 @@
     {
       "id": 160803,
       "title": "魔法少女育成计划 restart",
-      "native": "",
-      "source": "anilist-chinese"
+      "native": "魔法少女育成計画restart",
+      "bangumiId": 418229,
+      "source": "bangumi-data"
     },
     {
       "id": 160829,
@@ -97383,8 +97411,9 @@
     {
       "id": 169581,
       "title": "魔法★探险家",
-      "native": "",
-      "source": "anilist-chinese"
+      "native": "マジカル★エクスプローラー",
+      "bangumiId": 456078,
+      "source": "bangumi-data"
     },
     {
       "id": 169582,
@@ -99249,8 +99278,9 @@
     {
       "id": 176314,
       "title": "佐佐木与文鸟小哔 第二季",
-      "native": "",
-      "source": "anilist-chinese"
+      "native": "佐々木とピーちゃん Season2",
+      "bangumiId": 486456,
+      "source": "bangumi-data"
     },
     {
       "id": 176319,
@@ -99950,8 +99980,9 @@
     {
       "id": 178083,
       "title": "东京复仇者 三天战争篇",
-      "native": "",
-      "source": "anilist-chinese"
+      "native": "東京リベンジャーズ 三天戦争編",
+      "bangumiId": 499474,
+      "source": "bangumi-data"
     },
     {
       "id": 178090,
@@ -100184,9 +100215,10 @@
     },
     {
       "id": 178868,
-      "title": "魔法骑士雷阿斯 (2026)",
-      "native": "",
-      "source": "anilist-chinese"
+      "title": "魔法骑士雷阿斯",
+      "native": "魔法騎士レイアース(2026)",
+      "bangumiId": 502123,
+      "source": "bangumi-data"
     },
     {
       "id": 178869,
@@ -102264,9 +102296,10 @@
     },
     {
       "id": 186742,
-      "title": "暗部共生少女",
-      "native": "",
-      "source": "anilist-chinese"
+      "title": "某暗部的少女共栖",
+      "native": "とある暗部の少女共棲",
+      "bangumiId": 537738,
+      "source": "bangumi-data"
     },
     {
       "id": 186744,
@@ -102817,9 +102850,10 @@
     },
     {
       "id": 189123,
-      "title": "青春之箱 第二季",
-      "native": "",
-      "source": "anilist-chinese"
+      "title": "青之箱 第二季",
+      "native": "アオのハコ Season2",
+      "bangumiId": 548156,
+      "source": "bangumi-data"
     },
     {
       "id": 189137,
@@ -103036,6 +103070,13 @@
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
+    },
+    {
+      "id": 191656,
+      "title": "学生会也有洞！",
+      "native": "生徒会にも穴はある！",
+      "bangumiId": 554779,
+      "source": "bangumi-data"
     },
     {
       "id": 191689,
@@ -103517,8 +103558,9 @@
     {
       "id": 195571,
       "title": "朱红的假面",
-      "native": "",
-      "source": "anilist-chinese"
+      "native": "朱色の仮面",
+      "bangumiId": 568525,
+      "source": "bangumi-data"
     },
     {
       "id": 195600,
@@ -103530,8 +103572,9 @@
     {
       "id": 195604,
       "title": "黑色五叶草 第二季",
-      "native": "",
-      "source": "anilist-chinese"
+      "native": "ブラッククローバー 2nd Season",
+      "bangumiId": 567896,
+      "source": "bangumi-data"
     },
     {
       "id": 195734,
@@ -103717,9 +103760,10 @@
     },
     {
       "id": 197474,
-      "title": "新剧场版 银魂－吉原大炎上－",
-      "native": "",
-      "source": "anilist-chinese"
+      "title": "新剧场版 银魂 -吉原大炎上-",
+      "native": "新劇場版 銀魂 -吉原大炎上-",
+      "bangumiId": 578766,
+      "source": "bangumi-data"
     },
     {
       "id": 197543,
@@ -103996,6 +104040,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 198931,
+      "title": "神魔大帝",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 198939,
       "title": "转生成自动贩卖机的我今天也在迷宫徘徊 第三季",
       "native": "自動販売機に生まれ変わった俺は迷宮を彷徨う 3rd season",
@@ -104019,8 +104070,9 @@
     {
       "id": 199007,
       "title": "僵尸搜寻中",
-      "native": "",
-      "source": "anilist-chinese"
+      "native": "#ゾンビさがしてます",
+      "bangumiId": 586255,
+      "source": "bangumi-data"
     },
     {
       "id": 199009,
@@ -104150,9 +104202,10 @@
     },
     {
       "id": 199594,
-      "title": "铁道行！meet with 铁道娘",
-      "native": "",
-      "source": "anilist-chinese"
+      "title": "铁旅！邂逅铁道少女",
+      "native": "てつりょー！ meet with 鉄道むすめ",
+      "bangumiId": 590553,
+      "source": "bangumi-data"
     },
     {
       "id": 199635,
@@ -104196,9 +104249,10 @@
     },
     {
       "id": 200294,
-      "title": "超巡！超条先辈",
-      "native": "",
-      "source": "anilist-chinese"
+      "title": "超巡！超条前辈",
+      "native": "超巡！超条先輩",
+      "bangumiId": 593565,
+      "source": "bangumi-data"
     },
     {
       "id": 200432,
@@ -104721,8 +104775,9 @@
     {
       "id": 205909,
       "title": "萤火虫的出嫁",
-      "native": "",
-      "source": "anilist-chinese"
+      "native": "ホタルの嫁入り",
+      "bangumiId": 621108,
+      "source": "bangumi-data"
     },
     {
       "id": 206003,
@@ -104871,9 +104926,10 @@
     },
     {
       "id": 206949,
-      "title": "乱世千金倪亚．利斯顿 转生为娇弱千金的弑神武人华丽无双录",
-      "native": "",
-      "source": "anilist-chinese"
+      "title": "乱世千金倪亚‧利斯顿转生为娇弱千金的弑神武人华丽无双录",
+      "native": "凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録",
+      "bangumiId": 624085,
+      "source": "bangumi-data"
     },
     {
       "id": 206950,
@@ -104951,9 +105007,10 @@
     },
     {
       "id": 208025,
-      "title": "与暗黑召唤师秘密恋爱中",
-      "native": "",
-      "source": "anilist-chinese"
+      "title": "黑暗召唤师在地下恋爱中",
+      "native": "ダークサモナーとデキている",
+      "bangumiId": 630160,
+      "source": "bangumi-data"
     },
     {
       "id": 208044,
@@ -105027,15 +105084,23 @@
     },
     {
       "id": 209219,
-      "title": "转生哥布林有什么问题吗？",
-      "native": "",
-      "source": "anilist-chinese"
+      "title": "转生成哥布林但有疑问吗？",
+      "native": "転生ゴブリンだけど質問ある？",
+      "bangumiId": 634587,
+      "source": "bangumi-data"
     },
     {
       "id": 209499,
       "title": "TANK CHAIR -战车椅子-",
       "native": "",
       "source": "anilist-chinese"
+    },
+    {
+      "id": 209502,
+      "title": "冷淡的佐藤同学只对我撒娇",
+      "native": "塩対応の佐藤さんが俺にだけ甘い",
+      "bangumiId": 634708,
+      "source": "bangumi-data"
     },
     {
       "id": 209504,
@@ -105046,9 +105111,10 @@
     },
     {
       "id": 209562,
-      "title": "至高之力 Vertex Force",
-      "native": "",
-      "source": "anilist-chinese"
+      "title": "バーテックスフォース",
+      "native": "バーテックスフォース",
+      "bangumiId": 636512,
+      "source": "bangumi-data"
     },
     {
       "id": 209669,
@@ -105181,8 +105247,34 @@
       "source": "bangumi-data"
     },
     {
+      "id": 211877,
+      "title": "女友的朋友",
+      "native": "彼女の友達",
+      "bangumiId": 647220,
+      "source": "bangumi-data"
+    },
+    {
       "id": 212272,
       "title": "デコ×デコ THE ANIMATION",
+      "native": "",
+      "source": "anilist-chinese"
+    },
+    {
+      "id": 212308,
+      "title": "パンの赤ちゃん",
+      "native": "パンの赤ちゃん",
+      "bangumiId": 651872,
+      "source": "bangumi-data"
+    },
+    {
+      "id": 212574,
+      "title": "ピュアホリック ～纯洁乙女と婚姻カンケイ！？～ The Animation",
+      "native": "",
+      "source": "anilist-chinese"
+    },
+    {
+      "id": 212575,
+      "title": "サレ妻は夺われたい",
       "native": "",
       "source": "anilist-chinese"
     },
@@ -105257,6 +105349,12 @@
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
+    },
+    {
+      "id": 213733,
+      "title": "彼女催眠",
+      "native": "",
+      "source": "anilist-chinese"
     },
     {
       "id": 213750,
