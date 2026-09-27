@@ -28,6 +28,9 @@ jobs:
       - name: Fetch and merge title sources (Bangumi, soruly, Wikidata Manga)
         run: node scripts/merge-title-sources.mjs
 
+      - name: Export localization bundle assets
+        run: npm run export-bundle
+
       - name: Run verification checks & build
         run: npm run check
 
