@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   checkBundleContract,
   getCodePointCount,
+  parseIntLikeKotlin,
   validateStaffCharacters,
   validateT2sCharMap,
   validateTags,
@@ -127,6 +128,80 @@ describe('check-bundle-contract', () => {
       expect(validateTags({})).toContain('tags_zh_cn.json must not be empty');
       expect(validateStaffCharacters({})).toContain('staff_characters_zh_cn.json must not be empty');
       expect(validateT2sCharMap({})).toContain('t2s_char_map.json must not be empty');
+    });
+  });
+
+  describe('Kotlin toIntOrNull semantic equivalence', () => {
+    describe('parseIntLikeKotlin helper', () => {
+      it('correctly parses decimal strings with leading zeros or explicit signs', () => {
+        expect(parseIntLikeKotlin('007')).toBe(7);
+        expect(parseIntLikeKotlin('+5')).toBe(5);
+        expect(parseIntLikeKotlin('-5')).toBe(-5);
+        expect(parseIntLikeKotlin('0')).toBe(0);
+      });
+
+      it('enforces 32-bit signed integer limits', () => {
+        expect(parseIntLikeKotlin('2147483647')).toBe(2147483647);
+        expect(parseIntLikeKotlin('2147483648')).toBeNull();
+        expect(parseIntLikeKotlin('-2147483648')).toBe(-2147483648);
+        expect(parseIntLikeKotlin('-2147483649')).toBeNull();
+      });
+
+      it('rejects invalid number formats', () => {
+        expect(parseIntLikeKotlin('abc')).toBeNull();
+        expect(parseIntLikeKotlin('1e5')).toBeNull();
+        expect(parseIntLikeKotlin('0x10')).toBeNull();
+        expect(parseIntLikeKotlin(' 5 ')).toBeNull();
+        expect(parseIntLikeKotlin('')).toBeNull();
+      });
+    });
+
+    describe('Bangumi ID validation matching Kotlin', () => {
+      it('accepts Bangumi ID as "007" (leading zeros allowed in Kotlin)', () => {
+        expect(validateTitles({ 1: '标题|007' })).toEqual([]);
+      });
+
+      it('accepts Bangumi ID as "+5" (explicit plus sign allowed in Kotlin)', () => {
+        expect(validateTitles({ 1: '标题|+5' })).toEqual([]);
+      });
+
+      it('rejects Bangumi ID as "0" (non-positive in Kotlin)', () => {
+        expect(validateTitles({ 1: '标题|0' })).toContain(
+          'titles_zh_cn.json contains invalid Bangumi ID after pipe: 标题|0'
+        );
+      });
+
+      it('rejects Bangumi ID as "abc" (unparseable in Kotlin)', () => {
+        expect(validateTitles({ 1: '标题|abc' })).toContain(
+          'titles_zh_cn.json contains invalid Bangumi ID after pipe: 标题|abc'
+        );
+      });
+    });
+
+    describe('numeric key validation matching Kotlin', () => {
+      it('accepts numeric key as "007"', () => {
+        expect(validateTitles({ '007': '标题' })).toEqual([]);
+      });
+
+      it('accepts numeric key as "+5"', () => {
+        expect(validateTitles({ '+5': '标题' })).toEqual([]);
+      });
+
+      it('rejects numeric key as "0"', () => {
+        expect(validateTitles({ 0: '标题' })).toContain(
+          'titles_zh_cn.json numeric key must parse to positive Int: 0'
+        );
+      });
+
+      it('rejects numeric key as "2147483648" (overflows Int32)', () => {
+        expect(validateTitles({ '2147483648': '标题' })).toContain(
+          'titles_zh_cn.json numeric key must parse to positive Int: 2147483648'
+        );
+      });
+
+      it('accepts numeric key as "2147483647" (Int32 max)', () => {
+        expect(validateTitles({ '2147483647': '标题' })).toEqual([]);
+      });
     });
   });
 });

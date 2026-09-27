@@ -20,7 +20,32 @@ export function getCodePointCount(str) {
 const CONTROL_CHAR_REGEX = /[\u0000-\u001F\u007F-\u009F]/;
 const INTEGER_REGEX = /^[-+]?\d+$/;
 const STAFF_KEY_REGEX = /^(person_\d+|char_\d+|name_[a-z0-9_]+|id_\d+)$/;
+const MIN_INT_32 = -2147483648;
 const MAX_INT_32 = 2147483647;
+
+/**
+ * Simulates Kotlin String.toIntOrNull() semantics.
+ *
+ * NOTE: Numeric key and Bangumi ID validation deliberately mirror Kotlin String.toIntOrNull()
+ * semantics (32-bit signed integer range). Simple regex like /^\d+$/ must NOT be used because
+ * Kotlin accepts valid decimal integer forms such as "007" (leading zeros) and "+5" (explicit plus sign),
+ * which would otherwise cause false positive validation failures.
+ * Returns the parsed 32-bit integer, or null if unparseable or out of range [-2147483648, 2147483647].
+ */
+export function parseIntLikeKotlin(str) {
+  if (typeof str !== 'string' || !INTEGER_REGEX.test(str)) {
+    return null;
+  }
+  try {
+    const b = BigInt(str);
+    if (b < BigInt(MIN_INT_32) || b > BigInt(MAX_INT_32)) {
+      return null;
+    }
+    return Number(b);
+  } catch {
+    return null;
+  }
+}
 
 export function validateTitles(titles) {
   const errors = [];
@@ -54,8 +79,8 @@ export function validateTitles(titles) {
 
     const isNumericKey = INTEGER_REGEX.test(key);
     if (isNumericKey) {
-      const num = Number(key);
-      if (!Number.isInteger(num) || num <= 0 || num > MAX_INT_32) {
+      const numericId = parseIntLikeKotlin(key);
+      if (numericId === null || numericId <= 0) {
         errors.push(`titles_zh_cn.json numeric key must parse to positive Int: ${key}`);
       }
     }
@@ -66,8 +91,8 @@ export function validateTitles(titles) {
       }
       const lastPipe = value.lastIndexOf('|');
       const bgmIdStr = value.slice(lastPipe + 1);
-      const bgmId = Number(bgmIdStr);
-      if (!/^\d+$/.test(bgmIdStr) || !Number.isInteger(bgmId) || bgmId <= 0 || bgmId > MAX_INT_32) {
+      const bgmId = parseIntLikeKotlin(bgmIdStr);
+      if (bgmId === null || bgmId <= 0) {
         errors.push(`titles_zh_cn.json contains invalid Bangumi ID after pipe: ${value}`);
       }
     }
