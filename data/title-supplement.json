@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-02T12:09:24.415Z",
+  "generatedAt": "2026-11-16T12:32:42.225Z",
   "sources": [
     "https://unpkg.com/bangumi-data@0.3/dist/data.json",
     "https://raw.githubusercontent.com/soruly/anilist-chinese/master/anilist-chinese.json",
@@ -47044,7 +47044,7 @@
       "native": "",
       "bangumiId": 75179,
       "source": "wikidata-manga",
-      "rank": 2
+      "rank": 3
     },
     {
       "id": 30779,
@@ -47254,7 +47254,7 @@
     },
     {
       "id": 30877,
-      "title": "花样男子",
+      "title": "流星花园",
       "native": "",
       "bangumiId": 44328,
       "source": "wikidata-manga",
@@ -47283,6 +47283,14 @@
       "bangumiId": 30167,
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 30892,
+      "title": "依恋你的指温",
+      "native": "",
+      "bangumiId": 29735,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 30893,
@@ -48733,6 +48741,13 @@
       "rank": 3
     },
     {
+      "id": 31589,
+      "title": "To Heart",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 31595,
       "title": "爱的维他命",
       "native": "",
@@ -48931,6 +48946,14 @@
       "rank": 2
     },
     {
+      "id": 31718,
+      "title": "STAR BLACKS",
+      "native": "",
+      "bangumiId": 91552,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 31721,
       "title": "隐王",
       "native": "",
@@ -48951,6 +48974,14 @@
       "native": "",
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 31730,
+      "title": "沙滩之星",
+      "native": "",
+      "bangumiId": 180559,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 31733,
@@ -49244,6 +49275,14 @@
       "rank": 2
     },
     {
+      "id": 32154,
+      "title": "闪灵怪医",
+      "native": "",
+      "bangumiId": 174438,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 32156,
       "title": "辉夜姬",
       "native": "",
@@ -49428,6 +49467,14 @@
       "rank": 2
     },
     {
+      "id": 32976,
+      "title": "17岁青春遁走",
+      "native": "",
+      "bangumiId": 25774,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 32998,
       "title": "教科书没教的事",
       "native": "",
@@ -49580,6 +49627,14 @@
       "rank": 3
     },
     {
+      "id": 33083,
+      "title": "凉宫春日系列",
+      "native": "",
+      "bangumiId": 505,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 33084,
       "title": "搞怪吹笛手",
       "native": "",
@@ -49593,6 +49648,14 @@
       "bangumiId": 170385,
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 33098,
+      "title": "漂亮怪兽",
+      "native": "",
+      "bangumiId": 49246,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 33102,
@@ -49629,6 +49692,14 @@
       "id": 33116,
       "title": "黑鸟恋人~BLACK BIRD~",
       "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 33141,
+      "title": "羔羊的眼泪",
+      "native": "",
+      "bangumiId": 204601,
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -49928,6 +49999,14 @@
       "bangumiId": 90574,
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 33500,
+      "title": "新世纪福音战士：碇真嗣育成计划 (漫画)",
+      "native": "",
+      "bangumiId": 6151,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 33501,
@@ -50894,6 +50973,13 @@
       "rank": 2
     },
     {
+      "id": 35050,
+      "title": "惊异死亡线",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 35072,
       "title": "咎狗之血",
       "native": "",
@@ -51012,6 +51098,14 @@
       "bangumiId": 74654,
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 35418,
+      "title": "超时空要塞7 Trash",
+      "native": "",
+      "bangumiId": 38621,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 35440,
@@ -51193,6 +51287,14 @@
       "rank": 3
     },
     {
+      "id": 35701,
+      "title": "退魔启示录",
+      "native": "",
+      "bangumiId": 159458,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 35711,
       "title": "火线先锋大吾",
       "native": "",
@@ -51362,6 +51464,13 @@
       "native": "",
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 36236,
+      "title": "爱丽丝四重奏",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 36292,
@@ -51707,6 +51816,14 @@
       "rank": 2
     },
     {
+      "id": 37558,
+      "title": "蜥蜴女孩",
+      "native": "",
+      "bangumiId": 158446,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 37570,
       "title": "神奇宝贝",
       "native": "",
@@ -51938,6 +52055,14 @@
       "rank": 2
     },
     {
+      "id": 38041,
+      "title": "我要你的爱",
+      "native": "",
+      "bangumiId": 236885,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 38070,
       "title": "战国妖狐",
       "native": "",
@@ -51993,6 +52118,14 @@
       "rank": 3
     },
     {
+      "id": 38168,
+      "title": "海街日记",
+      "native": "",
+      "bangumiId": 39736,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 38241,
       "title": "我们俩的田村同学",
       "native": "",
@@ -52031,6 +52164,13 @@
       "rank": 3
     },
     {
+      "id": 38391,
+      "title": "双星有约",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 38398,
       "title": "RIDEBACK",
       "native": "",
@@ -52050,6 +52190,22 @@
       "title": "死亡预告",
       "native": "",
       "bangumiId": 78150,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 38455,
+      "title": "银盘万花筒",
+      "native": "",
+      "bangumiId": 315831,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 38477,
+      "title": "小孩的小孩",
+      "native": "",
+      "bangumiId": 107602,
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -52151,6 +52307,13 @@
       "title": "吸血姬夕维",
       "native": "",
       "bangumiId": 59032,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 38714,
+      "title": "撒旦之炎魔 克尔柏洛斯",
+      "native": "",
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -52257,12 +52420,28 @@
       "rank": 3
     },
     {
+      "id": 38977,
+      "title": "精灵特派员",
+      "native": "",
+      "bangumiId": 117830,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 39072,
       "title": "乃木坂春香的秘密",
       "native": "",
       "bangumiId": 22697,
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 39074,
+      "title": "手天童子",
+      "native": "",
+      "bangumiId": 116713,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 39084,
@@ -52289,7 +52468,7 @@
     },
     {
       "id": 39142,
-      "title": "机动战士钢弹 C.D.A. 年轻彗星的肖像",
+      "title": "机动战士高达 C.D.A. 年轻彗星的肖像",
       "native": "",
       "bangumiId": 1033,
       "source": "wikidata-manga",
@@ -52372,7 +52551,7 @@
       "native": "",
       "bangumiId": 75179,
       "source": "wikidata-manga",
-      "rank": 2
+      "rank": 3
     },
     {
       "id": 39711,
@@ -52615,6 +52794,13 @@
       "title": "壹",
       "native": "",
       "bangumiId": 92234,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 40461,
+      "title": "开心快乐幸运草",
+      "native": "",
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -53017,6 +53203,14 @@
       "rank": 2
     },
     {
+      "id": 41353,
+      "title": "正义大哥大",
+      "native": "",
+      "bangumiId": 15944,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 41378,
       "title": "不思议少年",
       "native": "",
@@ -53046,6 +53240,13 @@
       "bangumiId": 29529,
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 41419,
+      "title": "冰履革命 Ice Revolution",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 41425,
@@ -53432,6 +53633,13 @@
       "rank": 2
     },
     {
+      "id": 42377,
+      "title": "住家男人妹仔强",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 42400,
       "title": "GENTE～リストランテの日々～",
       "native": "",
@@ -53600,6 +53808,14 @@
       "rank": 3
     },
     {
+      "id": 42829,
+      "title": "为你歌唱",
+      "native": "",
+      "bangumiId": 39568,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 42854,
       "title": "魔法禁书目录",
       "native": "",
@@ -53716,6 +53932,21 @@
       "bangumiId": 37777,
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 43279,
+      "title": "斗球少女",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 43283,
+      "title": "猿飞小忍者",
+      "native": "",
+      "bangumiId": 172555,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 43293,
@@ -54023,6 +54254,13 @@
       "rank": 2
     },
     {
+      "id": 44202,
+      "title": "柴王",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 44231,
       "title": "热拳本色",
       "native": "",
@@ -54174,8 +54412,22 @@
       "rank": 2
     },
     {
+      "id": 44764,
+      "title": "时光行者零",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 44790,
       "title": "魔奇少年",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 44864,
+      "title": "シニカル·ヒステリー·アワー",
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
@@ -54267,6 +54519,13 @@
       "rank": 3
     },
     {
+      "id": 45084,
+      "title": "我们都是超能力者",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 45088,
       "title": "风云爆弹娘",
       "native": "",
@@ -54343,6 +54602,13 @@
     {
       "id": 45498,
       "title": "少年啊！要光耀耽美",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 45523,
+      "title": "ティンクルセイバーNOVA",
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
@@ -55056,6 +55322,14 @@
       "rank": 3
     },
     {
+      "id": 48139,
+      "title": "Nyoron 小鹤屋学姊",
+      "native": "",
+      "bangumiId": 197547,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 48143,
       "title": "机动战士GUNDAM 基连暗杀计划",
       "native": "",
@@ -55194,6 +55468,13 @@
       "rank": 2
     },
     {
+      "id": 48765,
+      "title": "我的幸运数字13",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 48774,
       "title": "学校妖怪纪行",
       "native": "",
@@ -55223,6 +55504,13 @@
       "rank": 3
     },
     {
+      "id": 48924,
+      "title": "新科幻少年",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 48926,
       "title": "最后大魔王",
       "native": "",
@@ -55235,6 +55523,14 @@
       "title": "学园无聊男",
       "native": "",
       "bangumiId": 68613,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 49073,
+      "title": "罗宾与兔吉",
+      "native": "",
+      "bangumiId": 93507,
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -55327,6 +55623,14 @@
       "id": 49370,
       "title": "骨之音",
       "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 49393,
+      "title": "监督不行届",
+      "native": "",
+      "bangumiId": 69229,
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -55429,6 +55733,14 @@
       "title": "大阪哈姆雷特",
       "native": "",
       "bangumiId": 69525,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 49790,
+      "title": "深海鱼男",
+      "native": "",
+      "bangumiId": 47502,
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -55655,6 +55967,14 @@
       "rank": 2
     },
     {
+      "id": 50633,
+      "title": "沉睡的夏娃",
+      "native": "",
+      "bangumiId": 117884,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 50647,
       "title": "罗马浴场",
       "native": "",
@@ -55829,6 +56149,14 @@
       "rank": 2
     },
     {
+      "id": 51371,
+      "title": "壳中少女",
+      "native": "",
+      "bangumiId": 45743,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 51389,
       "title": "百姓贵族",
       "native": "",
@@ -55855,6 +56183,14 @@
       "id": 51419,
       "title": "偷窥孔",
       "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 51422,
+      "title": "外星来的魔女",
+      "native": "",
+      "bangumiId": 140450,
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -56094,6 +56430,14 @@
       "rank": 2
     },
     {
+      "id": 52290,
+      "title": "萝莉姊妹花",
+      "native": "",
+      "bangumiId": 56734,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 52305,
       "title": "人间昆虫记",
       "native": "",
@@ -56130,6 +56474,13 @@
       "native": "",
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 52506,
+      "title": "13号炼金石",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 52520,
@@ -56173,6 +56524,13 @@
       "title": "足球之翼",
       "native": "",
       "bangumiId": 56460,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 52870,
+      "title": "Six Half",
+      "native": "",
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -56389,6 +56747,13 @@
       "rank": 2
     },
     {
+      "id": 53443,
+      "title": "元祖！抓狂一族",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 53463,
       "title": "乙女帝国",
       "native": "",
@@ -56413,6 +56778,13 @@
     {
       "id": 53485,
       "title": "袭来！美少女邪神",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
+      "id": 53529,
+      "title": "请勿转台!",
       "native": "",
       "source": "wikidata-manga",
       "rank": 3
@@ -56860,6 +57232,14 @@
       "rank": 2
     },
     {
+      "id": 54965,
+      "title": "SARU",
+      "native": "",
+      "bangumiId": 70813,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 54967,
       "title": "战国ARMORS",
       "native": "",
@@ -56909,6 +57289,14 @@
       "title": "斩·赤红之瞳！",
       "native": "",
       "bangumiId": 30582,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
+      "id": 55165,
+      "title": "钢之女",
+      "native": "",
+      "bangumiId": 276004,
       "source": "wikidata-manga",
       "rank": 3
     },
@@ -57081,12 +57469,33 @@
       "rank": 3
     },
     {
+      "id": 55880,
+      "title": "DD北斗之拳",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 55906,
       "title": "姊姊结婚吧",
       "native": "",
       "bangumiId": 28279,
       "source": "wikidata-manga",
       "rank": 2
+    },
+    {
+      "id": 55925,
+      "title": "Yes! 光之美少女5",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
+      "id": 55926,
+      "title": "Yes! 光之美少女5 GoGo!",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 55952,
@@ -57491,6 +57900,13 @@
       "rank": 3
     },
     {
+      "id": 58683,
+      "title": "魔印传说",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 58697,
       "title": "至高指令",
       "native": "",
@@ -57666,6 +58082,14 @@
       "rank": 2
     },
     {
+      "id": 60755,
+      "title": "Klan",
+      "native": "",
+      "bangumiId": 80462,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 60779,
       "title": "铁乐诗歌",
       "native": "",
@@ -57815,6 +58239,14 @@
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
+    },
+    {
+      "id": 62831,
+      "title": "棺姬嘉依卡",
+      "native": "",
+      "bangumiId": 35521,
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 62833,
@@ -58441,6 +58873,14 @@
       "title": "Spirit Circle -魂环-",
       "native": "",
       "bangumiId": 41437,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 68105,
+      "title": "牵牛花与加瀬同学",
+      "native": "",
+      "bangumiId": 122272,
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -59325,6 +59765,13 @@
       "rank": 2
     },
     {
+      "id": 78271,
+      "title": "妖怪公寓的优雅日常",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 78347,
       "title": "舞动青春",
       "native": "",
@@ -59788,6 +60235,13 @@
       "rank": 2
     },
     {
+      "id": 84123,
+      "title": "ガンダムEXA",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 84125,
       "title": "大奥之樱",
       "native": "",
@@ -60231,6 +60685,14 @@
       "rank": 3
     },
     {
+      "id": 85313,
+      "title": "急性子伯爵与时间小偷",
+      "native": "",
+      "bangumiId": 89720,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 85316,
       "title": "DEAD DEAD DEMON'S DEDEDEDE DESTRUCTION 恶魔的破坏",
       "native": "",
@@ -60318,6 +60780,14 @@
       "title": "时光沙漏fragtime",
       "native": "",
       "bangumiId": 84003,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 85404,
+      "title": "思春期苦涩的变化",
+      "native": "",
+      "bangumiId": 97810,
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -60860,6 +61330,13 @@
       "title": "神印王座",
       "native": "",
       "bangumiId": 217581,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
+      "id": 85986,
+      "title": "仙逆",
+      "native": "",
       "source": "wikidata-manga",
       "rank": 3
     },
@@ -61409,12 +61886,28 @@
       "rank": 3
     },
     {
+      "id": 86443,
+      "title": "通往王国之路",
+      "native": "",
+      "bangumiId": 327823,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 86449,
       "title": "在异世界开拓第二人生",
       "native": "",
       "bangumiId": 207807,
       "source": "wikidata-manga",
       "rank": 2
+    },
+    {
+      "id": 86452,
+      "title": "轮回的花瓣",
+      "native": "",
+      "bangumiId": 107598,
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 86459,
@@ -62115,6 +62608,13 @@
       "title": "紫电改的真纪",
       "native": "",
       "bangumiId": 193353,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 87089,
+      "title": "妮娜与兔子与魔法战车",
+      "native": "",
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -62823,6 +63323,13 @@
       "rank": 2
     },
     {
+      "id": 88213,
+      "title": "4TEEN十四岁",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 88240,
       "title": "少年剑道王直角",
       "native": "",
@@ -63029,6 +63536,13 @@
       "rank": 2
     },
     {
+      "id": 89234,
+      "title": "重启咲良田",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 89241,
       "title": "SKYWORLD 苍穹境界",
       "native": "",
@@ -63058,6 +63572,14 @@
       "bangumiId": 14502,
       "source": "wikidata-manga",
       "rank": 2
+    },
+    {
+      "id": 89773,
+      "title": "屌丝骑士",
+      "native": "",
+      "bangumiId": 199225,
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 89825,
@@ -63187,6 +63709,13 @@
     {
       "id": 90765,
       "title": "我让最想被拥抱的男人给威胁了。",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 90766,
+      "title": "三角窗外是黑夜",
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
@@ -63412,6 +63941,13 @@
     {
       "id": 91981,
       "title": "怪盗Joker",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 92025,
+      "title": "红三四郎 - 1969",
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
@@ -63844,6 +64380,14 @@
       "rank": 3
     },
     {
+      "id": 94401,
+      "title": "单亲乐章",
+      "native": "",
+      "bangumiId": 168418,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 94446,
       "title": "ALICE OR ALICE～妹控哥哥与双胞胎妹妹～",
       "native": "",
@@ -63883,6 +64427,13 @@
     {
       "id": 94698,
       "title": "死神少女‧镜",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 94707,
+      "title": "前男友←RETRY",
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
@@ -63934,6 +64485,13 @@
       "rank": 2
     },
     {
+      "id": 95147,
+      "title": "DOORS (小说)",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 95148,
       "title": "宇宙刑警",
       "native": "",
@@ -63968,6 +64526,13 @@
       "title": "弹弹小天使",
       "native": "",
       "bangumiId": 141777,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 95292,
+      "title": "爸爸与父亲的家庭食堂",
+      "native": "",
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -64105,6 +64670,14 @@
       "rank": 2
     },
     {
+      "id": 95953,
+      "title": "向上攀吧小寺同学",
+      "native": "",
+      "bangumiId": 139453,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 95978,
       "title": "碧蓝的荷鲁斯之眼: 男装女王物语",
       "native": "",
@@ -64123,6 +64696,13 @@
       "title": "此花亭奇谭",
       "native": "",
       "bangumiId": 127653,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 96113,
+      "title": "妖怪学校的新人教师",
+      "native": "",
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -64228,6 +64808,13 @@
     {
       "id": 96702,
       "title": "企鹅君",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 96737,
+      "title": "GOOD NIGHT WORLD",
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
@@ -64474,6 +65061,14 @@
       "id": 97493,
       "title": "愚蠢天使与恶魔共舞",
       "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
+      "id": 97494,
+      "title": "转生之后的我变成了龙蛋~目标乃是世界最强~",
+      "native": "",
+      "bangumiId": 231015,
       "source": "wikidata-manga",
       "rank": 3
     },
@@ -68486,6 +69081,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 99650,
+      "title": "萌男友是柑橘色",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 99654,
       "title": "黑白无双",
       "native": "",
@@ -68687,6 +69289,13 @@
       "native": "だがしかし2",
       "bangumiId": 221490,
       "source": "bangumi-data"
+    },
+    {
+      "id": 99737,
+      "title": "坠落JK与废人老师",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 99738,
@@ -69139,6 +69748,13 @@
       "native": "ガイコツ書店員 本田さん",
       "bangumiId": 225850,
       "source": "bangumi-data"
+    },
+    {
+      "id": 100106,
+      "title": "点到即止Milky Way",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 100107,
@@ -70574,6 +71190,13 @@
       "rank": 2
     },
     {
+      "id": 100999,
+      "title": "北极百货的秋乃小姐",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 101001,
       "title": "来玩游戏吧",
       "native": "あそびあそばせ",
@@ -71077,6 +71700,13 @@
       "bangumiId": 57637,
       "source": "wikidata-manga",
       "rank": 2
+    },
+    {
+      "id": 101255,
+      "title": "烦恼着恋爱的惠莉",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 101258,
@@ -72668,6 +73298,13 @@
       "rank": 2
     },
     {
+      "id": 102228,
+      "title": "猫往西走",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 102232,
       "title": "最终幻想 失落的异乡人",
       "native": "",
@@ -72765,6 +73402,13 @@
       "native": "狐狸之声",
       "bangumiId": 223127,
       "source": "bangumi-data"
+    },
+    {
+      "id": 102419,
+      "title": "伪装的芙蕾亚",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 102427,
@@ -73560,6 +74204,13 @@
       "rank": 2
     },
     {
+      "id": 103270,
+      "title": "我们的餐桌",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 103275,
       "title": "Fate/Grand Order 绝对魔兽战线 巴比伦尼亚",
       "native": "Fate/Grand Order -絶対魔獣戦線バビロニア-",
@@ -73913,6 +74564,13 @@
       "title": "くノ一牡丹",
       "native": "",
       "source": "anilist-chinese"
+    },
+    {
+      "id": 103995,
+      "title": "女神降临",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 104001,
@@ -74295,6 +74953,13 @@
       "native": "荒野のコトブキ飛行隊",
       "bangumiId": 260467,
       "source": "bangumi-data"
+    },
+    {
+      "id": 104255,
+      "title": "自称男人的小甘美眉♂",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 104257,
@@ -75208,6 +75873,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 105338,
+      "title": "阿尔涅事件簿",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 105339,
       "title": "烟与蜜",
       "native": "",
@@ -75785,6 +76457,14 @@
       "rank": 2
     },
     {
+      "id": 106260,
+      "title": "继母",
+      "native": "",
+      "bangumiId": 261433,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 106283,
       "title": "D.C.III 风见鸡篇",
       "native": "",
@@ -76019,6 +76699,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 106698,
+      "title": "虫虫奇兵",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 106726,
       "title": "蘑菇的拟态日常",
       "native": "",
@@ -76061,6 +76748,13 @@
       "bangumiId": 270211,
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 106789,
+      "title": "DOUBLE",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 106819,
@@ -76376,6 +77070,13 @@
       "bangumiId": 170663,
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 107230,
+      "title": "他有尾巴。",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 107237,
@@ -78147,6 +78848,13 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 109398,
+      "title": "致善良的妳",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 109403,
       "title": "悠哉日常大王 Nonstop",
       "native": "のんのんびより のんすとっぷ",
@@ -79132,6 +79840,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 110897,
+      "title": "Swing！！",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 110909,
       "title": "SHY腼腆英雄",
       "native": "",
@@ -79197,6 +79912,13 @@
       "bangumiId": 283316,
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 111077,
+      "title": "恋与枪弹",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 111080,
@@ -79310,6 +80032,14 @@
       "title": "与你青春的缘起",
       "native": "",
       "bangumiId": 295695,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 111218,
+      "title": "暗转epilogue",
+      "native": "",
+      "bangumiId": 267011,
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -79442,6 +80172,13 @@
       "rank": 2
     },
     {
+      "id": 111343,
+      "title": "尘8",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 111390,
       "title": "爱在征服世界后",
       "native": "",
@@ -79489,6 +80226,13 @@
       "title": "女儿的朋友",
       "native": "",
       "bangumiId": 283966,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 111485,
+      "title": "步天歌",
+      "native": "",
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -79557,6 +80301,13 @@
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
+    },
+    {
+      "id": 111711,
+      "title": "黄昏光影",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 111728,
@@ -80313,6 +81064,21 @@
       "source": "bangumi-data"
     },
     {
+      "id": 112820,
+      "title": "リッチ警官 キャッシュ！",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 112830,
+      "title": "堤亚穆帝国物语～从断头台开始，公主重生后的逆转人生～",
+      "native": "",
+      "bangumiId": 305876,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 112897,
       "title": "连续按下一亿年按钮的我，回神时已变成最强～落第剑士的学院无双～",
       "native": "",
@@ -80614,6 +81380,14 @@
       "source": "bangumi-data"
     },
     {
+      "id": 113399,
+      "title": "堤亚穆帝国物语～从断头台开始，公主重生后的逆转人生～",
+      "native": "",
+      "bangumiId": 305872,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 113415,
       "title": "咒术回战",
       "native": "呪術廻戦",
@@ -80661,6 +81435,14 @@
       "native": "美少年探偵団",
       "bangumiId": 295048,
       "source": "bangumi-data"
+    },
+    {
+      "id": 113438,
+      "title": "透视画男孩，全景画女孩",
+      "native": "",
+      "bangumiId": 329647,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 113449,
@@ -80944,6 +81726,13 @@
       "rank": 2
     },
     {
+      "id": 113893,
+      "title": "尤莉亚老师的红线",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 113906,
       "title": "BanG Dream! 少女乐团派对！☆PICO～大份～",
       "native": "BanG Dream! ガルパ☆ピコ～大盛り～",
@@ -81192,6 +81981,14 @@
       "rank": 2
     },
     {
+      "id": 114203,
+      "title": "转生后的大圣女，极力隐瞒圣女的身分 A Tale of The Great Saint",
+      "native": "",
+      "bangumiId": 299096,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 114232,
       "title": "剃须。然后捡到女高中生",
       "native": "ひげを剃る。そして女子高生を拾う。",
@@ -81392,6 +82189,14 @@
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
+    },
+    {
+      "id": 114527,
+      "title": "公司的小小前辈",
+      "native": "",
+      "bangumiId": 304298,
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 114531,
@@ -81604,6 +82409,14 @@
       "native": "ざしきわらしのタタミちゃん",
       "bangumiId": 294120,
       "source": "bangumi-data"
+    },
+    {
+      "id": 114898,
+      "title": "恋爱（少女）的培育法",
+      "native": "",
+      "bangumiId": 304964,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 114904,
@@ -82067,6 +82880,13 @@
     },
     {
       "id": 115979,
+      "title": "梅蒂亚转生物语",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
+      "id": 115980,
       "title": "梅蒂亚转生物语",
       "native": "",
       "source": "wikidata-manga",
@@ -82684,6 +83504,14 @@
       "native": "もっと！まじめにふまじめ かいけつゾロリ",
       "bangumiId": 285762,
       "source": "bangumi-data"
+    },
+    {
+      "id": 116799,
+      "title": "最后可以再拜托您一件事吗？",
+      "native": "",
+      "bangumiId": 256968,
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 116801,
@@ -83545,6 +84373,13 @@
       "rank": 2
     },
     {
+      "id": 118627,
+      "title": "往这边看 向井君",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 118630,
       "title": "决斗大师 KING",
       "native": "デュエル・マスターズ キング",
@@ -83854,11 +84689,27 @@
       "source": "bangumi-data"
     },
     {
+      "id": 119690,
+      "title": "迟早是最强的炼金术师？",
+      "native": "",
+      "bangumiId": 270100,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 119696,
       "title": "女武神的餐桌II",
       "native": "戦乙女の食卓II",
       "bangumiId": 310687,
       "source": "bangumi-data"
+    },
+    {
+      "id": 119704,
+      "title": "迟早是最强的炼金术师？",
+      "native": "",
+      "bangumiId": 239499,
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 119708,
@@ -83954,6 +84805,13 @@
       "title": "地下鉄に乗るっ",
       "native": "",
       "source": "anilist-chinese"
+    },
+    {
+      "id": 119913,
+      "title": "秘密教学",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 119941,
@@ -84226,6 +85084,13 @@
       "rank": 2
     },
     {
+      "id": 120580,
+      "title": "冰川铁甲",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 120600,
       "title": "机动战士GUNDAM AGGRESSOR",
       "native": "",
@@ -84275,6 +85140,13 @@
       "bangumiId": 298752,
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 120684,
+      "title": "柏青娘",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 120688,
@@ -84381,6 +85253,13 @@
       "native": "",
       "source": "wikidata-manga",
       "rank": 1
+    },
+    {
+      "id": 120980,
+      "title": "某天成为魔神",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 121026,
@@ -85472,6 +86351,14 @@
       "rank": 2
     },
     {
+      "id": 123796,
+      "title": "怪病医拉姆尼",
+      "native": "",
+      "bangumiId": 226577,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 123802,
       "title": "圣女的魔力是万能的",
       "native": "聖女の魔力は万能です",
@@ -86408,6 +87295,14 @@
       "rank": 2
     },
     {
+      "id": 126273,
+      "title": "中年男的异世界网购生活",
+      "native": "",
+      "bangumiId": 281930,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 126275,
       "title": "宇宙战舰大和号的时代 西历2202年的选择",
       "native": "「宇宙戦艦ヤマト」という時代 西暦2202年の選択",
@@ -86510,6 +87405,14 @@
       "native": "私に天使が舞い降りた！プレシャス・フレンズ",
       "bangumiId": 320493,
       "source": "bangumi-data"
+    },
+    {
+      "id": 126429,
+      "title": "办公室的秘密新婚",
+      "native": "",
+      "bangumiId": 272640,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 126494,
@@ -86798,6 +87701,13 @@
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
+    },
+    {
+      "id": 127010,
+      "title": "成为铁匠在异世界度过悠闲人生",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 127047,
@@ -87157,6 +88067,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 127956,
+      "title": "女装参加线下聚会的话…",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 127957,
       "title": "Holy Knight Light",
       "native": "",
@@ -87379,6 +88296,13 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 128518,
+      "title": "异世界的处置依社畜而定",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 128545,
       "title": "白砂的水族馆",
       "native": "白い砂のアクアトープ",
@@ -87516,6 +88440,13 @@
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
+    },
+    {
+      "id": 128799,
+      "title": "优雅贵族的休假指南",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 128801,
@@ -88036,6 +88967,14 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 130099,
+      "title": "玩数字游戏。",
+      "native": "",
+      "bangumiId": 278150,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 130126,
       "title": "ブンナよ, 木からおりてこい",
       "native": "ブンナよ, 木からおりてこい",
@@ -88069,6 +89008,13 @@
       "native": "ベイブレードバースト ダイナマイトバトル",
       "bangumiId": 330869,
       "source": "bangumi-data"
+    },
+    {
+      "id": 130256,
+      "title": "村井之恋",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 130290,
@@ -88292,6 +89238,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 130624,
+      "title": "吞噬星空",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 130631,
       "title": "Lv1魔王与独居废勇者",
       "native": "",
@@ -88413,6 +89366,13 @@
     {
       "id": 130804,
       "title": "转学后班上的清纯可爱美少女，竟是小时候玩在一起的哥儿们",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
+      "id": 130833,
+      "title": "我们陷入恋爱的理由",
       "native": "",
       "source": "wikidata-manga",
       "rank": 3
@@ -88618,6 +89578,13 @@
       "native": "",
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 131537,
+      "title": "无能之鹰",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 131538,
@@ -88939,6 +89906,13 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 132216,
+      "title": "代书万万岁！",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 132232,
       "title": "RE:cycle of the PENGUINDRUM [前篇] 你的列车是生存战略",
       "native": "RE:cycle of the PENGUINDRUM [前編] 君の列車は生存戦略",
@@ -89139,6 +90113,13 @@
       "rank": 2
     },
     {
+      "id": 132604,
+      "title": "今晚有猫伴身边",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 132634,
       "title": "头文字D BATTLE STAGE 3",
       "native": "",
@@ -89236,6 +90217,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 132914,
+      "title": "心爱的谎言 温柔的黑暗",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 132920,
       "title": "火焰之纹章 (佐野真砂辉&渡边京漫画)#广播剧CD",
       "native": "",
@@ -89247,6 +90235,13 @@
       "title": "剧场版 魔法少女小圆 瓦尔普吉斯之回天",
       "native": "",
       "source": "anilist-chinese"
+    },
+    {
+      "id": 133016,
+      "title": "虚位王权",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 133025,
@@ -89339,6 +90334,13 @@
       "native": "ぐんまちゃん",
       "bangumiId": 341168,
       "source": "bangumi-data"
+    },
+    {
+      "id": 133686,
+      "title": "8人的战士",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 133844,
@@ -89456,6 +90458,13 @@
       "title": "斗罗大陆 山雨欲来",
       "native": "",
       "source": "anilist-chinese"
+    },
+    {
+      "id": 134215,
+      "title": "救生圈 (漫画)",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 134226,
@@ -89811,6 +90820,14 @@
       "source": "bangumi-data"
     },
     {
+      "id": 135822,
+      "title": "未成年",
+      "native": "",
+      "bangumiId": 387438,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 135827,
       "title": "群花绽放、仿如修罗",
       "native": "",
@@ -89873,6 +90890,14 @@
       "title": "千鹤ちゃん开発日记",
       "native": "",
       "source": "anilist-chinese"
+    },
+    {
+      "id": 136063,
+      "title": "冻结地球",
+      "native": "",
+      "bangumiId": 326431,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 136064,
@@ -89988,6 +91013,13 @@
       "title": "そしてわたしはセンセイに……",
       "native": "",
       "source": "anilist-chinese"
+    },
+    {
+      "id": 136277,
+      "title": "后宫露营！",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 136290,
@@ -90109,6 +91141,14 @@
       "source": "bangumi-data"
     },
     {
+      "id": 136498,
+      "title": "矢野同学的普通日常",
+      "native": "",
+      "bangumiId": 340201,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 136508,
       "title": "和机器人啪啪啪能算在经验次数里吗？？",
       "native": "",
@@ -90182,6 +91222,14 @@
       "title": "蓦然回首",
       "native": "",
       "bangumiId": 342254,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 136814,
+      "title": "迷糊天使俏护士",
+      "native": "",
+      "bangumiId": 196222,
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -90266,6 +91314,14 @@
       "rank": 3
     },
     {
+      "id": 137091,
+      "title": "GRANDEEK～外传～",
+      "native": "",
+      "bangumiId": 118359,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 137158,
       "title": "天下第一 日本最强武术家决定战",
       "native": "",
@@ -90276,6 +91332,14 @@
       "id": 137202,
       "title": "不虐待我的继母与继姐",
       "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 137219,
+      "title": "樱开二度",
+      "native": "",
+      "bangumiId": 327657,
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -90705,6 +91769,13 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 138272,
+      "title": "软男与铁妹子",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 138281,
       "title": "假面忍者 赤影",
       "native": "",
@@ -90915,6 +91986,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 138741,
+      "title": "强势美女白川小姐",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 138755,
       "title": "我当备胎女友也没关系。",
       "native": "",
@@ -90965,14 +92043,35 @@
       "rank": 2
     },
     {
+      "id": 138817,
+      "title": "白井カイウ×出水ぽすか短篇集",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 138833,
       "title": "Abandon‐100ヌキしないと出られない不思议な教室‐",
       "native": "",
       "source": "anilist-chinese"
     },
     {
+      "id": 138847,
+      "title": "Studio Cabana思密录音室",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 138867,
       "title": "绯之棱线",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 138876,
+      "title": "离巢的魔王城",
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
@@ -91375,6 +92474,13 @@
       "rank": 3
     },
     {
+      "id": 139700,
+      "title": "神明大人出错了",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 139732,
       "title": "转学后班上的清纯可爱美少女，竟是小时候玩在一起的哥儿们",
       "native": "",
@@ -91479,6 +92585,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 140006,
+      "title": "哈里斯的旋风",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 140036,
       "title": "聪明的一休 露姬，春天到了！",
       "native": "一休さん 春だ！やんちゃ姫",
@@ -91491,6 +92604,14 @@
       "native": "シャドウバースF",
       "bangumiId": 351943,
       "source": "bangumi-data"
+    },
+    {
+      "id": 140148,
+      "title": "星空交流",
+      "native": "",
+      "bangumiId": 294340,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 140172,
@@ -91628,6 +92749,14 @@
       "native": "勇者、辞めます",
       "bangumiId": 353657,
       "source": "bangumi-data"
+    },
+    {
+      "id": 140461,
+      "title": "粉红缎带",
+      "native": "",
+      "bangumiId": 337047,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 140475,
@@ -91810,6 +92939,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 140855,
+      "title": "吉伊卡哇",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 140879,
       "title": "剧场版 サルゲッチュ 黄金のピポヘル・ウッキーバトル",
       "native": "劇場版 サルゲッチュ 黄金のピポヘル・ウッキーバトル",
@@ -91922,6 +93058,13 @@
       "rank": 3
     },
     {
+      "id": 141135,
+      "title": "3秒后，野兽。～坐在联谊会角落的他是个肉食系",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 141136,
       "title": "3秒后，野兽。～坐在联谊会角落的他是个肉食系",
       "native": "3秒後、野獣。～合コンで隅にいた彼は肉食でした",
@@ -91963,6 +93106,13 @@
       "native": "トニカクカワイイ ～制服～",
       "bangumiId": 376708,
       "source": "bangumi-data"
+    },
+    {
+      "id": 141245,
+      "title": "透明男子与人类女孩～两人迟早会成为夫妻～",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 141249,
@@ -92452,6 +93602,14 @@
       "rank": 3
     },
     {
+      "id": 142688,
+      "title": "水属性的魔法师",
+      "native": "",
+      "bangumiId": 351311,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 142701,
       "title": "后宫之乌",
       "native": "後宮の烏",
@@ -92808,6 +93966,14 @@
       "rank": 3
     },
     {
+      "id": 143334,
+      "title": "女帝薫子",
+      "native": "",
+      "bangumiId": 164406,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 143337,
       "title": "打了300年的史莱姆，不知不觉就练到了满级 ～其二～",
       "native": "スライム倒して300年、知らないうちにレベルMAXになってました ～そのに～",
@@ -92914,6 +94080,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 143882,
+      "title": "欢迎来到梅萨佩拉饭店",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 143978,
       "title": "安典大人尽收腹中",
       "native": "",
@@ -92940,6 +94113,13 @@
       "title": "身为女性向游戏的女主角挑战最强生存剧",
       "native": "",
       "bangumiId": 372294,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
+      "id": 144073,
+      "title": "恶食千金与狂血公爵",
+      "native": "",
       "source": "wikidata-manga",
       "rank": 3
     },
@@ -92985,6 +94165,14 @@
       "native": "アリス・ギア・アイギス Expansion",
       "bangumiId": 366331,
       "source": "bangumi-data"
+    },
+    {
+      "id": 144223,
+      "title": "公主骑士大人的小白脸",
+      "native": "",
+      "bangumiId": 381400,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 144316,
@@ -93078,6 +94266,13 @@
       "native": "映画 デリシャスパーティ♡プリキュア 夢みる♡お子さまランチ!",
       "bangumiId": 368456,
       "source": "bangumi-data"
+    },
+    {
+      "id": 144688,
+      "title": "命运的倒带士",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 144718,
@@ -93189,6 +94384,13 @@
       "native": "呪術廻戦 懐玉・玉折／渋谷事変(第2期)",
       "bangumiId": 369304,
       "source": "bangumi-data"
+    },
+    {
+      "id": 145067,
+      "title": "我所看见的未来",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 145069,
@@ -93397,6 +94599,13 @@
       "title": "乡下大叔成为剑圣~只是区区乡下剑术师傅，成大器的弟子们却不肯放过我~",
       "native": "",
       "bangumiId": 372605,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 145644,
+      "title": "SEXY田中小姐",
+      "native": "",
       "source": "wikidata-manga",
       "rank": 2
     },
@@ -93740,6 +94949,13 @@
       "native": "範馬刃牙 2期",
       "bangumiId": 375541,
       "source": "bangumi-data"
+    },
+    {
+      "id": 146647,
+      "title": "白山与三田",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 146650,
@@ -94299,6 +95515,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 148439,
+      "title": "雷霆3人组",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 148465,
       "title": "虽然1级但以固有技能却是最强的",
       "native": "レベル1だけどユニークスキルで最強です",
@@ -94318,6 +95541,13 @@
       "native": "それいけ!アンパンマン シャボン玉のプルン",
       "bangumiId": 417418,
       "source": "bangumi-data"
+    },
+    {
+      "id": 148729,
+      "title": "花丸小跳步",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 148862,
@@ -94761,6 +95991,14 @@
       "source": "bangumi-data"
     },
     {
+      "id": 151194,
+      "title": "好好地听一下吧",
+      "native": "",
+      "bangumiId": 388782,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 151252,
       "title": "冰属性男子与酷酷女同事",
       "native": "氷属性男子とクールな同僚女子",
@@ -94934,6 +96172,13 @@
       "native": "3丁目のタマ うちのタマ知りませんか?",
       "bangumiId": 8247,
       "source": "bangumi-data"
+    },
+    {
+      "id": 151789,
+      "title": "契约之吻",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 151799,
@@ -95221,6 +96466,14 @@
       "source": "bangumi-data"
     },
     {
+      "id": 153336,
+      "title": "挣扎吧，亚当君",
+      "native": "",
+      "bangumiId": 469430,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 153339,
       "title": "甜点转生",
       "native": "おかしな転生",
@@ -95438,6 +96691,13 @@
       "native": "メイクアガール",
       "bangumiId": 398556,
       "source": "bangumi-data"
+    },
+    {
+      "id": 154072,
+      "title": "梦幻女仆的茶点时光",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 154076,
@@ -95673,6 +96933,14 @@
       "source": "bangumi-data"
     },
     {
+      "id": 154695,
+      "title": "双星的天剑士",
+      "native": "",
+      "bangumiId": 401601,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 154745,
       "title": "租借女友 第三季",
       "native": "彼女、お借りします(第3期)",
@@ -95711,6 +96979,13 @@
     {
       "id": 154824,
       "title": "被定罪的恶役千金回到过去成为完美恶女@comic",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 154827,
+      "title": "被定罪的恶役千金回到过去成为完美恶女",
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
@@ -95792,6 +97067,14 @@
       "source": "bangumi-data"
     },
     {
+      "id": 154981,
+      "title": "泥泞的餐桌",
+      "native": "",
+      "bangumiId": 387539,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 154982,
       "title": "极道主夫 第二季",
       "native": "",
@@ -95845,6 +97128,14 @@
       "native": "カワイスギクライシス",
       "bangumiId": 402935,
       "source": "bangumi-data"
+    },
+    {
+      "id": 155073,
+      "title": "猫与海的彼端",
+      "native": "",
+      "bangumiId": 411758,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 155089,
@@ -96423,6 +97714,14 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 156914,
+      "title": "谁看见了孔雀在跳舞？",
+      "native": "",
+      "bangumiId": 393233,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 156935,
       "title": "阴角辣妹也想要出风头",
       "native": "",
@@ -96450,6 +97749,13 @@
       "native": "デッドマウント・デスプレイ",
       "bangumiId": 408013,
       "source": "bangumi-data"
+    },
+    {
+      "id": 157200,
+      "title": "甜蜜的最后恋人",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 157295,
@@ -96491,6 +97797,13 @@
       "native": "ブルバスター",
       "bangumiId": 408361,
       "source": "bangumi-data"
+    },
+    {
+      "id": 157491,
+      "title": "打杂赋予术师察觉到自己最强",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 157511,
@@ -96770,6 +98083,13 @@
       "rank": 3
     },
     {
+      "id": 158684,
+      "title": "星旅少年",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 158699,
       "title": "火鸟 羽衣篇",
       "native": "火の鳥 羽衣編",
@@ -96866,6 +98186,13 @@
       "native": "",
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 158916,
+      "title": "武士生死斗",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 158926,
@@ -97016,6 +98343,13 @@
       "bangumiId": 410425,
       "source": "wikidata-manga",
       "rank": 3
+    },
+    {
+      "id": 159387,
+      "title": "明明只是个砲灰角色，却受到完美王子的宠爱。",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 159417,
@@ -97214,6 +98548,13 @@
       "rank": 2
     },
     {
+      "id": 160171,
+      "title": "七姬物语",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 160173,
       "title": "群马酱 第二季",
       "native": "ぐんまちゃん シーズン2",
@@ -97380,6 +98721,13 @@
       "rank": 2
     },
     {
+      "id": 161209,
+      "title": "健身美眉",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 161237,
       "title": "之后顿珍汉",
       "native": "",
@@ -97440,6 +98788,14 @@
       "native": "異修羅",
       "bangumiId": 420084,
       "source": "bangumi-data"
+    },
+    {
+      "id": 161477,
+      "title": "毁掉一切地狱再爱",
+      "native": "",
+      "bangumiId": 420817,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 161632,
@@ -97867,6 +99223,13 @@
     {
       "id": 163048,
       "title": "Sugar Meets Girl!",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 163064,
+      "title": "元素高手",
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
@@ -98490,6 +99853,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 165162,
+      "title": "身为女仆这是当然的。～遭受诬陷的万能女仆决定踏上旅途～",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 165171,
       "title": "金牌得主",
       "native": "メダリスト",
@@ -98829,7 +100199,7 @@
     {
       "id": 166475,
       "title": "罗小黑战记2",
-      "native": "罗小黑战记2",
+      "native": "羅小黒戦記2 ぼくらが望む未来",
       "bangumiId": 442114,
       "source": "bangumi-data"
     },
@@ -99236,6 +100606,13 @@
       "rank": 2
     },
     {
+      "id": 167856,
+      "title": "超级麻雀",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 167927,
       "title": "失忆投捕",
       "native": "忘却バッテリー",
@@ -99417,6 +100794,14 @@
       "source": "bangumi-data"
     },
     {
+      "id": 168712,
+      "title": "在异世界被姊姊夺走了名字",
+      "native": "",
+      "bangumiId": 401950,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 168727,
       "title": "为了与你慢步宇宙",
       "native": "",
@@ -99495,6 +100880,13 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 168984,
+      "title": "恶灵克星",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 168992,
       "title": "小不点",
       "native": "オチビサン",
@@ -99555,6 +100947,13 @@
       "title": "BEAT & MOTION 摇滚动画魂",
       "native": "",
       "source": "anilist-chinese"
+    },
+    {
+      "id": 169148,
+      "title": "皇帝之剑",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 169202,
@@ -100257,6 +101656,13 @@
       "rank": 3
     },
     {
+      "id": 170815,
+      "title": "高良同学与天城同学",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 170822,
       "title": "没获得救赎的村民 A，被贵族捡到并宠爱，事实上持有的传说级神技能也觉醒了",
       "native": "",
@@ -100650,6 +102056,13 @@
       "rank": 3
     },
     {
+      "id": 172091,
+      "title": "鬼的新娘",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 172166,
       "title": "卖药的皇太子",
       "native": "",
@@ -100963,6 +102376,14 @@
       "rank": 3
     },
     {
+      "id": 173375,
+      "title": "Dolly ♪Kanon 变装轮唱曲 秘密音乐活动!!",
+      "native": "",
+      "bangumiId": 118549,
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 173388,
       "title": "精灵小姐瘦不了。",
       "native": "エルフさんは痩せられない。",
@@ -101101,6 +102522,13 @@
       "native": "ググミちゃん",
       "bangumiId": 381386,
       "source": "bangumi-data"
+    },
+    {
+      "id": 174143,
+      "title": "蜉蝣之岛",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 174181,
@@ -101322,6 +102750,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 174857,
+      "title": "人类控",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 174913,
       "title": "科学×冒险与生存！",
       "native": "科学×冒険サバイバル！",
@@ -101340,6 +102775,14 @@
       "title": "孕ませ屋 THE ANIMATION",
       "native": "",
       "source": "anilist-chinese"
+    },
+    {
+      "id": 174933,
+      "title": "京兼家的新娘",
+      "native": "",
+      "bangumiId": 471549,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 175019,
@@ -101719,6 +103162,13 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 176335,
+      "title": "DO-P-KAN",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 176370,
       "title": "公主大人“拷问”的时间到了 第二季",
       "native": "姫様“拷問”の時間です(第2期)",
@@ -101757,6 +103207,14 @@
       "native": "Thunderbolt Fantasy 東離劍遊紀 最終章",
       "bangumiId": 486663,
       "source": "bangumi-data"
+    },
+    {
+      "id": 176451,
+      "title": "双面魔术师",
+      "native": "",
+      "bangumiId": 172549,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 176470,
@@ -102735,6 +104193,13 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 179164,
+      "title": "美味炸酱征服武林",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 1
+    },
+    {
       "id": 179292,
       "title": "噗尼轮轮 噗尼2",
       "native": "ぷにるんず ぷに2",
@@ -103335,6 +104800,13 @@
       "rank": 2
     },
     {
+      "id": 180890,
+      "title": "天下第一的青梅竹马",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 180891,
       "title": "绝对回归",
       "native": "",
@@ -103489,6 +104961,13 @@
       "native": "たまごっち！たまともだいしゅーGO",
       "bangumiId": 130181,
       "source": "bangumi-data"
+    },
+    {
+      "id": 181656,
+      "title": "谁杀了勇者",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 181776,
@@ -103807,6 +105286,14 @@
       "native": "カードファイト!! ヴァンガード Divinez デラックス編",
       "bangumiId": 440880,
       "source": "bangumi-data"
+    },
+    {
+      "id": 182992,
+      "title": "在男性禁入的游戏世界里，我唯一该做的事情 我转生成了夹在百合之间的男人",
+      "native": "",
+      "bangumiId": 432523,
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 183127,
@@ -104163,6 +105650,13 @@
       "title": "Star Wars: Visions Volume 3",
       "native": "",
       "source": "anilist-chinese"
+    },
+    {
+      "id": 184652,
+      "title": "魔王的武林之路",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 1
     },
     {
       "id": 184718,
@@ -104817,6 +106311,13 @@
       "rank": 3
     },
     {
+      "id": 186490,
+      "title": "宇宙天魔 3077",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 1
+    },
+    {
       "id": 186497,
       "title": "冰之城墙",
       "native": "氷の城壁",
@@ -105359,6 +106860,14 @@
       "rank": 3
     },
     {
+      "id": 188091,
+      "title": "平民出身的帝国将官蹂躏无能的贵族上司出人头地",
+      "native": "",
+      "bangumiId": 501482,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 188131,
       "title": "竹轮战纪～用我的可爱来侵略地球～",
       "native": "ちくわ戦記～おれのカワイイで地球侵略～",
@@ -105378,6 +106887,13 @@
       "native": "ふつつかな悪女ではございますが～雛宮蝶鼠とりかえ伝～",
       "bangumiId": 545008,
       "source": "bangumi-data"
+    },
+    {
+      "id": 188155,
+      "title": "独剑复残门",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 188216,
@@ -105652,6 +107168,14 @@
       "rank": 2
     },
     {
+      "id": 189698,
+      "title": "少女身，大叔魂",
+      "native": "",
+      "bangumiId": 544387,
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 189716,
       "title": "ゆるかわメルちゃん",
       "native": "ゆるかわメルちゃん",
@@ -105707,9 +107231,10 @@
     },
     {
       "id": 190054,
-      "title": "我的幸福婚约 特别篇",
-      "native": "",
-      "source": "anilist-chinese"
+      "title": "我的幸福婚姻 特别篇",
+      "native": "わたしの幸せな結婚 特別篇",
+      "bangumiId": 551304,
+      "source": "bangumi-data"
     },
     {
       "id": 190143,
@@ -105757,6 +107282,13 @@
     {
       "id": 191048,
       "title": "逢魔警察 空与岚",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
+      "id": 191194,
+      "title": "奥尔克森王国史 野蛮的豚头族之国，是如何将和平的精灵之国烧毁殆尽",
       "native": "",
       "source": "wikidata-manga",
       "rank": 2
@@ -105992,6 +107524,13 @@
       "title": "MyGO!!!!!メンバーの日常",
       "native": "",
       "source": "anilist-chinese"
+    },
+    {
+      "id": 193466,
+      "title": "高音让小岚脸红心跳",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
     },
     {
       "id": 193607,
@@ -106809,6 +108348,13 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 198459,
+      "title": "飞龙十三队",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 198511,
       "title": "制服は着たままで",
       "native": "",
@@ -107270,6 +108816,13 @@
       "source": "bangumi-data"
     },
     {
+      "id": 201096,
+      "title": "被背叛的田川的忧郁",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
+    },
+    {
       "id": 201151,
       "title": "THE LENTICULARS",
       "native": "",
@@ -107552,8 +109105,9 @@
     {
       "id": 203275,
       "title": "恶魔纹章",
-      "native": "",
-      "source": "anilist-chinese"
+      "native": "デモンズ・クレスト",
+      "bangumiId": 612608,
+      "source": "bangumi-data"
     },
     {
       "id": 203296,
@@ -107908,11 +109462,25 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 206042,
+      "title": "史无前例的剑术天才",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 3
+    },
+    {
       "id": 206048,
       "title": "食人魔",
       "native": "鬼がら",
       "bangumiId": 310062,
       "source": "bangumi-data"
+    },
+    {
+      "id": 206131,
+      "title": "学园帝国",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 206163,
@@ -108166,6 +109734,14 @@
       "native": "天は赤い河のほとり",
       "bangumiId": 627648,
       "source": "bangumi-data"
+    },
+    {
+      "id": 207888,
+      "title": "骄矜狂妄反派贵族的恶行恶状",
+      "native": "",
+      "bangumiId": 453270,
+      "source": "wikidata-manga",
+      "rank": 2
     },
     {
       "id": 208025,
@@ -108786,6 +110362,13 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 213324,
+      "title": "回春天魔酱的魔境实况",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 1
+    },
+    {
       "id": 213338,
       "title": "在地最棒了！",
       "native": "",
@@ -109155,6 +110738,13 @@
       "source": "anilist-chinese"
     },
     {
+      "id": 215954,
+      "title": "重生毒后护唐门",
+      "native": "",
+      "source": "wikidata-manga",
+      "rank": 1
+    },
+    {
       "id": 216170,
       "title": "8月31日的无尽夏天",
       "native": "",
@@ -109211,9 +110801,10 @@
     },
     {
       "id": 216895,
-      "title": "蓝色传承 Welsh & Shedar",
-      "native": "",
-      "source": "anilist-chinese"
+      "title": "苍き伝承 ウェルシュ＆シェダー",
+      "native": "蒼き伝承 ウェルシュ＆シェダー",
+      "bangumiId": 701782,
+      "source": "bangumi-data"
     },
     {
       "id": 216939,
